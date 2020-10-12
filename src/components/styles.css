@@ -1,0 +1,15 @@
+.carousel .slide {
+    background-color: transparent;
+}
+
+.carousel .thumbs-wrapper {
+    display: none;
+}
+
+.carousel .carousel-status {
+    display: none;
+}
+
+.carousel .control-arrow {
+    display: none;
+}
