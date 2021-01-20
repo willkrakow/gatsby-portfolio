@@ -45,6 +45,15 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: path.join(__dirname, `_posts/projects`),
+      }
+    },
+    `gatsby-transformer-remark`
   ],
 }
