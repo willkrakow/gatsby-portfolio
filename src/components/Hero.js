@@ -38,7 +38,7 @@ const Hero = () => {
               Dev | Designer | Writer
             </h3>
             <div className="d-flex w-100 align-center h-100">
-              <Button variant="info d-block align-self-start mr-4 my-4">
+              <Button variant="dark d-block align-self-start mr-4 my-4">
                 Projects
               </Button>
               <Button variant="outline-light mr-4 my-4">Contact</Button>

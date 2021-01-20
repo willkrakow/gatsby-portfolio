@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import JobDescription from '../components/JobDescription.js';
 import { BioHeader, LabelText, ColorHeader, BioText } from './Typography'
 
-import { FancyContainer, ProjectWrapper } from './containers'
+import { FancyContainer } from './containers'
 
 const Resume = () => {
 
@@ -58,12 +58,12 @@ const Resume = () => {
         <Row className="justify-content-center">
         <Col xs={{ span: 12 }} md={{span: 6}}>
           {data.map((job, index) => (
-            <ProjectWrapper key={index}>
+            <div key={index}>
               <ColorHeader>{job.role}</ColorHeader>
           <BioText>{job.name}</BioText>
               <BioText lighter>{job.dates}</BioText>
               <JobDescription list={job.description} />
-            </ProjectWrapper>
+            </div>
           ))}
         </Col>
       </Row>
