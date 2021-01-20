@@ -1,15 +1,49 @@
-.carousel .slide {
-    background-color: transparent;
+.fade-in-image {
+    animation: fade 0.9s ease-in;
+    right: 0;
+    position: relative;
 }
 
-.carousel .thumbs-wrapper {
-    display: none;
+@keyframes fade {
+    0% {
+        right: -500px;
+        transform: rotate(50deg) scale(1.2);
+        box-shadow: 60px 0px 100px rgba(0,29,59,0.4);
+    }
+    100% {
+        box-shadow: 0px 0px 20px rgba(0,29,59,0.4);
+    }
+}
+/* 
+.animated-grid {
+    animation: wave 0.9s;
+    background: rgb(3, 240, 204);
 }
 
-.carousel .carousel-status {
-    display: none;
-}
+@keyframes wave {
+    from {
+        background: linear-gradient(90deg, rgba(3,240,204,1) 0%, rgb(1, 62, 78) 100%);
+    }
+    to {
+        background: linear-gradient(90deg, rgba(221,247,243,1) 0%, rgba(3,120,152,1) 100%);
+    }
+} */
 
-.carousel .control-arrow {
-    display: none;
-}
+@keyframes example {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+  }
+  
+  /* The element to apply the animation to */
+  .animated-grid {
+    background: linear-gradient(-45deg, rgba(247, 179, 116, 0.2), rgba(207, 34, 34, 0.2), rgba(103, 6, 182, 0.2), rgba(3,240,201,0.2), rgba(3,120,152,0.2));    animation-name: example;
+    background-size: 400% 400%;
+    animation: example 15s ease infinite;
+  }

@@ -1,37 +1,12 @@
 import React from 'react';
-// import styled from 'styled-components';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import PlantPureLogo from '../../src/images/plantpure.png';
-import styled from 'styled-components';
 import JobDescription from '../components/JobDescription.js';
 import DukeLogo from '../../src/images/duke.png';
 import CMLogo from '../images/corticalmetrics.png';
+import { BioHeader, LabelText, ColorHeader, BioText } from './Typography'
 
-
-const Img = styled.img`
-height: 3em;
-display: block;
-margin-top: 5rem;`
-
-const Dates = styled.p`
-color: #4f4f4f;
-font-size: 24px;
-line-height: 36px;
-`
-
-const Role = styled.p`
-font-weight: bold;
-font-size: 24px;
-line-height: 36px;
-color: #2f2f4f;
-margin-top: 5rem;
-`
-
-const OrgLink = styled.a`
-color: #6f6f8f;
-width: 50%;
-display: block;
-`
+import { FancyContainer, ProjectWrapper } from './containers'
 
 const Resume = () => {
 
@@ -42,7 +17,10 @@ const Resume = () => {
       logo: PlantPureLogo,
       url: 'plantpurenation.com',
       role: "Web Development and Marketing",
-      description: ["did this", "did this", "did this"]
+      description: [
+        "Developed and maintained pages, components, and content for a Shopify store with 40k+ monthly visitors.",
+        "Designed marketing materials and wrote web, social media, and email marketing copy.",
+        "Used creative initiatives and insights from Google Analytics to increase total reach by 90% over 3 months."]
     },
     {
       name: "Duke Center for Child Traumatic Stress",
@@ -50,7 +28,10 @@ const Resume = () => {
       logo: DukeLogo,
       url: 'duke.edu',
       role: "Web Development and Database Analyst",
-      description: ["did this", "did this", "did this"]
+      description: [
+        "Developed and implemented project-specific data management plans for 100+ medical clinics.",
+        "Advised clinicians, administrators and psychiatry researchers on proper data entry conventions.",
+        "Compiled and wrote documentation for database development and Salesforce integrations."]
     },
     {
       name: "Cortical Metrics",
@@ -58,26 +39,41 @@ const Resume = () => {
       logo: CMLogo,
       url: 'corticalmetrics.com',
       role: "Hardware Engineering, Marketing and Design",
-      description: ["did this", "did this", "did this"]
+      description: [
+        "Analyzed clinical trial data, generated statistical reports, and wrote articles on the latest neuroscience research.",
+        "Wrote website copy and contributed technical support articles, and handled support tickets.",
+        "Designed neuroscience research hardware, manufacturing processes, and QA tests."]
     }
   ]
 
   return (
-    <Container style={{ width: '100%', margin: 'auto' }}>
-      {data.map((job, index) => (
-        <Row key={index}>
-          <Col md={6} className="border border-right border-left-0 border-top-0 border-bottom-0">
-            <Role>{job.role}</Role>
-            <Dates>{job.dates}</Dates>
-          </Col>
-          <Col md={6}>
-            <Img src={job.logo} />
-            <OrgLink href={job.url}>{job.url}</OrgLink>
-            <JobDescription list={job.description} />
-          </Col>
+    <FancyContainer>
+      <Row className="justify-content-center" >
+        <Col xs={{ span: 12 }} md={{span: 6}}>
+          <LabelText>Resume</LabelText>
+          <BioHeader>
+            Sufficiently Experienced<br /> (if I do say so myself)
+          </BioHeader>
+          <BioText>
+            I've jumped around a lot and run around a lot and walked a bunch
+            too. I like to keep things interesting but I'm looking to settle
+            into a more permanent, stable role because money.
+          </BioText>
+        </Col>
         </Row>
-      ))}
-
-    </Container>)
+        <Row className="justify-content-center">
+        <Col xs={{ span: 12 }} md={{span: 6}}>
+          {data.map((job, index) => (
+            <ProjectWrapper key={index}>
+              <ColorHeader>{job.role}</ColorHeader>
+          <BioText>{job.name}</BioText>
+              <BioText lighter>{job.dates}</BioText>
+              <JobDescription list={job.description} />
+            </ProjectWrapper>
+          ))}
+        </Col>
+      </Row>
+    </FancyContainer>
+  )
 }
 export default Resume

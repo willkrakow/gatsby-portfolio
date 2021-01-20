@@ -3,13 +3,14 @@ import { HoverSlideshow } from "react-hover-slideshow";
  
 // As a function component
 function Slideshow(props) {
-    const imageURLs = props.images;
+    const images = props.images;
  
     return (
         <div>
             <HoverSlideshow
+                autoplay={true}
                 aria-label="My pretty picture slideshow"
-                images={imageURLs}
+                images={images}
                 width="760px"
                 height="400px"
             />

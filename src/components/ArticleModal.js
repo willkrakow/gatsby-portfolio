@@ -1,30 +1,42 @@
-function Example() {
+import React, { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
+import styled from 'styled-components';
+
+const ArticleButton = styled.button`
+  box-shadow: 0px -10px 0px rgba(247, 179, 116, 0.7) inset;
+  border: none;
+  background: transparent;
+  color: #4f4f4a;
+  font-weight: bold;
+  font-size: 16px;
+  &:hover{
+    background-color: #f9f9ff;
+  }
+`
+export default function ArticleModal(props) {
+    const article = props.article;
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
     return (
-      <>
-        <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
-        </Button>
+      <React.Fragment>
+        <ArticleButton onClick={handleShow}>
+          Read more
+        </ArticleButton>
   
-        <Modal show={show} onHide={handleClose}>
+        <Modal size="lg" show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+    <Modal.Title>{article.name}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+    <Modal.Body>{article.preview}</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="outline-danger"  onClick={handleClose}>
               Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
             </Button>
           </Modal.Footer>
         </Modal>
-      </>
+      </React.Fragment>
     );
   }
-  

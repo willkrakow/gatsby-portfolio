@@ -7,6 +7,28 @@
 const path = require('path');
 
 module.exports = {
+  siteMetadata: {
+    title: "Portfolio",
+    description: "Wililam Krakow | Developer, Designer, Writer",
+    menuLinks:[
+            {
+               name:'home',
+               link:'/'
+            },
+            {
+              name:'projects',
+              link:'/projects'
+            },
+            {
+               name:'writing',
+               link:'/writing'
+            },
+            {
+              name:'contact',
+              link: '/contact'
+            }
+          ]
+  },
   plugins: [
     'gatsby-plugin-antd',
     {

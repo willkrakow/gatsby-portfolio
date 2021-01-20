@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "images/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "_posts/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "project"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Tech Stack", name: "stack", widget: "select", multiple: true, options: ["React", "Gatsby", "Shopify", "Python", "Bootstrap", "Netlify", "VanillaJS"]}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "articles"
+    label: "Articles"
+    folder: "_posts/articles"
+    create: true
+    fields:
+      - {label: "Published Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}    
