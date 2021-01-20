@@ -1,9 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import PlantPureLogo from '../../src/images/plantpure.png';
 import JobDescription from '../components/JobDescription.js';
-import DukeLogo from '../../src/images/duke.png';
-import CMLogo from '../images/corticalmetrics.png';
 import { BioHeader, LabelText, ColorHeader, BioText } from './Typography'
 
 import { FancyContainer, ProjectWrapper } from './containers'
@@ -14,7 +11,6 @@ const Resume = () => {
     {
       name: "PlantPure",
       dates: "November 2019 - present",
-      logo: PlantPureLogo,
       url: 'plantpurenation.com',
       role: "Web Development and Marketing",
       description: [
@@ -25,7 +21,6 @@ const Resume = () => {
     {
       name: "Duke Center for Child Traumatic Stress",
       dates: "December 2018 - April 2019",
-      logo: DukeLogo,
       url: 'duke.edu',
       role: "Web Development and Database Analyst",
       description: [
@@ -36,7 +31,6 @@ const Resume = () => {
     {
       name: "Cortical Metrics",
       dates: "May 2016 - November 2018",
-      logo: CMLogo,
       url: 'corticalmetrics.com',
       role: "Hardware Engineering, Marketing and Design",
       description: [
