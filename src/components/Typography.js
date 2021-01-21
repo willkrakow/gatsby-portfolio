@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 export const BioHeader = styled.h3.attrs(props => ({
   className: "text-dark",
@@ -14,18 +15,36 @@ export const BioText = styled.p.attrs(props => ({
   line-height: 1.5em;
 `
 
-export const ColorLink = styled.p.attrs(props => ({
+export const ColorText = styled.p.attrs(props => ({
   className: "text-center text-dark",
 }))`
-  box-shadow: inset 0px -0.5em rgba(245, 191, 66, 0.5);
+  box-shadow: inset 0px -0.5em rgba(131, 58, 180, 0.2);
   line-height: 2.5em;
   font-size: 1.25em;
   padding: 0 0.5em;
   margin-left: -0.5em;
   display: inline;
+`
+
+export const ColorLink = styled(Link).attrs(props => ({
+  className: "text-dark"
+}))`
+  box-shadow: inset 0 -0.1em 0 rgba(253, 29, 29, 0.5);
+  line-height: 2.5em;
+  font-size: 1.25em;
+  border: none;
+  padding: 0.25em 0.5em;
+  margin: 0.5em;
+  border-radius: 5px 0 5px 0;
+  background: transparent;
+  display: inline;
   transition: all 0.5s ease;
   &:hover {
-    box-shadow: 0px 0.25em rgba(245, 191, 66, 1);
+    box-shadow: 0px 0.25em 0 rgba(253, 29, 29, 1);
+    background: rgba(253, 29, 29, 0.1);
+    text-decoration: none;
+  }
+  &:link {
     text-decoration: none;
   }
 `
@@ -39,12 +58,12 @@ export const NoUnderline = styled.a`
 export const ColorHeader = styled.h4.attrs(props => ({
   className: "text-dark",
 }))`
-box-shadow: inset 0px -0.5em rgba(1, 177, 169, 0.2);
-line-height: 1.75em;
-font-size: 1.5em;
-padding: 0 0.5em;
-margin-left: -0.5em;
-display: inline;
+  box-shadow: 0px 0.5em rgba(1, 177, 169, 0.2);
+  line-height: 1.75em;
+  font-size: 2em;
+  font-weight: 200;
+  display: inline-block;
+  margin-bottom: 1em;
 `
 
 export const LabelText = styled.h5`

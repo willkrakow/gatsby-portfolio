@@ -1,23 +1,24 @@
 import React from 'react'
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import SocialLinks from './SocialLinks.js';
 import { BioText, BioHeader } from './Typography'
+import { FancyContainer } from './containers'
 
 export default function Bio() {
     return (
-      <Container fluid className="p-3 p-md-5">
+      <FancyContainer>
         <Row>
           <Col xs={12} md={6}>
-            <BioHeader>Hi!<br/>Thanks for stopping by.</BioHeader>
+            <BioHeader>Hi there!</BioHeader>
             <BioText>
-              Here is a little bit more so that you can get to know me thanks
+              Here's a little bit more so that you can get to know me thanks
               for reading.
             </BioText>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={5}>
             <SocialLinks />
           </Col>
         </Row>
-      </Container>
+      </FancyContainer>
     )
 }

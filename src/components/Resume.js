@@ -58,9 +58,9 @@ const Resume = () => {
         <Row className="justify-content-center">
         <Col xs={{ span: 12 }} md={{span: 6}}>
           {data.map((job, index) => (
-            <div key={index}>
+            <div key={index} className="mt-3 mb-5">
               <ColorHeader>{job.role}</ColorHeader>
-          <BioText>{job.name}</BioText>
+              <BioText>{job.name}</BioText>
               <BioText lighter>{job.dates}</BioText>
               <JobDescription list={job.description} />
             </div>

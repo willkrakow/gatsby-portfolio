@@ -3,7 +3,7 @@ import { faGithub, faFacebook, faInstagram, faLinkedin } from '@fortawesome/free
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { ColorLink, NoUnderline } from './Typography'
+import { ColorText, NoUnderline, ColorLink } from './Typography'
 
 const data = [
     {
@@ -40,14 +40,12 @@ const ListItem = styled.li`
 
 export default function SocialLinks() {
     return (
-      <ul className="pl-5 text-left ml-5">
+      <ul className="text-right">
         {data.map((datum, index) => (
           <ListItem key={index}>
-            <NoUnderline href={datum.url} alt={datum.name}>
-              <ColorLink iconIsActive>
+              <ColorLink to={datum.url} >
                 <FontAwesomeIcon icon={datum.icon} /> {datum.name}
               </ColorLink>
-            </NoUnderline>
           </ListItem>
         ))}
       </ul>

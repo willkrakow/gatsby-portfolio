@@ -23,7 +23,7 @@ export default function Header({menuLinks, siteTitle}) {
           >
             <Nav className="text-right">
               {menuLinks.map((link, index) => (
-                <Nav.Link as="span">
+                <Nav.Link as="span" key={index}>
                   <Link
                     to={link.link}
                     alt={link.name}

@@ -80,7 +80,7 @@ const Contact = () => {
               />
               {errors.text && <span>This field is required</span>}
               <Button
-                className="btn-info text-center mx-auto d-block"
+                className="btn-dark text-center mx-auto d-block"
                 type="submit"
               >
                 Submit

@@ -6,13 +6,13 @@ const ProjectList = () => {
     return (
       <ListGroup>
         <ListGroupItem>
-          <ColorLink iconIsActive >React [icon] [icon] [icon]</ColorLink>
+          <ColorLink>React [icon] [icon] [icon]</ColorLink>
         </ListGroupItem>
         <ListGroupItem>
-          <ColorLink iconIsActive >GatsbyJS [icon] [icon] [icon]</ColorLink>
+          <ColorLink>GatsbyJS [icon] [icon] [icon]</ColorLink>
         </ListGroupItem>
         <ListGroupItem>
-          <ColorLink iconIsActive >Shopify [icon] [icon] [icon]</ColorLink>
+          <ColorLink>Shopify [icon] [icon] [icon]</ColorLink>
         </ListGroupItem>
       </ListGroup>
     )

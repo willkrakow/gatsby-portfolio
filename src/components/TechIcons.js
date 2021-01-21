@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faShopify, faNodeJs, faFigma, faCss3, faPython, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
 import { useState } from 'react';
-import { BioText, BioHeader, ColorLink, LabelText } from './Typography'
+import { BioText, BioHeader, ColorText, LabelText } from './Typography'
+import { FancyContainer } from './containers'
 
 const Icon = styled(FontAwesomeIcon)`
 transition: 0.2s;
@@ -64,7 +65,7 @@ const TechIcons = () => {
   const [isActive, setIsActive] = useState(null)
 
   return (
-    <Container fluid className="p-3 p-md-5">
+    <FancyContainer>
       <Row>
         <Col xs={12} md={6}>
           <Container fluid>
@@ -77,7 +78,7 @@ const TechIcons = () => {
                   key={index}
                   xs={6}
                   md={3}
-                  className="d-flex justify-content-center flex-wrap"
+                  className="d-flex justify-content-center flex-wrap p-3"
                 >
                   <Icon
                     icon={icon.name}
@@ -86,13 +87,6 @@ const TechIcons = () => {
                     onMouseOver={() => setIsActive(index)}
                     className="d-block w-100 p-2"
                   />
-                  <div className="d-block w-100 text-center p-2">
-                    <a href={icon.link} alt={icon.text}>
-                      <ColorLink iconIsActive={index === isActive}>
-                        {icon.text}
-                      </ColorLink>
-                    </a>
-                  </div>
                 </Col>
               ))}
             </Row>
@@ -110,7 +104,7 @@ const TechIcons = () => {
           </BioText>
         </Col>
       </Row>
-    </Container>
+    </FancyContainer>
   )
 }
 

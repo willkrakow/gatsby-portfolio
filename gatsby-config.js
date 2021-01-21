@@ -10,27 +10,27 @@ module.exports = {
   siteMetadata: {
     title: "Portfolio",
     description: "Wililam Krakow | Developer, Designer, Writer",
-    menuLinks:[
-            {
-               name:'home',
-               link:'/'
-            },
-            {
-              name:'projects',
-              link:'/projects'
-            },
-            {
-               name:'writing',
-               link:'/writing'
-            },
-            {
-              name:'contact',
-              link: '/contact'
-            }
-          ]
+    menuLinks: [
+      {
+        name: "home",
+        link: "/",
+      },
+      {
+        name: "projects",
+        link: "/projects",
+      },
+      {
+        name: "writing",
+        link: "/writing",
+      },
+      {
+        name: "contact",
+        link: "/contact",
+      },
+    ],
   },
   plugins: [
-    'gatsby-plugin-antd',
+    "gatsby-plugin-antd",
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -52,8 +52,15 @@ module.exports = {
       options: {
         name: `projects`,
         path: path.join(__dirname, `_posts/projects`),
-      }
+      },
     },
-    `gatsby-transformer-remark`
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: path.join(__dirname, `_posts/articles`),
+      },
+    },
+    `gatsby-transformer-remark`,
   ],
 }
