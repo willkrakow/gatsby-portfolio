@@ -23,6 +23,7 @@ collections:
   - name: "articles"
     label: "Articles"
     folder: "_posts/articles"
+    slug: "{{slug}}"
     create: true
     fields:
       - {label: "Published Date", name: "date", widget: "datetime"}
