@@ -6,13 +6,15 @@ backend:
 publish_mode: editorial_workflow
 
 media_folder: "static/images"
-public_folder: "/assets"
+public_folder: "/images"
 
 collections:
   - name: "projects"
     label: "Projects"
     folder: "_posts/projects"
     create: true
+    media_folder: ''
+    public_folder: ''
     slug: "{{title}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "project"}
@@ -27,6 +29,8 @@ collections:
     label: "Articles"
     folder: "_posts/articles"
     slug: "{{title}}"
+    media_folder: ''
+    public_folder: ''
     create: true
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "article"}

@@ -3,6 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import Layout from "../components/layout";
 import Article from "../components/Article";
 import { PageBanner, FancyContainer } from "../components/containers";
+import { graphql } from 'gatsby'
 
 export default function Writing({data}) {
   const { allMarkdownRemark } = data

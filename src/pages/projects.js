@@ -42,7 +42,9 @@ export default function Projects({data}) {
                   <ProjectImage src={project.node.frontmatter.thumbnail} />
                   <BioText>{project.node.excerpt}</BioText>
                   <a className="d-block mx-auto" href="/">
-                    <BlackButton className="btn-dark text-center">Live site</BlackButton>
+                    <BlackButton className="btn-dark text-center">
+                      Live site
+                    </BlackButton>
                   </a>
                   <div className="w-100 d-flex justify-content-center">
                     <ColorLink
