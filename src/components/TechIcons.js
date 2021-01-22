@@ -3,8 +3,7 @@ import { Row, Col, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faShopify, faNodeJs, faFigma, faCss3, faPython, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
-import { useState } from 'react';
-import { BioText, BioHeader, ColorText, LabelText } from './Typography'
+import { BioText, BioHeader, LabelText } from './Typography'
 import { FancyContainer } from './containers'
 
 const Icon = styled(FontAwesomeIcon)`
@@ -62,7 +61,6 @@ const icons = [
 
 
 const TechIcons = () => {
-  const [isActive, setIsActive] = useState(null)
 
   return (
     <FancyContainer>
@@ -71,7 +69,6 @@ const TechIcons = () => {
           <Container fluid>
             <Row
               className="justify-content-center"
-              onMouseLeave={() => setIsActive(null)}
             >
               {icons.map((icon, index) => (
                 <Col
@@ -84,7 +81,6 @@ const TechIcons = () => {
                     icon={icon.name}
                     size="6x"
                     color={icon.color}
-                    onMouseOver={() => setIsActive(index)}
                     className="d-block w-100 p-2"
                   />
                 </Col>

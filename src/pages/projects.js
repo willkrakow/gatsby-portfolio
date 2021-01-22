@@ -1,14 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { ProjectWrapper, FancyContainer, PageBanner } from '../components/containers'
-import { BioText, ColorHeader, NoUnderline, ColorText, ColorLink  } from '../components/Typography'
+import { BioText, ColorHeader, ColorLink, ColorURL, BlackButton  } from '../components/Typography'
 import styled from 'styled-components'
 import { Row, Col } from 'react-bootstrap'
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faCode } from '@fortawesome/free-solid-svg-icons'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 
 const ProjectImage = styled.img`
@@ -41,8 +41,21 @@ export default function Projects({data}) {
                   </ColorHeader>
                   <ProjectImage src={project.node.frontmatter.thumbnail} />
                   <BioText>{project.node.excerpt}</BioText>
-                    <ColorLink to={`/projects/${project.node.frontmatter.slug}`}><FontAwesomeIcon icon={faEye} className="text-dark" /> Learn more</ColorLink>
-                    <ColorLink to={`/projects/${project.node.frontmatter.slug}`}><FontAwesomeIcon icon={faGithub} className="text-dark"/> View source</ColorLink>
+                  <a className="d-block mx-auto" href="/">
+                    <BlackButton className="btn-dark text-center">Live site</BlackButton>
+                  </a>
+                  <div className="w-100 d-flex justify-content-center">
+                    <ColorLink
+                      to={`/projects/${project.node.frontmatter.slug}`}
+                    >
+                      <FontAwesomeIcon icon={faEye} className="text-dark" />{" "}
+                      Learn more
+                    </ColorLink>
+                    <ColorURL to={`/projects/${project.node.frontmatter.slug}`}>
+                      <FontAwesomeIcon icon={faGithub} className="text-dark" />{" "}
+                      View source
+                    </ColorURL>
+                  </div>
                 </ProjectWrapper>
               ))}
             </Col>

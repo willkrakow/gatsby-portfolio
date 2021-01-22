@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import { Button } from 'react-bootstrap'
 
 export const BioHeader = styled.h3.attrs(props => ({
   className: "text-dark",
@@ -11,7 +13,7 @@ export const BioHeader = styled.h3.attrs(props => ({
 export const BioText = styled.p.attrs(props => ({
   className: props.lighter ? "text-secondary" : "text-dark",
 }))`
-  font-size: 1.25em;
+  font-size: 1.125em;
   line-height: 1.5em;
 `
 
@@ -30,12 +32,12 @@ export const ColorLink = styled(Link).attrs(props => ({
   className: "text-dark"
 }))`
   box-shadow: inset 0 -0.1em 0 rgba(253, 29, 29, 0.5);
-  line-height: 2.5em;
-  font-size: 1.25em;
+  line-height: 2em;
+  font-size: 1.125em;
   border: none;
-  padding: 0.25em 0.5em;
+  padding: 0 1em;
   margin: 0.5em;
-  border-radius: 5px 0 5px 0;
+  border-radius: 1em 0 1em 0;
   background: transparent;
   display: inline;
   transition: all 0.5s ease;
@@ -49,6 +51,35 @@ export const ColorLink = styled(Link).attrs(props => ({
   }
 `
 
+export const ColorURL = styled.a`
+  box-shadow: inset 0 -0.1em 0 rgba(253, 29, 29, 0.5);
+  line-height: 2em;
+  font-size: 1.125em;
+  border: none;
+  padding: 0 1em;
+  margin: 0.5em;
+  border-radius: 1em 0 1em 0;
+  background: transparent;
+  display: inline;
+  transition: all 0.5s ease;
+  &:hover {
+    box-shadow: 0px 0.25em 0 rgba(253, 29, 29, 1);
+    background: rgba(253, 29, 29, 0.1);
+    text-decoration: none;
+  }
+  &:link {
+    text-decoration: none;
+  }
+`
+
+ColorURL.propTypes = {
+  className: PropTypes.string,
+}
+
+ColorURL.defaultProps = {
+  className: "text-dark"
+}
+
 export const NoUnderline = styled.a`
   &:link {
     text-decoration: none;
@@ -58,8 +89,8 @@ export const NoUnderline = styled.a`
 export const ColorHeader = styled.h4.attrs(props => ({
   className: "text-dark",
 }))`
-  box-shadow: 0px 0.5em rgba(1, 177, 169, 0.2);
-  line-height: 1.75em;
+  box-shadow: 0px 0.3em rgba(1, 177, 169, 0.2);
+  line-height: 1.25em;
   font-size: 2em;
   font-weight: 200;
   display: inline-block;
@@ -76,3 +107,19 @@ export const LabelText = styled.h5`
   font-weight: bolder;
 `
 
+export const BlackButton = styled(Button).attrs(props => ({
+  className: "px-5 my-3 mr-2 btn-dark"
+}))`
+font-weight: 500;
+`
+
+BlackButton.propTypes = {
+  className: PropTypes.string,
+}
+
+export const WhiteButton = styled(Button).attrs(props => ({
+  variant: "outline-light",
+  className: "px-5 my-3 mr-2"
+}))`
+font-weight: 500;
+`

@@ -59,7 +59,7 @@ WrapperText.defaultProps = {
 }
 
 export const PageBanner = ({ title, subtitle, nospan }) => (
-  <Container fluid className="pt-2 pb-2">
+  <Container fluid className="pt-5 pb-2">
     <Row>
       <Col xs={12} className="text-center">
         <h1 className="display-3 pt-2 pb-3">

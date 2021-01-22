@@ -7,6 +7,6 @@ stack:
   - Gatsby
   - React
   - Bootstrap
-livesite: "/"
+source: "https://github.com/willkrakow/supp"
 ---
 An ecommerce site that integrates supplement research with product options. Built with Gatsby, React, Bootstrap and Styled Components. Deployed with Netlify. Product metadata fetched with GraphQL via Airtable. Payment processing setup through Stripe (Gatsby Plugin).

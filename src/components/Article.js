@@ -28,9 +28,10 @@ export default function Article({article, index}) {
             <Link to={`/articles/${article.node.frontmatter.slug}`}>
               <ColorHeader>{article.node.frontmatter.title}</ColorHeader>
             </Link>
+  <BioText className="font-weight-bold mb-0">The Trek</BioText>
             <BioText lighter>{dateParsed.toDateString()}</BioText>
             <BioText className="pt-4">{article.node.excerpt}</BioText>
-            <ColorLink to={`/articles/${article.node.frontmatter.slug}`}>
+            <ColorLink className="d-inline-block" to={`/articles/${article.node.frontmatter.slug}`}>
               Read more
             </ColorLink>
           </Card.Body>

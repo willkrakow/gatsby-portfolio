@@ -1,10 +1,11 @@
 import React from "react"
 import { useForm } from "react-hook-form"
-import { Form, Button, Row, Col } from 'react-bootstrap'
+import { Form, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 import { FullContainer, PageBanner } from '../components/containers'
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { BlackButton } from '../components/Typography'
 
 
 const FancyInput = styled(Form.Control).attrs(props => ({
@@ -79,12 +80,12 @@ const Contact = () => {
                 className="w-100"
               />
               {errors.text && <span>This field is required</span>}
-              <Button
+              <BlackButton
                 className="btn-dark text-center mx-auto d-block"
                 type="submit"
               >
                 Submit
-              </Button>
+              </BlackButton>
             </Form>
           </Col>
         </Row>

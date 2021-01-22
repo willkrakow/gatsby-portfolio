@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Me from '../images/me.png';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { FancyContainer } from './containers';
+import { BlackButton, WhiteButton } from './Typography';
 
 
 const Img = styled.img`
@@ -38,10 +39,10 @@ const Hero = () => {
               Dev | Designer | Writer
             </h3>
             <div className="d-flex w-100 align-center h-100">
-              <Button variant="dark d-block align-self-start mr-4 my-4">
+              <BlackButton className="align-self-start">
                 Projects
-              </Button>
-              <Button variant="outline-light mr-4 my-4">Contact</Button>
+              </BlackButton>
+              <WhiteButton>Contact</WhiteButton>
             </div>
           </Col>
           <Col xs={12} md={7}>

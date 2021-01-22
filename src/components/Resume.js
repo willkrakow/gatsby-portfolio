@@ -60,7 +60,7 @@ const Resume = () => {
           {data.map((job, index) => (
             <div key={index} className="mt-3 mb-5">
               <ColorHeader>{job.role}</ColorHeader>
-              <BioText>{job.name}</BioText>
+              <BioText className="font-weight-bold mb-0">{job.name}</BioText>
               <BioText lighter>{job.dates}</BioText>
               <JobDescription list={job.description} />
             </div>
