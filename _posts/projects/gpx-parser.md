@@ -6,7 +6,7 @@ stack:
   - React
   - Bootstrap
   - Netlify
-slug: projects/{{slug}}
+slug: gpx-parser
 source: https://github.com/willkrakow/gps-grapher
 livesite: https://adoring-goldwasser-a7c4c6.netlify.app/
 ---

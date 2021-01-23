@@ -22,9 +22,9 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Tech Stack", name: "stack", widget: "select", multiple: true, options: ["React", "Gatsby", "Shopify", "Python", "Bootstrap", "Netlify", "VanillaJS"]}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Slug", name: "slug", widget: "string", default: "projects/{{slug}}"}
+      - {label: "Slug", name: "slug", widget: "string", default: "projects/{{title}}"}
       - {label: "Source code URL", name: "source", widget: "string", default: "https://github.com/willkrakow"}
-      - {label: "Live site URL", name: "livesite", widget: "string", default: "/"}
+      - {label: "Live site URL", name: "livesite", widget: "string", default: "{{title}}"}
   - name: "articles"
     label: "Articles"
     folder: "_posts/articles"
@@ -38,4 +38,4 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Slug", name: "slug", widget: "string", default: "projects/{{slug}}"}
+      - {label: "Slug", name: "slug", widget: "string", default: "{{title}}"}
