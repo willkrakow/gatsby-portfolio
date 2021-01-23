@@ -18,11 +18,17 @@ In early March, NASA posted satellite images of nitrogen dioxide concentrations 
 
 The Chinese government did take a rather militant approach to stay-at-home orders, but less aggressive restrictions have also caused air quality to improve. Since early March, when stay-at-home orders became widespread in the US and Europe, major cities in these regions saw rapid improvements in air quality:
 
+<div class="mx-auto">
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Madrid has lost its &#39;boina&#39; - nitrogen dioxide levels have dropped 65% in one week. The yellowy-green layer of contamination that has hung over the city for the past few years has cleared <a href="https://t.co/AtxF0Eh8Js">https://t.co/AtxF0Eh8Js</a> <a href="https://twitter.com/hashtag/AirQuality?src=hash&amp;ref_src=twsrc%5Etfw">#AirQuality</a> <a href="https://twitter.com/hashtag/Environment?src=hash&amp;ref_src=twsrc%5Etfw">#Environment</a> <a href="https://twitter.com/hashtag/Madrid?src=hash&amp;ref_src=twsrc%5Etfw">#Madrid</a> <a href="https://twitter.com/hashtag/Spain?src=hash&amp;ref_src=twsrc%5Etfw">#Spain</a> <a href="https://twitter.com/hashtag/NO2?src=hash&amp;ref_src=twsrc%5Etfw">#NO2</a> <a href="https://t.co/xO2cOxrkex">pic.twitter.com/xO2cOxrkex</a></p>&mdash; AS English (@English_AS) <a href="https://twitter.com/English_AS/status/1250785278937174027?ref_src=twsrc%5Etfw">April 16, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
+<div class="mx-auto">
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/LosAngeles?src=hash&amp;ref_src=twsrc%5Etfw">#LosAngeles</a> without smog. 🌤 Last week, the <a href="https://twitter.com/EPA?ref_src=twsrc%5Etfw">@EPA</a> reported that March 2020 reflected the best month of air quality in LA since at least 1980.<a href="https://t.co/PE2jO5dLjz">https://t.co/PE2jO5dLjz</a> via r/pics <a href="https://t.co/MwawLWMuCP">pic.twitter.com/MwawLWMuCP</a></p>&mdash; Reddit (@reddit) <a href="https://twitter.com/reddit/status/1248639367436013570?ref_src=twsrc%5Etfw">April 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
+<div class="mx-auto">
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Huge drop in pollution levels in India 🇮🇳 during the lockdown.<br>The challenge will be to keep blue skies and clean air when economy bounces back. Let’s build back better! <br><br> <a href="https://t.co/vGRfefw87j">pic.twitter.com/vGRfefw87j</a></p>&mdash; Erik Solheim (@ErikSolheim) <a href="https://twitter.com/ErikSolheim/status/1249508862664769536?ref_src=twsrc%5Etfw">April 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
 And while coronavirus cases worldwide continue to increase, evidence suggests that this recent reduction in emissions may save thousands of lives in the coming months.
 
