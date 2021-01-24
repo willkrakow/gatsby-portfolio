@@ -26,16 +26,16 @@ collections:
       - {label: "Source code URL", name: "source", widget: "string", default: "https://github.com/willkrakow"}
       - {label: "Live site URL", name: "livesite", widget: "string", default: "{{title}}"}
       - label: "Technologies"
-      name: "technologies"
-      widget: "list"
-      fields:
-        - label: "Technology"
-          name: "tech"
-          widget: "object"
-          fields:
-            - {label: "Name", name: "Name", widget: "string"}
-            - {label: "Type", name: "type", widget: "select", options: ["FontAwesome", "PNG"]}
-            - {label: "Source or class name", name: "srcOrClassName", widget: "string"}
+        name: "technologies"
+        widget: "list"
+        fields:
+          - label: "Technology"
+            name: "tech"
+            widget: "object"
+            fields:
+              - {label: "Name", name: "Name", widget: "string"}
+              - {label: "Type", name: "type", widget: "select", options: ["FontAwesome", "PNG"]}
+              - {label: "Source or class name", name: "srcOrClassName", widget: "string"}
   - name: "articles"
     label: "Articles"
     folder: "_posts/articles"
