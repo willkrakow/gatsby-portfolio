@@ -39,3 +39,14 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Slug", name: "slug", widget: "string", default: "{{title}}"}
+  - name: "technologies"
+    label: "Technologies"
+    folder: "_posts/technologies"
+    create: true
+    media_folder: ''
+    public_ folder: ''
+    fields:
+      - {label: "Technology name", name: "name", widget: "string"}
+      - {label: "Icon type", name: "icontype", widget: "select", options: ["Font Awesome Icon", "PNG"], default: "Font Awesome Icon"}
+      - {label: "Font Awesome Class Name", name: "faClassName", widget: "string", default: "fas fa-spinner" required: false}
+      - {label: "PNG source", name: "pngSrc", widget: "string", default: "https://www.jqueryscript.net/images/Minimal-jQuery-Loading-Overlay-Spinner-Plugin-Easy-Overlay.jpg", required: false}

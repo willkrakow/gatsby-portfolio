@@ -1,8 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { Container, Row, Col } from "react-bootstrap"
-import { BioText } from "./Typography"
-import PropTypes from 'prop-types'
+import { BioText, BioHeader } from "./Typography"
+import PropTypes from "prop-types"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+import { Link } from "gatsby"
+import RehypeReact from "rehype-react"
+import { UnorderedList, OrderedList, BlockQuote } from "../templates/article/MarkdownComponents"
 
 export const FancyContainer = styled(Container)`
   background: ${props =>
@@ -55,14 +60,14 @@ WrapperText.propTypes = {
 }
 
 WrapperText.defaultProps = {
-  className: "text-info"
+  className: "text-info",
 }
 
 export const PageBanner = ({ title, subtitle, nospan }) => (
   <Container fluid className="pt-5 pb-2">
     <Row>
       <Col xs={12} className="text-center">
-        <h1 className="display-3 pt-2 pb-3">
+        <h1 className="display-3 pt-2 pb-3 text-dark">
           <WrapperText hidden={nospan} className="text-info">
             &#60;
           </WrapperText>
@@ -78,6 +83,7 @@ export const PageBanner = ({ title, subtitle, nospan }) => (
   </Container>
 )
 
+
 PageBanner.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
@@ -90,28 +96,69 @@ PageBanner.defaultProps = {
   nospan: false,
 }
 
+
+export const PostBanner = ({ title, date, timeToRead, backLink }) => (
+  <Container fluid className="pt-5 pb-2">
+    <Row className="justify-content-center">
+      <Col xs={12} md={8} lg={6}>
+        <Link to={backLink} className="text-secondary">
+          <FontAwesomeIcon icon={faArrowLeft} className="text-info" />
+          &nbsp;All {backLink.slice(1)}
+        </Link>
+        <h1 className="display-4 pt-2 pb-3 text-dark text-left">{title}</h1>
+        <BioText className="text-secondary">{date}</BioText>
+        <BioText lighter>{timeToRead} min read</BioText>
+      </Col>
+    </Row>
+  </Container>
+)
+
+PostBanner.propTypes = {
+  title: PropTypes.string,
+  date: PropTypes.string,
+  timeToRead: PropTypes.string,
+  backLink: PropTypes.string,
+}
+
+PostBanner.defaultProps = {
+  title: "New post",
+  timeToRead: "4",
+  backLink: "/projects",
+}
+
 const FeaturedImageCol = styled(Col).attrs(props => ({
   xs: 12,
-  md: 8,
-  className: "mb-5"
+  className: "mb-5",
 }))`
   background-image: url(${props => props.img});
   background-size: cover;
-  min-height: ${props => props.img ? "300px" : "0"};
+  min-height: ${props => (props.img ? "400px" : "0")};
+  background-position: ${props => props.bgposition || "center"};
 `
+
 FeaturedImageCol.propTypes = {
   xs: PropTypes.number,
   md: PropTypes.number,
   img: PropTypes.string,
 }
 
+const renderAst = new RehypeReact({
+  createElement: React.createElement,
+  components: {
+    h3: BioHeader,
+    p: BioText,
+    ul: UnorderedList,
+    ol: OrderedList,
+    blockquote: BlockQuote,
+  },
+}).Compiler
 
-export const PostWrapper = ({ html, img }) => (
+export const PostWrapper = ({ htmlAst, img }) => (
   <Container fluid>
     <Row className="justify-content-center">
-      {img ? <FeaturedImageCol xs={12} md={8} img={img} /> : null}
-      <Col xs={12} md={6}>
-        <div dangerouslySetInnerHTML={{ __html: html }}></div>
+      {img ? <FeaturedImageCol img={img} /> : null}
+      <Col xs={12} md={8} lg={6}>
+        {renderAst(htmlAst)}
       </Col>
     </Row>
   </Container>

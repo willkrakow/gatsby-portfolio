@@ -1,22 +1,23 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from '../../components/layout'
-import { PageBanner, PostWrapper } from "../../components/containers"
-import "../article/styles.css"
+import { PostBanner, PostWrapper } from "../../components/containers"
 
 export default function Template({ data }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, htmlAst, timeToRead } = markdownRemark
   const dateParsed = new Date(frontmatter.date)
 
   return (
     <Layout>
-      <PageBanner
-        title={frontmatter.title}
-        subtitle={dateParsed.toDateString()}
-        nospan
-      />
-      <PostWrapper html={html} img={frontmatter.thumbnail} />
+        <PostBanner
+          title={frontmatter.title}
+          date={dateParsed.toDateString().slice(3)}
+          timeToRead={timeToRead.toString()}
+          backLink="/writing"
+          nospan
+        />
+        <PostWrapper htmlAst={htmlAst} img={frontmatter.thumbnail} />
     </Layout>
   )
 }
@@ -24,6 +25,7 @@ export default function Template({ data }) {
 export const query = graphql`
 query($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+        timeToRead
         frontmatter {
             date
             slug
@@ -32,6 +34,7 @@ query($slug: String!) {
             layout
         }
         html
+        htmlAst
     }
 }
 `
