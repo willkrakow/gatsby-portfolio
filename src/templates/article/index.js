@@ -5,7 +5,7 @@ import { PostBanner, PostWrapper } from "../../components/containers"
 
 export default function Template({ data }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html, htmlAst, timeToRead } = markdownRemark
+  const { frontmatter, htmlAst, timeToRead } = markdownRemark
   const dateParsed = new Date(frontmatter.date)
 
   return (
@@ -33,7 +33,6 @@ query($slug: String!) {
             title
             layout
         }
-        html
         htmlAst
     }
 }

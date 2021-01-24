@@ -7,7 +7,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 export default function Project({data}) {
     const { markdownRemark } = data
-    const { frontmatter, html, htmlAst, timeToRead } = markdownRemark
+    const { frontmatter, htmlAst, timeToRead } = markdownRemark
 
     //todo: add custom widget that lets me select a React component (i.e., a Font Awesome Icon) from a list
 
@@ -48,7 +48,6 @@ export const query = graphql`
         layout
         stack
       }
-      html
       htmlAst
     }
   }

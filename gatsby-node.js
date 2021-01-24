@@ -14,7 +14,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             excerpt(pruneLength: 250)
-            html
+            htmlAst
             id
             frontmatter {
               date
