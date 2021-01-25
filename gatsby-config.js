@@ -1,15 +1,10 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
 const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: "Portfolio",
+    title: "William Krakow",
     description: "Wililam Krakow | Developer, Designer, Writer",
+    siteUrl: "https://quirky-hawking-b6672a.netlify.app/",
     menuLinks: [
       {
         name: "home",
@@ -57,6 +52,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    `gatsby-plugin-twitter`
+    `gatsby-plugin-twitter`,
   ],
 }

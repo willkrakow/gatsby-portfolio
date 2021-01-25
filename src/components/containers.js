@@ -142,6 +142,12 @@ FeaturedImageCol.propTypes = {
   img: PropTypes.string,
 }
 
+const PostImage = styled.img`
+max-width: 500px;
+height: auto;
+margin: 2em auto;
+`
+
 const renderAst = new RehypeReact({
   createElement: React.createElement,
   components: {
@@ -150,6 +156,7 @@ const renderAst = new RehypeReact({
     ul: UnorderedList,
     ol: OrderedList,
     blockquote: BlockQuote,
+    img: PostImage,
   },
 }).Compiler
 

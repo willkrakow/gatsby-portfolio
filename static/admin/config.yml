@@ -39,6 +39,7 @@ collections:
               "Bootstrap",
               "Netlify",
               "VanillaJS",
+              "Figma"
             ],
         }
       - { label: "Body", name: "body", widget: "markdown" }
