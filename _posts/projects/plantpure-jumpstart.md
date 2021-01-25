@@ -24,12 +24,16 @@ The logo also had to fit in with our current design system.
 
 I decided to design around the idea of a seal (you know, like the old-timey wax ones used to secure an envelope's contents.) Rather than an amorphous wax smudge, however, I wanted something closer to a stamp of validity. This was, after all, ***the*** PlantPure Jumpstart.
 
-The image below depicts my working progress.
+The images below depicts my working progress.
 
-In draft #1, I tried mimicking the font used in our main corporate logo. However, it quickly became apparent that that would be simply too much cursive and too long. Also, in most use cases, either the outer circle of the logo would either be laughably large, or the text within would be illegible. 
+![Jumpstart Logos | William Krakow](https://lh3.googleusercontent.com/C0ooGYJV-xJ6BHeqU_bx06pmUKSfZhtzCGGJ2fa89BT5YZ-GWSKClPJA7W4kqJaaxBgNcln65-jufBg67LwDdC0ALILBuQQ8dQbHYMr7UqzdsBkc22eS-WhuMCTMkp3sO4iKtzwrhcVs38VDmLPqLOpfFOPxCwtz8pAl2yvHsJCWifo57TdlWVru4z79MsMCvDecjPfzVW-y69s8tlAiJkLiR-K-Y3yn8yzoXB47GpcloHCtG9T_tygfiWYv-q89-r_YpTckk8uv3FYBCrMgnMzxfK6F8wMne3ZA1jOSrXW85UWF605Vf7gykDRxWTZ_vnG-GOhPsGEap3AwqWDqeXbyH7dRrAj5QJKjNumXZZg0av4hV6vUo_9d_Q_4IEaiccMmaqaEH_XeLUnkCDh2OqacE8g0IGprZjbeZzpze7f7d2tUM1DaS01pkX5LCfRIIFINaWfeM7Uf6pPJjXyJm6F7J4KiT0dunMzFxtwFAUScqtKXP1BcXDo7S_eGEG2m0xSm8cdwfrPaOZZV5N3ScMZ8eb9O32OcQb-fLAE0NxxSRTdDHfdxubQmEfPziCDRdncSlOmvwdNzXGgHCJPrVTQWUBfHnKQlAAJ86nS7oocyJ84C6zcG2-F96mxr-7yi987EHgRvGawRR43yV28sE5aJFk9ZBr9pbnhwXYkpZtj2kp0uzXo3xN1P7fBt=w1846-h407-no?authuser=0)
 
-In draft #2, I dropped the full name of the program and replaced it with the initials that we often use to discuss the program internally: **JS**. 
+Draft #1 is a quick mockup of my idea for the logo.
 
-In draft #3, I realized that the white border would clash or blend incompletely with any whitish background.
+In draft #2, I tried mimicking the font used in our main corporate logo. However, it quickly became apparent that that would be simply too much cursive and too long. Also, in most use cases, either the outer circle of the logo would either be laughably large, or the text within would be illegible. 
 
-Draft #4 is the final products. See color and theme variations below.
+In draft #3, I dropped the full name of the program and replaced it with the initials that we often use to discuss the program internally: **JS**.
+
+In draft #4, I realized that the white border would clash or blend incompletely with any whitish background.
+
+Draft #5 is the final product.
