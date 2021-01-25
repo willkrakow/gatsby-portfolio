@@ -30,8 +30,10 @@ The images below depicts my working progress.
 
 In draft #1, I tried mimicking the font used in our main corporate logo. However, it quickly became apparent that that would be simply too much cursive and too long. Also, in most use cases, either the outer circle of the logo would either be laughably large, or the text within would be illegible. 
 
-In draft #2, I dropped the full name of the program and replaced it with the initials that we often use to discuss the program internally: **JS**. 
+In draft #2, I dropped the full name of the program and replaced it with the initials that we often use to discuss the program internally: **JS**.
 
-In draft #3, I realized that the white border would clash or blend incompletely with any whitish background.
+In draft #3, 
+
+In draft #4, I realized that the white border would clash or blend incompletely with any whitish background.
 
 Draft #4 is the final products. See color and theme variations below.
