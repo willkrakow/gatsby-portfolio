@@ -2,8 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import { PostBanner, PostWrapper } from '../../components/containers'
-import { ColorText } from '../../components/Typography'
-import { Container, Row, Col } from 'react-bootstrap'
 
 export default function Project({data}) {
     const { markdownRemark } = data
@@ -11,27 +9,16 @@ export default function Project({data}) {
 
     //todo: add custom widget that lets me select a React component (i.e., a Font Awesome Icon) from a list
 
-    console.log(frontmatter.stack)
     return (
       <Layout>
-          <PostBanner
-            title={frontmatter.title}
-            date={""}
-            backLink="/projects"
-            timeToRead={timeToRead.toString()}
-          />
-          <Container>
-            <Row className="justify-content-center pb-2">
-              {frontmatter.stack.map((platform, index) => (
-                <Col xs={3} md={2} className="text-center">
-                  <ColorText className="text-center" key={index}>
-                    {platform}
-                  </ColorText>
-                </Col>
-              ))}
-            </Row>
-          </Container>
-          <PostWrapper htmlAst={htmlAst} img={frontmatter.thumbnail} />
+        <PostBanner
+          title={frontmatter.title}
+          date={""}
+          backLink="/projects"
+          timeToRead={timeToRead.toString()}
+          stack={frontmatter.stack}
+        />
+        <PostWrapper htmlAst={htmlAst} img={frontmatter.thumbnail} />
       </Layout>
     )
 
@@ -47,8 +34,11 @@ export const query = graphql`
         title
         layout
         stack
+        source
+        livesite
       }
       htmlAst
     }
   }
+
 `

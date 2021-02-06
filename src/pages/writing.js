@@ -20,7 +20,7 @@ export default function Writing({data}) {
           <Row>
             <Col xs={12}>
               {edges.map((article, index) => (
-                <Article index={index} article={article} />
+                <Article index={index} article={article} type="articles" />
               ))}
             </Col>
           </Row>

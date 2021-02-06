@@ -1,19 +1,10 @@
 import React from "react"
 import { Row, Col, Card } from "react-bootstrap"
-import styled from "styled-components"
 import { ColorHeader, BioText, ColorLink } from "./Typography.js";
 import { Link } from 'gatsby'
+import { StackList, ResponsiveImg } from './containers'
 
-const ResponsiveImg = styled(Card.Img)`
-  position: relative;
-  left: 0;
-  width: 100%;
-  padding-top: 0;
-  padding-bottom: 1.5em;
-  padding-left: 0;
-  padding-right: 0;
-`
-export default function Article({article, index}) {
+export default function Article({article, index, type}) {
 
   const dateParsed = new Date(article.node.frontmatter.date)
 
@@ -24,13 +15,20 @@ export default function Article({article, index}) {
     >
       <Row>
         <Col xs={{ span: 12, order: 2 }} md={8}>
-          <Card.Body className="pt-0">
-            <Link to={`/articles/${article.node.frontmatter.slug}`}>
+          <Card.Body className="pt-0 px-0">
+            <Link to={`/${type}/${article.node.frontmatter.slug}`}>
               <ColorHeader>{article.node.frontmatter.title}</ColorHeader>
             </Link>
-            <BioText lighter>{dateParsed.toDateString()}</BioText>
-            <BioText className="pt-4">{article.node.excerpt}</BioText>
-            <ColorLink className="d-inline-block" to={`/articles/${article.node.frontmatter.slug}`}>
+            <div className="w-100"></div>
+            {type === "article" && (
+              <BioText lighter>{dateParsed.toDateString()}</BioText>
+            )}
+            {article.node.frontmatter.stack && <StackList stack={article.node.frontmatter.stack} />}
+            <BioText>{article.node.excerpt}</BioText>
+            <ColorLink
+              className="d-inline-block"
+              to={`/${type}/${article.node.frontmatter.slug}`}
+            >
               Read more
             </ColorLink>
           </Card.Body>
@@ -38,7 +36,7 @@ export default function Article({article, index}) {
         <Col xs={{ span: 12, order: 1 }} md={4}>
           <ResponsiveImg
             variant="top"
-            src={article.node.frontmatter.thumbnail}
+            src={`/${article.node.frontmatter.thumbnail}`}
           />
         </Col>
       </Row>

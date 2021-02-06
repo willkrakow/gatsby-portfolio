@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Card } from "react-bootstrap"
 import { BioText, BioHeader } from "./Typography"
 import PropTypes from "prop-types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -21,6 +21,7 @@ FancyContainer.propTypes = {
   fluid: PropTypes.bool,
   className: PropTypes.string,
 }
+
 
 FancyContainer.defaultProps = {
   fluid: true,
@@ -64,23 +65,23 @@ WrapperText.defaultProps = {
 }
 
 export const PageBanner = ({ title, subtitle, nospan }) => (
-  <Container fluid className="pt-5 pb-2">
+  <FancyContainer fluid className="pt-5 pb-2">
     <Row>
       <Col xs={12} className="text-center">
-        <h1 className="display-3 pt-2 pb-3 text-dark">
-          <WrapperText hidden={nospan} className="text-info">
+        <h1 className="display-4 pt-2 pb-3 text-dark">
+          <WrapperText hidden={nospan}>
             &#60;
           </WrapperText>
           {title}
-          <WrapperText className="text-info" hidden={nospan}>
+          <WrapperText hidden={nospan}>
             {" "}
             /&#62;
           </WrapperText>
         </h1>
-        <BioText>{subtitle}</BioText>
+        <BioText className="text-light">{subtitle}</BioText>
       </Col>
     </Row>
-  </Container>
+  </FancyContainer>
 )
 
 
@@ -97,7 +98,7 @@ PageBanner.defaultProps = {
 }
 
 
-export const PostBanner = ({ title, date, timeToRead, backLink }) => (
+export const PostBanner = ({ title, date, timeToRead, backLink, stack }) => (
   <Container fluid className="pt-5 pb-2">
     <Row className="justify-content-center">
       <Col xs={12} md={8} lg={6}>
@@ -108,6 +109,7 @@ export const PostBanner = ({ title, date, timeToRead, backLink }) => (
         <h1 className="display-4 pt-2 pb-3 text-dark text-left">{title}</h1>
         <BioText className="text-secondary">{date}</BioText>
         <BioText lighter>{timeToRead} min read</BioText>
+        {stack && <StackList stack={stack} />}
       </Col>
     </Row>
   </Container>
@@ -126,12 +128,31 @@ PostBanner.defaultProps = {
   backLink: "/projects",
 }
 
+export const StackList = ({ stack }) => (
+  <>
+    {stack.map((tech, index) => (
+      <BioText key={index} lighter className={`d-inline-block`}>
+        {index > 0 && <span className="mx-2 d-inline-block">|</span>}
+        {tech}
+      </BioText>
+    ))}
+  </>
+)
+
+StackList.propTypes = {
+  stack: PropTypes.arrayOf(PropTypes.string),
+}
+  
+
 const FeaturedImageCol = styled(Col).attrs(props => ({
   xs: 12,
+  md: 8,
+  lg: 7,
   className: "mb-5",
 }))`
-  background-image: url(${props => props.img});
-  background-size: cover;
+  background-image: ${props => `/${props.img}`};
+  background-size: contain;
+  background-repeat: no-repeat;
   min-height: ${props => (props.img ? "400px" : "0")};
   background-position: ${props => props.bgposition || "center"};
 `
@@ -143,7 +164,7 @@ FeaturedImageCol.propTypes = {
 }
 
 const PostImage = styled.img`
-max-width: 500px;
+max-width: 100%;
 height: auto;
 margin: 2em auto;
 `
@@ -160,11 +181,29 @@ const renderAst = new RehypeReact({
   },
 }).Compiler
 
+export const ResponsiveImg = styled(Card.Img)`
+  position: relative;
+  width: auto;
+  max-width: 100%;
+  padding-top: 0;
+  padding-bottom: 2.5em;
+  padding-left: 0;
+  padding-right: 0;
+`
+
 export const PostWrapper = ({ htmlAst, img }) => (
   <Container fluid>
     <Row className="justify-content-center">
-      {img ? <FeaturedImageCol img={img} /> : null}
-      <Col xs={12} md={8} lg={6}>
+      <Col xs={12}></Col>
+      {img ? (
+        <ResponsiveImg
+          variant="top"
+          src={`/${img}`}
+        />
+      ) : null}
+    </Row>
+    <Row className="justify-content-center">
+      <Col xs={12} md={8} lg={7}>
         {renderAst(htmlAst)}
       </Col>
     </Row>

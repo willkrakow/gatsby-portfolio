@@ -6,12 +6,12 @@ import { Button } from 'react-bootstrap'
 export const BioHeader = styled.h3.attrs(props => ({
   className: "text-dark",
 }))`
-  font-size: 2em;
+  font-size: 2rem;
   line-height: 1.25em;
 `
 
 export const BioText = styled.p.attrs(props => ({
-  className: props.lighter ? "text-secondary" : "text-dark",
+  className: `${props.lighter ? "text-info" : "text-dark"} ${props.gray && "text-muted"}`
 }))`
   font-size: 1.125em;
   line-height: 1.5em;
@@ -29,21 +29,21 @@ export const ColorText = styled.p.attrs(props => ({
 `
 
 export const ColorLink = styled(Link).attrs(props => ({
-  className: "text-dark"
+  className: "text-dark",
 }))`
-  box-shadow: inset 0 -0.1em 0 rgba(253, 29, 29, 0.5);
+  box-shadow: inset 0 -0.1em 0 rgba(23, 162, 184, 0.5);
   line-height: 2em;
   font-size: 1.125em;
   border: none;
   padding: 0 1em;
   margin: 0.5em;
   border-radius: 1em 0 1em 0;
-  background: transparent;
+  background: rgba(23, 162, 184, 0.0);
   display: inline;
   transition: all 0.5s ease;
   &:hover {
-    box-shadow: 0px 0.25em 0 rgba(253, 29, 29, 1);
-    background: rgba(253, 29, 29, 0.1);
+    box-shadow: 0px 0.25em 0 rgba(23, 162, 184, 0.5);
+    background: rgba(23, 162, 184, 0.1);
     text-decoration: none;
   }
   &:link {
@@ -91,8 +91,8 @@ export const ColorHeader = styled.h4.attrs(props => ({
 }))`
   box-shadow: 0px 0.3em rgba(1, 177, 169, 0.2);
   line-height: 1.25em;
-  font-size: 2em;
-  font-weight: 200;
+  font-size: 1.5rem;
+  font-weight: 500;
   display: inline-block;
   margin-bottom: 1em;
 `

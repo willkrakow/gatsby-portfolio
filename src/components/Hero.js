@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Me from '../images/me.png';
 import { Row, Col } from 'react-bootstrap';
 import { FancyContainer } from './containers';
 import { BlackButton, WhiteButton } from './Typography';
+import { Link } from 'gatsby';
 
 
 const Img = styled.img`
@@ -39,14 +39,16 @@ const Hero = () => {
               Dev | Designer | Writer
             </h3>
             <div className="d-flex w-100 align-center h-100">
-              <BlackButton className="align-self-start">
-                Projects
-              </BlackButton>
-              <WhiteButton>Contact</WhiteButton>
+              <Link to="/projects" alt="Projects | William Krakow">
+                <BlackButton className="align-self-start">Projects</BlackButton>
+              </Link>
+              <Link to="/contact" alt="Contact | William Krakow">
+                <WhiteButton>Contact</WhiteButton>
+              </Link>
             </div>
           </Col>
-          <Col xs={12} md={7}>
-            <Img src={Me} alt="William Krakow" />
+          <Col xs={12} md={7} className="overflow-hidden">
+            <Img src={'/images/me.png'} alt="William Krakow" />
           </Col>
         </Row>
       </FancyContainer>

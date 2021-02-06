@@ -33,7 +33,7 @@ const ProjectList = () => {
               <ColorHeader>
                 {project.node.frontmatter.title}
               </ColorHeader>
-              <BioText className="pl-3" lighter>
+              <BioText className="pl-3" gray>
                 {project.node.excerpt}
               </BioText>
             </ListGroupItem>

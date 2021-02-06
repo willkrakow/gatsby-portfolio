@@ -11,7 +11,6 @@ export default function Header({menuLinks, siteTitle}) {
           expand="md"
           bg="light"
           variant="light"
-          className="justify-content-end"
         >
           <Navbar.Brand as={Link} to="/" alt="Home - William Krakow">
             WK
