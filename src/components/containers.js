@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { Container, Row, Col, Card } from "react-bootstrap"
 import { BioText, BioHeader } from "./Typography"
 import PropTypes from "prop-types"
@@ -9,13 +9,37 @@ import { Link } from "gatsby"
 import RehypeReact from "rehype-react"
 import { UnorderedList, OrderedList, BlockQuote } from "../templates/article/MarkdownComponents"
 
+const bgAnimation = keyframes`
+0% {
+  background-position: top left;
+}
+
+25% {
+  background-position: top right;
+}
+
+50% {
+  background-position: bottom right;
+}
+
+75% {
+  background-position: bottom left;
+}
+
+100% {
+  background-position: top left;
+}
+`
+
 export const FancyContainer = styled(Container)`
-  background: ${props =>
-    props.gradientbg === "true" ? "rgb(131, 58, 190)" : null};
+  background: ${props => (props.gradientbg === "true" ? "#002c86" : null)};
   background: ${props =>
     props.gradientbg === "true"
-      ? " linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)"
+      ? " linear-gradient(70deg, #002c86 0%, #17a4ba 50%, #89a4e5 100%)"
       : null};
+  background-size: 400%;
+  background-position: top left;
+  animation: ${bgAnimation} 10s ease-in-out infinite;
 `
 FancyContainer.propTypes = {
   fluid: PropTypes.bool,
@@ -185,6 +209,7 @@ export const ResponsiveImg = styled(Card.Img)`
   position: relative;
   width: 100%;
   height: auto;
+  max-height: 300px;
   padding-top: 0;
   padding-bottom: 2.5rem;
   padding-left: 0;

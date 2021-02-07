@@ -10,7 +10,10 @@ export default function Project({data}) {
     //todo: add custom widget that lets me select a React component (i.e., a Font Awesome Icon) from a list
 
     return (
-      <Layout>
+      <Layout
+        pageTitle={frontmatter.title}
+        pageDescription={frontmatter.excerpt}
+      >
         <PostBanner
           title={frontmatter.title}
           date={""}
@@ -38,6 +41,7 @@ export const query = graphql`
         livesite
       }
       htmlAst
+      excerpt
     }
   }
 

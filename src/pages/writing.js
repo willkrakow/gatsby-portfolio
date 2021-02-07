@@ -10,7 +10,7 @@ export default function Writing({data}) {
   const { edges } = allMarkdownRemark
 
     return (
-      <Layout>
+      <Layout pageTitle="Writing" pageDescription="Articles about everything under the sun.">
         <PageBanner
           title="Writing"
           subtitle="Perhaps not relevant to web dev but I like to write so these are here."
@@ -20,7 +20,7 @@ export default function Writing({data}) {
           <Row>
             <Col xs={12}>
               {edges.map((article, index) => (
-                <Article index={index} article={article} type="articles" />
+                <Article index={index} key={index} article={article} type="articles" />
               ))}
             </Col>
           </Row>

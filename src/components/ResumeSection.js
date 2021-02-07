@@ -1,13 +1,12 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import JobDescription from '../components/JobDescription.js';
+import JobDescription from './JobDescription';
 import { BioHeader, LabelText, ColorHeader, BioText } from './Typography'
-
 import { FancyContainer } from './containers'
 
-const Resume = () => {
+const ResumeSection = () => {
 
-  const data = [
+  const jobData = [
     {
       name: "PlantPure",
       dates: "November 2019 - present",
@@ -40,13 +39,20 @@ const Resume = () => {
     }
   ]
 
+  const educationData = {
+    school: "University of North Carolina at Chapel Hill",
+    major: "BS – Applied Mathematics",
+    gradYear: 2017,
+  }
+
   return (
     <FancyContainer>
-      <Row className="justify-content-center" >
-        <Col xs={{ span: 12 }} md={{span: 6}}>
-          <LabelText>Resume</LabelText>
+      <Row className="justify-content-center">
+        <Col xs={12} md={7}>
+          <LabelText>Experience</LabelText>
           <BioHeader>
-            Sufficiently Experienced<br /> (if I do say so myself)
+            Sufficiently Experienced
+            <br /> (if I do say so myself)
           </BioHeader>
           <BioText>
             I've jumped around a lot and run around a lot and walked a bunch
@@ -54,20 +60,30 @@ const Resume = () => {
             into a more permanent, stable role because money.
           </BioText>
         </Col>
-        </Row>
-        <Row className="justify-content-center">
-        <Col xs={{ span: 12 }} md={{span: 6}}>
-          {data.map((job, index) => (
+      </Row>
+      <Row className="justify-content-center">
+        <Col xs={12} md={7}>
+          {jobData.map((job, index) => (
             <div key={index} className="mt-3 mb-5">
               <ColorHeader>{job.role}</ColorHeader>
-              <BioText className="font-weight-bolder text-dark mb-0">{job.name}</BioText>
+              <BioText className="font-weight-bolder text-dark mb-0">
+                {job.name}
+              </BioText>
               <BioText lighter>{job.dates}</BioText>
               <JobDescription list={job.description} />
             </div>
           ))}
         </Col>
       </Row>
+      <Row className="justify-content-center">
+        <Col xs={12} md={7}>
+          <LabelText>Education</LabelText>
+          <BioHeader>{educationData.school}</BioHeader>
+          <BioText>{educationData.major}</BioText>
+          <BioText lighter>{educationData.gradYear}</BioText>
+        </Col>
+      </Row>
     </FancyContainer>
   )
 }
-export default Resume
+export default ResumeSection

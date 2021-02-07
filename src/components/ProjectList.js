@@ -28,7 +28,7 @@ const ProjectList = () => {
     return (
       <ListGroup>
         {data.allMarkdownRemark.edges.map((project, index) => (
-          <Link to={`/projects/${project.node.frontmatter.slug}`}>
+          <Link to={`/projects/${project.node.frontmatter.slug}`} key={index}>
             <ListGroupItem>
               <ColorHeader>
                 {project.node.frontmatter.title}

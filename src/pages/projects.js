@@ -11,7 +11,7 @@ export default function Writing({ data }) {
   const { edges } = allMarkdownRemark
 
   return (
-    <Layout>
+    <Layout pageTitle="Projects" pageDescription="A collection of personal and professional development projects." >
       <PageBanner
         title="Projects"
         subtitle="Personal, professional, and more."
@@ -21,7 +21,7 @@ export default function Writing({ data }) {
         <Row>
           <Col xs={12}>
             {edges.map((article, index) => (
-              <Article index={index} article={article} type="projects" />
+              <Article index={index} key={index} article={article} type="projects" />
             ))}
           </Col>
         </Row>

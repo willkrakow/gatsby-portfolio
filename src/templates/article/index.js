@@ -9,7 +9,7 @@ export default function Template({ data }) {
   const dateParsed = new Date(frontmatter.date)
 
   return (
-    <Layout>
+    <Layout pageTitle={frontmatter.title} pageDescription={frontmatter.excerpt}>
         <PostBanner
           title={frontmatter.title}
           date={dateParsed.toDateString().slice(3)}
@@ -34,6 +34,7 @@ query($slug: String!) {
             layout
         }
         htmlAst
+        excerpt
     }
 }
 `

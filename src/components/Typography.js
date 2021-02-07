@@ -51,6 +51,30 @@ export const ColorLink = styled(Link).attrs(props => ({
   }
 `
 
+
+export const ColorSpan = styled.span.attrs(props => ({
+  className: "text-dark",
+}))`
+  box-shadow: inset 0 -0.1em 0 rgba(23, 162, 184, 0.5);
+  line-height: 2em;
+  font-size: 1.125em;
+  border: none;
+  padding: 0 1em;
+  margin: 0.5em;
+  border-radius: 1em 0 1em 0;
+  background: rgba(23, 162, 184, 0);
+  display: inline;
+  transition: all 0.5s ease;
+  &:hover {
+    box-shadow: 0px 0.25em 0 rgba(23, 162, 184, 0.5);
+    background: rgba(23, 162, 184, 0.1);
+    text-decoration: none;
+  }
+  &:link {
+    text-decoration: none;
+  }
+`
+
 export const ColorURL = styled.a`
   box-shadow: inset 0 -0.1em 0 rgba(253, 29, 29, 0.5);
   line-height: 2em;

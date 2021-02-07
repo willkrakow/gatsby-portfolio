@@ -41,7 +41,7 @@ const Contact = () => {
   watch("email", "nane", "subject")
 
   return (
-    <Layout>
+    <Layout pageTitle="Contact" pageDescription="Let's connect">
       <PageBanner title="Let's connect" subtitle="" icon={faEnvelope} />
       <FullContainer>
         <Row className="justify-content-center h-100">

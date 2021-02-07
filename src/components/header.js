@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, } from 'gatsby';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Capitalized } from '../utils'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { ColorSpan } from './Typography';
 
-export default function Header({menuLinks, siteTitle}) {
+export default function Header({menuLinks}) {
     return (
       <React.Fragment>
         <Navbar collapseOnSelect expand="md" bg="light" variant="light">
@@ -18,13 +19,15 @@ export default function Header({menuLinks, siteTitle}) {
           >
             <Nav className="text-right">
               {menuLinks.map((link, index) => (
-                <Nav.Link as="span" key={index}>
+                <Nav.Link as={ColorSpan} key={index} className="pr-3">
                   <AniLink
-                    cover
-                    bg="#833ab4"
+                    swipe
+                    activeStyle={{
+                      fontWeight: "bolder",
+                    }}
                     to={link.link}
                     alt={link.name}
-                    className="text-right text-info"
+                    className="text-right text-dark"
                   >
                     {Capitalized(link.name)}
                   </AniLink>

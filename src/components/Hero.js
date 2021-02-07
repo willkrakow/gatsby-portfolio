@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { Row, Col } from 'react-bootstrap';
 import { FancyContainer } from './containers';
 import { BlackButton, WhiteButton } from './Typography';
-import { Link } from 'gatsby';
+import { Link,  } from 'gatsby';
+import Img from 'gatsby-image';
 
 
-const HeroImg = styled.img`
+const HeroImg = styled(Img)`
   display: block;
-  height: auto;
-  width: 35%;
+  height: 250px;
+  width: 250px;
   border: 2vh solid #fafafa;
   box-shadow: 0px 5px 20px rgba(0, 29, 59, 0.4);
   transform: rotate(12deg);
@@ -21,44 +22,16 @@ const HeroImg = styled.img`
   }
   @media screen and (max-width: 575px) {
     margin-top: 3rem;
-    width: 100%;
+    width: 250px;
   }
 `
 
-// const bounce = keyframes`
-// 0% {
-//   background: -webkit-linear-gradient(#eee, #333);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }
-
-// 100% {
-//   background: -webkit-linear-gradient(#eee, #333);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }
-// `
-
-// const DownArrow = styled.span.attrs(props => ({
-//   className: "text-light",
-// }))`
-//   background: transparent;
-//   border: none;
-//   width: 100%;
-//   display: block;
-//   font-size: 3rem;
-//   font-weight: bold;
-//   animation: ${bounce} 2.5s ease-in-out infinite;
-// `
-
-
-const Hero = () => {
-
+const Hero = ({data}) => {
     return (
       <FancyContainer gradientbg="true">
         <Row className="justify-content-center align-items-center">
-          <Col xs={10} md={7}>
-            <HeroImg src={"/images/me.png"} alt="William Krakow" />
+          <Col xs={10} md={7} className="text-center">
+            <HeroImg fluid={data.file.childImageSharp.fluid} alt="William Krakow" />
           </Col>
         </Row>
         <Row className="align-items-center justify-content-center">
