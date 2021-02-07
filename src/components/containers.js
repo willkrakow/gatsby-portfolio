@@ -183,10 +183,10 @@ const renderAst = new RehypeReact({
 
 export const ResponsiveImg = styled(Card.Img)`
   position: relative;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   padding-top: 0;
-  padding-bottom: 2.5em;
+  padding-bottom: 2.5rem;
   padding-left: 0;
   padding-right: 0;
 `
