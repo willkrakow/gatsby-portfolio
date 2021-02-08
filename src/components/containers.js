@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { Container, Row, Col, Card } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import { BioText, BioHeader } from "./Typography"
 import PropTypes from "prop-types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -205,15 +205,11 @@ const renderAst = new RehypeReact({
   },
 }).Compiler
 
-export const ResponsiveImg = styled(Card.Img)`
-  position: relative;
-  width: 100%;
+export const ResponsiveImg = styled.img`
+  width: 80%;
+  margin: auto;
+  display: block;
   height: auto;
-  max-height: 300px;
-  padding-top: 0;
-  padding-bottom: 2.5rem;
-  padding-left: 0;
-  padding-right: 0;
 `
 
 export const PostWrapper = ({ htmlAst, img }) => (
