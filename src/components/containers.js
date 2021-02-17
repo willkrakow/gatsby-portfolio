@@ -49,7 +49,7 @@ FancyContainer.propTypes = {
 
 FancyContainer.defaultProps = {
   fluid: true,
-  className: "p-3 mt-3 mb-5 p-md-5",
+  className: "p-3 mb-5 p-md-5",
 }
 
 export const ProjectWrapper = styled.div`
@@ -215,13 +215,9 @@ export const ResponsiveImg = styled.img`
 export const PostWrapper = ({ htmlAst, img }) => (
   <Container fluid>
     <Row className="justify-content-center">
-      <Col xs={12}></Col>
-      {img ? (
-        <ResponsiveImg
-          variant="top"
-          src={`/${img}`}
-        />
-      ) : null}
+      <Col xs={12}>
+        {img ? <ResponsiveImg variant="top" src={`/${img}`} /> : null}
+      </Col>
     </Row>
     <Row className="justify-content-center">
       <Col xs={12} md={8} lg={7}>

@@ -3,14 +3,26 @@ import { Link, } from 'gatsby';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Capitalized } from '../utils'
 import { ColorAniLink } from './Typography';
+import styled from 'styled-components'
+
+const Logo = styled(Navbar.Brand).attrs(props => ({
+  to: "/",
+  alt: "Home | William Krakow",
+}))`
+  font-family: 'Playball', cursive;
+  color: #002c86;
+  font-size: 2rem;
+`
+
+
 
 export default function Header({menuLinks}) {
     return (
       <React.Fragment>
         <Navbar collapseOnSelect expand="md" bg="light" variant="light">
-          <Navbar.Brand as={Link} to="/" alt="Home - William Krakow">
+          <Logo as={Link}>
             WK
-          </Navbar.Brand>
+          </Logo>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse
             id="responsive-navbar-nav"

@@ -54,6 +54,16 @@ module.exports = {
         icon: `static/images/favicon.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Lato\:400,600`,
+          `Open Sans\:300,500`,
+          'Playball',
+        ]
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
