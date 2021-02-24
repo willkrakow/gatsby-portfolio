@@ -3,7 +3,7 @@ layout: article
 date: 2021-02-18T02:17:40.796Z
 title: How to scrape registrar location data from websites
 thumbnail: https://images.pexels.com/photos/346696/pexels-photo-346696.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260
-slug: "{{title}}"
+slug: scraping-registrar-location-data
 ---
 A while back my company acquired a list of prominent bloggers in our industry. We hoped to reach out to these bloggers to promote our then recently launched influencer program. However, one thing missing from the list was the location data for each blogger. With GDPR in mind, I wanted to be very cautious about who we contacted; the US has much more lenient laws about unsolicited emails, so I wanted to identify which of the bloggers' sites had IPs registered in the US.
 
