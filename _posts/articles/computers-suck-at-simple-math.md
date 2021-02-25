@@ -2,7 +2,7 @@
 layout: article
 date: 2021-02-18T13:26:20.241Z
 title: Computers suck at simple math
-thumbnail: https://images.pexels.com/photos/374918/pexels-photo-374918.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
+thumbnail: images/simple-math.jpeg
 slug: computers-suck-at-simple-math
 ---
 Computers are terrible problem solvers, but great problem estimators. In fact, nearly all of the math performed by your computer gives what mathematicians would call an "approximate answer". 
