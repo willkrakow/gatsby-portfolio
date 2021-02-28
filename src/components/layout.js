@@ -2,6 +2,7 @@ import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 import Header from './header.js';
 import SEO from './SEO'
+import Footer from './Footer';
 
 
 export default function Layout({ children, pageDescription, pageTitle }) {
@@ -28,6 +29,7 @@ export default function Layout({ children, pageDescription, pageTitle }) {
             siteTitle={data.site.siteMetadata.title}
           />
           <div>{children}</div>
+          <Footer />
         </React.Fragment>
       )}
     />

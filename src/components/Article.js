@@ -36,7 +36,7 @@ export default function Article({article, index, type}) {
         <Col xs={{ span: 12, order: 1 }} md={4}>
           <ResponsiveImg
             variant="top"
-            src={`/${article.node.frontmatter.thumbnail}`}
+            src={`/${article.node.frontmatter.thumbnail || article.node.thumbnail}`}
           />
         </Col>
       </Row>

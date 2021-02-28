@@ -4,18 +4,18 @@ import styled from 'styled-components'
 export const OrderedList = styled.ol`
   list-style: none;
   counter-reset: item;
-
+  padding: 1em;
   li {
-    margin-bottom: 1em;
     counter-increment: item;
+    line-height: 1.75em;
+    padding-left: 2em;
+
     &::before {
       content: counter(item) ".";
       color: rgba(1, 177, 169, 1);
       width: 1em;
-      margin-top: 1em;
       margin-right: 0.25em;
       font-weight: bold;
-      font-size: 2.5em;
       text-align: center;
       display: inline-block;
     }
@@ -30,6 +30,15 @@ export const BlockQuote = styled.blockquote`
     color: #6c757d;
     border-left: 0.5em solid rgba(1, 177, 169, 0.2);
   }
+`
+
+export const CodeBlock = styled.pre.attrs(props => ({
+  className: "text-secondary",
+}))`
+  padding: 1em;
+  background-color: rgba(0, 10, 15, 0.05);
+  border-radius: 2em;
+  line-height: 1.25em;
 `
 
 export const UnorderedList = styled.ul`

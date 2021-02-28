@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "gatsby"
 import RehypeReact from "rehype-react"
-import { UnorderedList, OrderedList, BlockQuote } from "../templates/article/MarkdownComponents"
+import { UnorderedList, OrderedList, BlockQuote, CodeBlock } from "../templates/article/MarkdownComponents"
 
 const bgAnimation = keyframes`
 0% {
@@ -125,7 +125,7 @@ PageBanner.defaultProps = {
 export const PostBanner = ({ title, date, timeToRead, backLink, stack }) => (
   <Container fluid className="pt-5 pb-2">
     <Row className="justify-content-center">
-      <Col xs={12} md={8} lg={6}>
+      <Col xs={12} md={8} lg={7} xl={6}>
         <Link to={backLink} className="text-secondary">
           <FontAwesomeIcon icon={faArrowLeft} className="text-info" />
           &nbsp;All {backLink.slice(1)}
@@ -201,12 +201,13 @@ const renderAst = new RehypeReact({
     ul: UnorderedList,
     ol: OrderedList,
     blockquote: BlockQuote,
+    pre: CodeBlock,
     img: PostImage,
   },
 }).Compiler
 
 export const ResponsiveImg = styled.img`
-  width: 80%;
+  width: 100%;
   margin: auto;
   display: block;
   height: auto;
@@ -215,12 +216,12 @@ export const ResponsiveImg = styled.img`
 export const PostWrapper = ({ htmlAst, img }) => (
   <Container fluid>
     <Row className="justify-content-center">
-      <Col xs={12}>
+      <Col xs={12} md={8} lg={7} xl={6}>
         {img ? <ResponsiveImg variant="top" src={`/${img}`} /> : null}
       </Col>
     </Row>
     <Row className="justify-content-center">
-      <Col xs={12} md={8} lg={7}>
+      <Col xs={12} md={8} lg={7} xl={6}>
         {renderAst(htmlAst)}
       </Col>
     </Row>
