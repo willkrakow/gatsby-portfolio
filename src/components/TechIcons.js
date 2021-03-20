@@ -65,7 +65,7 @@ const TechIcons = () => {
   return (
     <FancyContainer>
       <Row>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={4} xl={3}>
           <Container fluid>
             <Row
               className="justify-content-center"
@@ -90,13 +90,14 @@ const TechIcons = () => {
         </Col>
         <Col
           xs={{ span: 12, order: "first" }}
-          md={{ span: 6, order: "second" }}
+          md={{ span: 4, order: "second" }}
+          xl={{ span: 3, order: "second"}}
         >
           <LabelText>Skillset</LabelText>
           <BioHeader>Stacks? I've got 'em.</BioHeader>
           <BioText>
-            I know that was lame but so am I. Anywho, here are some of the
-            technologies I consider myself an expert in.
+            I know that was lame but so am I. Anywho, here's a brief list of the
+            technologies I've worked with the most.
           </BioText>
         </Col>
       </Row>

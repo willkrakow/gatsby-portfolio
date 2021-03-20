@@ -18,8 +18,8 @@ export default function Writing({ data }) {
         nospan
       />
       <FancyContainer>
-        <Row>
-          <Col xs={12}>
+        <Row className="justify-content-center">
+          <Col xs={12} md={8} xl={6}>
             {edges.map((article, index) => (
               <Article index={index} key={index} article={article} type="projects" />
             ))}

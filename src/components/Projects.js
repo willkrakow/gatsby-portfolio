@@ -13,19 +13,25 @@ const Projects = ({data}) => {
       <FancyContainer>
         <Row>
           <Col
-            xs={{ span: 12, order: "first" }}
-            md={{ span: 6, order: "first" }}
+            xs={12}
+            md={4}
+            xl={3}
           >
             <LabelText>Projects</LabelText>
             <BioHeader>Personal and Otherwise</BioHeader>
             <BioText>
-              I know that was lame but so am I. Anywho, here are some of the
-              technologies I consider myself an expert in.
+              I primary work on the frontend, and have recently taken a liking
+              to the JAMstack architecture. Nevertheless, I've also worked
+              extensively in Node.js on projects large and small, for both
+              complete servers and lambda functions. Beyond web dev, I like
+              using Python for web scraping, data analytics, and machine
+              learning via Tensorflow/Keras.
             </BioText>
           </Col>
           <Col
-            xs={{ span: 12, order: "second" }}
-            md={{ span: 6, order: "second" }}
+            xs={12}
+            md={4}
+            xl={3}
           >
             <ProjectList />
           </Col>

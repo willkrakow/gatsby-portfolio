@@ -7,15 +7,15 @@ import { FancyContainer } from './containers'
 export default function Bio() {
     return (
       <FancyContainer>
-        <Row>
-          <Col xs={12} md={6}>
+        <Row className="justify-content-center">
+          <Col xs={12} md={4} xl={3}>
             <BioHeader>Hi there!</BioHeader>
             <BioText>
               Here's a little bit more so that you can get to know me thanks
               for reading.
             </BioText>
           </Col>
-          <Col xs={12} md={5}>
+          <Col xs={12} md={4} xl={3}>
             <SocialLinks />
           </Col>
         </Row>

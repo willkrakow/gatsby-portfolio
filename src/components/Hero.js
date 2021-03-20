@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-bootstrap';
 import { FancyContainer } from './containers';
-import { BlackButton, WhiteButton } from './Typography';
+import { BlackButton, WhiteButton, HeroHeader } from './Typography';
 import { Link,  } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -36,9 +36,9 @@ const Hero = ({data}) => {
         </Row>
         <Row className="align-items-center justify-content-center">
           <Col xs={12} md={7} className="d-block text-center">
-            <h1 className="text-light d-block w-100 font-weight-bold display-3">
+            <HeroHeader className="text-light d-block w-100 font-weight-bold display-3">
               William Krakow
-            </h1>
+            </HeroHeader>
             <h3 className="text-light font-weight-lighter d-inline">
               Dev | Designer | Writer
             </h3>
