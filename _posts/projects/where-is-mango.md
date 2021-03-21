@@ -1,9 +1,11 @@
 ---
 layout: project
 title: Where is Mango?
-thumbnail: a4303973-0365-42d5-a47b-ebd640f233d0_1_201_a.jpeg
+thumbnail: images/mango.jpeg
 stack:
   - React
+  - Styled Components
+  - Heroku
 slug: projects/where-is-mango
 source: https://github.com/willkrakow
 livesite: https://www.whereismango.com

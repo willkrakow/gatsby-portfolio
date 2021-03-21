@@ -64,8 +64,8 @@ const TechIcons = () => {
 
   return (
     <FancyContainer>
-      <Row>
-        <Col xs={12} md={4} xl={3}>
+      <Row className="justify-content-center">
+        <Col xs={12} md={5}>
           <Container fluid>
             <Row
               className="justify-content-center"
@@ -90,8 +90,7 @@ const TechIcons = () => {
         </Col>
         <Col
           xs={{ span: 12, order: "first" }}
-          md={{ span: 4, order: "second" }}
-          xl={{ span: 3, order: "second"}}
+          md={{ span: 5, order: "second" }}
         >
           <LabelText>Skillset</LabelText>
           <BioHeader>Stacks? I've got 'em.</BioHeader>

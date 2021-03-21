@@ -11,11 +11,10 @@ const Projects = ({data}) => {
     
     return (
       <FancyContainer>
-        <Row>
+        <Row className="justify-content-center">
           <Col
             xs={12}
-            md={4}
-            xl={3}
+            md={5}
           >
             <LabelText>Projects</LabelText>
             <BioHeader>Personal and Otherwise</BioHeader>
@@ -30,7 +29,7 @@ const Projects = ({data}) => {
           </Col>
           <Col
             xs={12}
-            md={4}
+            md={5}
             xl={3}
           >
             <ProjectList />

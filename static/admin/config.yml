@@ -39,7 +39,11 @@ collections:
               "Bootstrap",
               "Netlify",
               "VanillaJS",
-              "Figma"
+              "Figma",
+              "NodeJS",
+              "Styled Components",
+              "Heroku",
+              "Twilio",
             ],
         }
       - { label: "Body", name: "body", widget: "markdown" }

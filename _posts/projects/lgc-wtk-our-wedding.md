@@ -1,7 +1,7 @@
 ---
 layout: project
 title: LGC + WTK | Our Wedding
-thumbnail: wedding.png
+thumbnail: images/wedding.png
 stack:
   - React
   - Bootstrap
