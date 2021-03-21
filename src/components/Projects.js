@@ -11,7 +11,7 @@ const Projects = ({data}) => {
     
     return (
       <FancyContainer>
-        <Row className="justify-content-center">
+        <Row className="justify-content-center align-items-center">
           <Col
             xs={12}
             md={5}
