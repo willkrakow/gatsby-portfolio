@@ -44,6 +44,9 @@ collections:
               "Styled Components",
               "Heroku",
               "Twilio",
+              "HTML5",
+              "CSS3",
+              "Vanilla JS"
             ],
         }
       - { label: "Body", name: "body", widget: "markdown" }

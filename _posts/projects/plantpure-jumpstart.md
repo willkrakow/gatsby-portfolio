@@ -4,6 +4,10 @@ title: "PlantPure Jumpstart "
 thumbnail: images/jslogo.png
 stack:
   - Shopify
+  - Figma
+  - HTML5
+  - CSS3
+  - Vanilla JS
 slug: projects/{{title}}
 source: https://github.com/willkrakow
 livesite: "{{title}}"

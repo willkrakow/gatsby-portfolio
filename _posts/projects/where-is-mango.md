@@ -6,6 +6,7 @@ stack:
   - React
   - Styled Components
   - Heroku
+  - Twilio
 slug: projects/where-is-mango
 source: https://github.com/willkrakow
 livesite: https://www.whereismango.com
