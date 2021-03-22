@@ -8,7 +8,7 @@ stack:
   - VanillaJS
   - Netlify
   - Gatsby
-slug: projects/{{title}}
+slug: our-wedding
 source: https://github.com/willkrakow/wedding-plans
 livesite: https://campbellkrakow.com
 publicId: wedding_byxwpi

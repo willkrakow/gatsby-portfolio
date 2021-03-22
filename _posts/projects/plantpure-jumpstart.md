@@ -8,9 +8,9 @@ stack:
   - HTML5
   - CSS3
   - Vanilla JS
-slug: projects/{{title}}
+slug: jumpstart
 source: https://github.com/willkrakow
-livesite: "{{title}}"
+livesite: https://plantpurenation.com/products/jumpstart
 publicId: jumpstart_ace9bm
 ---
 I completed this project while employed at PlantPure, Inc., a plant-based foods and education company.

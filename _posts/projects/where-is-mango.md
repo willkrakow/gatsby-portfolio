@@ -7,8 +7,8 @@ stack:
   - Styled Components
   - Heroku
   - Twilio
-slug: projects/where-is-mango
-source: https://github.com/willkrakow
+slug: where-is-mango
+source: https://github.com/willkrakow/mango-cra-node
 livesite: https://www.whereismango.com
 publicId: whereismango_uqjmyc
 ---
