@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, } from 'gatsby';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 import { Capitalized } from '../utils'
 import { ColorAniLink } from './Typography';
 import styled from 'styled-components'
@@ -18,7 +18,7 @@ const Logo = styled(Navbar.Brand).attrs(props => ({
 
 export default function Header({menuLinks}) {
     return (
-      <React.Fragment>
+      <Container>
         <Navbar collapseOnSelect expand="md" bg="light" variant="light">
           <Logo as={Link}>
             WK
@@ -31,7 +31,8 @@ export default function Header({menuLinks}) {
             <Nav className="text-right">
               {menuLinks.map((link, index) => (
                   <ColorAniLink
-                    swipe
+                  
+                  morphTo
                     activeStyle={{
                       fontWeight: "bolder",
                     }}
@@ -46,6 +47,6 @@ export default function Header({menuLinks}) {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </React.Fragment>
+      </Container>
     )
 }

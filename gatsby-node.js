@@ -18,8 +18,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             id
             frontmatter {
               date
+              thumbnail
               title
               slug
+              publicId
             }
           }
         }
@@ -58,6 +60,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 title
                 slug
                 layout
+                publicId
               }
             }
           }

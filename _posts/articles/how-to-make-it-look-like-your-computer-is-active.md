@@ -4,6 +4,7 @@ date: 2021-02-16T13:13:04.861Z
 title: How to make it look like your computer is active
 thumbnail: images/computer_desk.jpeg
 slug: how-to-make-it-look-like-your-computer-is-active
+publicId: computer_desk_r3dgnn
 ---
 # Emulating mouse events with macOS
 

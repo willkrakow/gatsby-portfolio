@@ -3,6 +3,7 @@ backend:
   repo: willkrakow/gatsby-portfolio
   branch: main
 
+
 publish_mode: editorial_workflow
 
 media_folder: "static/images"
@@ -17,12 +18,10 @@ collections:
     public_folder: ""
     slug: "{{title}}"
     fields:
-      - {
-          label: "Layout",
-          name: "layout",
-          widget: "hidden",
-          default: "project",
-        }
+      - label: 'Layout'
+        name: 'layout'
+        widget: 'hidden'
+        default: 'project'
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - {
@@ -50,6 +49,7 @@ collections:
             ],
         }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Cloudinary public ID", name: "publicId", widget: "string", default: "dandelion_gv9eod" }
       - {
           label: "Slug",
           name: "slug",
@@ -87,6 +87,7 @@ collections:
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Slug", name: "slug", widget: "string", default: "{{title}}" }
+      - { label: "Cloudinary public ID", name: "publicId", widget: "string", default: "dandelion_gv9eod" }
   - name: "technologies"
     label: "Technologies"
     folder: "_posts/technologies"

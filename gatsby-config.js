@@ -55,21 +55,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        fonts: [
-          `Lato\:400,600`,
-          `Open Sans\:300,500`,
-          'Playball',
-        ]
-      }
+        path: `${__dirname}/static/images`,
+        name: `images`,
+      },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-transition-link`,
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -85,12 +76,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        path: `${__dirname}/static/images`,
-        name: `images`,
+        fonts: [`Lato\:400,600`, `Open Sans\:300,500`, "Playball"],
       },
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-transition-link`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -117,5 +114,6 @@ module.exports = {
         context: true,
       },
     },
+    `gatsby-plugin-netlify`,
   ],
 }

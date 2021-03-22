@@ -3,35 +3,38 @@ import styled from 'styled-components';
 import { Row, Col } from 'react-bootstrap';
 import { FancyContainer } from './containers';
 import { BlackButton, WhiteButton, HeroHeader } from './Typography';
-import { Link,  } from 'gatsby';
-import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 
 
-const HeroImg = styled(Img)`
-  display: block;
-  height: 250px;
-  width: 250px;
-  border: 2vh solid #fafafa;
-  box-shadow: 0px 5px 20px rgba(0, 29, 59, 0.4);
+const HeroImg = styled.div`
   transform: rotate(12deg);
   transition: 0.3s;
-  margin: 2rem auto;
-  overflow: hidden;
+  background: #fafafa;
+  z-index: 1;
+  margin: 2rem;
+  padding: 1rem;
+  box-shadow: 0px 5px 20px rgba(15,15,15,0.2);
+  border: 1px solid rgba(3,120,152,0.1);
   &:hover {
     transform: rotate(0deg);
   }
   @media screen and (max-width: 575px) {
     margin-top: 3rem;
-    width: 250px;
   }
 `
 
-const Hero = ({data}) => {
+const Hero = (props) => {
     return (
       <FancyContainer gradientbg="true">
         <Row className="justify-content-center align-items-center">
-          <Col xs={10} md={7} className="text-center">
-            <HeroImg fluid={data.file.childImageSharp.fluid} alt="William Krakow" />
+          <Col
+            xs={10}
+            md={7}
+            className="text-center d-flex justify-content-center"
+          >
+            <HeroImg>
+              <div style={{ zIndex: "10" }}>{props.children}</div>
+            </HeroImg>
           </Col>
         </Row>
         <Row className="align-items-center justify-content-center">
@@ -50,9 +53,6 @@ const Hero = ({data}) => {
                 <WhiteButton>Contact</WhiteButton>
               </Link>
             </div>
-            {/* <div className="w-100 d-flex justify-content-center align-items-center">
-              <DownArrow>&#8964;</DownArrow>
-            </div> */}
           </Col>
         </Row>
       </FancyContainer>

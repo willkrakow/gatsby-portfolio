@@ -1,9 +1,9 @@
 import React from "react"
 import { useForm } from "react-hook-form"
-import { Form, Row, Col } from 'react-bootstrap'
+import { Form, Row, Col, Container } from 'react-bootstrap'
 import styled from 'styled-components'
 import Layout from '../components/layout'
-import { FullContainer, PageBanner } from '../components/containers'
+import { PageBanner } from '../components/containers'
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { BlackButton } from '../components/Typography'
 
@@ -43,9 +43,9 @@ const Contact = () => {
   return (
     <Layout pageTitle="Contact" pageDescription="Let's connect">
       <PageBanner title="Let's connect" subtitle="" icon={faEnvelope} />
-      <FullContainer>
+      <Container>
         <Row className="justify-content-center h-100">
-          <Col xs={{ span: 12 }} md={{ span: 6 }} className="text-center">
+          <Col xs={12} md={6} className="text-center">
             <Form onSubmit={handleSubmit(onSubmit)} data-netlify="true">
               <input
                 ref={register}
@@ -89,7 +89,7 @@ const Contact = () => {
             </Form>
           </Col>
         </Row>
-      </FullContainer>
+      </Container>
     </Layout>
   )
 }

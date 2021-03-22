@@ -11,6 +11,7 @@ stack:
 slug: projects/{{title}}
 source: https://github.com/willkrakow
 livesite: "{{title}}"
+publicId: jumpstart_ace9bm
 ---
 I completed this project while employed at PlantPure, Inc., a plant-based foods and education company.
 

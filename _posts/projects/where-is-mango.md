@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Where is Mango?
-thumbnail: images/mango.jpeg
+thumbnail: images/mango.jpg
 stack:
   - React
   - Styled Components
@@ -10,8 +10,8 @@ stack:
 slug: projects/where-is-mango
 source: https://github.com/willkrakow
 livesite: https://www.whereismango.com
+publicId: whereismango_uqjmyc
 ---
-## Background
 In the middle of the pandemic my girlfriend and I got a cat. We named her* Mango, and though she cute and, at only a few weeks old, adorably klutzy, she quickly became too much to handle inside our small riverside cottage. So we started letting her outside.
 
 At first she was too timid to even leave the porch. Not long after that, she would venture to the edge of our backyard and then scamper on home at the slightest chitter from a squirrel.

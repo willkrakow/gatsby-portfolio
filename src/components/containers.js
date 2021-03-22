@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import { Container, Row, Col } from "react-bootstrap"
-import { BioText, BioHeader } from "./Typography"
+import { BioText, BioHeader, } from "./Typography"
 import PropTypes from "prop-types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
@@ -77,30 +77,18 @@ FullContainer.defaultProps = {
 }
 
 const WrapperText = styled.span`
-  opacity: 0.2;
+  opacity: 0.4;
+  color: #7026b9;
 `
-
-WrapperText.propTypes = {
-  className: PropTypes.string,
-}
-
-WrapperText.defaultProps = {
-  className: "text-info",
-}
 
 export const PageBanner = ({ title, subtitle, nospan }) => (
   <FancyContainer fluid className="pt-5 pb-2">
     <Row>
       <Col xs={12} className="text-center">
         <h1 className="display-4 pt-2 pb-3 text-dark">
-          <WrapperText hidden={nospan}>
-            &#60;
-          </WrapperText>
-          {title}
-          <WrapperText hidden={nospan}>
-            {" "}
-            /&#62;
-          </WrapperText>
+          <WrapperText>&#60;</WrapperText>
+          <span className="text-dark">{title}</span>
+          <WrapperText> /&#62;</WrapperText>
         </h1>
         <BioText className="text-light">{subtitle}</BioText>
       </Col>
@@ -123,9 +111,9 @@ PageBanner.defaultProps = {
 
 
 export const PostBanner = ({ title, date, timeToRead, backLink, stack }) => (
-  <Container fluid className="pt-5 pb-2">
+  <Container className="pt-5 pb-2">
     <Row className="justify-content-center">
-      <Col xs={12} md={8} lg={7} xl={6}>
+      <Col xs={12} md={10} xl={8}>
         <Link to={backLink} className="text-secondary">
           <FontAwesomeIcon icon={faArrowLeft} className="text-info" />
           &nbsp;All {backLink.slice(1)}
@@ -168,7 +156,7 @@ StackList.propTypes = {
 }
   
 
-const FeaturedImageCol = styled(Col).attrs(props => ({
+export const FeaturedImageCol = styled(Col).attrs(props => ({
   xs: 12,
   md: 8,
   lg: 7,
@@ -211,17 +199,18 @@ export const ResponsiveImg = styled.img`
   margin: auto;
   display: block;
   height: auto;
+  max-width: 350px;
 `
 
 export const PostWrapper = ({ htmlAst, img }) => (
-  <Container fluid>
+  <Container>
     <Row className="justify-content-center">
-      <Col xs={12} md={8} lg={7} xl={6}>
+      <Col xs={12} md={10} xl={8}>
         {img ? <ResponsiveImg variant="top" src={`/${img}`} /> : null}
       </Col>
     </Row>
     <Row className="justify-content-center">
-      <Col xs={12} md={8} lg={7} xl={6}>
+      <Col xs={12} md={7} xl={8}>
         {renderAst(htmlAst)}
       </Col>
     </Row>
@@ -235,6 +224,6 @@ PostWrapper.propTypes = {
 
 PostWrapper.defaultProps = {
   html: "<p>Something went wrong. There's No content in this post yet.</p>",
-  img:
-    "https://images.pexels.com/photos/374918/pexels-photo-374918.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  img: "https://images.pexels.com/photos/374918/pexels-photo-374918.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
 }
+

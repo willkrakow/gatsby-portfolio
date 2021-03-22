@@ -1,8 +1,8 @@
 import React from "react"
-import { Row, Col } from "react-bootstrap"
+import { Row, Col, Container } from "react-bootstrap"
 import Layout from "../components/layout"
 import Article from "../components/Article"
-import { PageBanner, FancyContainer } from "../components/containers"
+import { PageBanner } from "../components/containers"
 import { graphql } from "gatsby"
 
 
@@ -11,21 +11,29 @@ export default function Writing({ data }) {
   const { edges } = allMarkdownRemark
 
   return (
-    <Layout pageTitle="Projects" pageDescription="A collection of personal and professional development projects." >
+    <Layout
+      pageTitle="Projects"
+      pageDescription="A collection of personal and professional development projects."
+    >
       <PageBanner
         title="Projects"
         subtitle="Personal, professional, and more."
         nospan
       />
-      <FancyContainer>
+      <Container>
         <Row className="justify-content-center">
-          <Col xs={12} md={8} xl={6}>
+          <Col xs={12} md={10}>
             {edges.map((article, index) => (
-              <Article index={index} key={index} article={article} type="projects" />
+              <Article
+                index={index}
+                key={index}
+                article={article}
+                type="projects"
+              />
             ))}
           </Col>
         </Row>
-      </FancyContainer>
+      </Container>
     </Layout>
   )
 }
@@ -41,6 +49,7 @@ export const query = graphql`
             slug
             date
             stack
+            publicId
           }
           html
           excerpt(format: PLAIN)

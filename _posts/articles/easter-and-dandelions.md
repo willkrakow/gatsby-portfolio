@@ -4,6 +4,7 @@ date: 2021-01-21T14:33:53.413Z
 title: Easter and Dandelions
 thumbnail: images/dandelion.jpeg
 slug: easter-and-dandelions
+publicId: dandelionandme_xb5bxm
 ---
 Dandelion came up to see me this weekend. Well, she actually wasn’t Dandelion until much later in this story. So for now I’ll use her off-trail name, her real name—Laura.
 

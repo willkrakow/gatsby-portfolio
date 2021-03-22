@@ -3,8 +3,6 @@ import { Row, Col, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faShopify, faNodeJs, faFigma, faCss3, faPython, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
-import { BioText, BioHeader, LabelText } from './Typography'
-import { FancyContainer } from './containers'
 
 const Icon = styled(FontAwesomeIcon)`
 transition: 0.2s;
@@ -59,17 +57,10 @@ const icons = [
   },
 ]
 
-
 const TechIcons = () => {
-
   return (
-    <FancyContainer>
-      <Row className="justify-content-center align-items-center">
-        <Col xs={12} md={5} xl={4}>
           <Container fluid>
-            <Row
-              className="justify-content-center"
-            >
+            <Row className="justify-content-center">
               {icons.map((icon, index) => (
                 <Col
                   key={index}
@@ -87,21 +78,6 @@ const TechIcons = () => {
               ))}
             </Row>
           </Container>
-        </Col>
-        <Col
-          xs={{ span: 12, order: "first" }}
-          md={{ span: 5, order: "second" }}
-          xl={{ span: 4, order: "second"}}
-        >
-          <LabelText>Skillset</LabelText>
-          <BioHeader>Stacks? I've got 'em.</BioHeader>
-          <BioText>
-            I know that was lame but so am I. Anywho, here's a brief list of the
-            technologies I've worked with the most.
-          </BioText>
-        </Col>
-      </Row>
-    </FancyContainer>
   )
 }
 

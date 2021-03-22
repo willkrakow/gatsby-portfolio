@@ -1,8 +1,7 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import JobDescription from './JobDescription';
 import { BioHeader, LabelText, ColorHeader, BioText } from './Typography'
-import { FancyContainer } from './containers'
 
 const ResumeSection = () => {
 
@@ -46,13 +45,13 @@ const ResumeSection = () => {
   }
 
   return (
-    <FancyContainer>
+    <Container>
       <Row className="justify-content-center">
-        <Col xs={12} md={7}>
+        <Col xs={12} md={10} xl={8}>
           <LabelText>Experience</LabelText>
           <BioHeader>
             Sufficiently Experienced
-            <br /> (if I do say so myself)
+            {<br />} (if I do say so myself)
           </BioHeader>
           <BioText>
             I've jumped around a lot and run around a lot and walked a bunch
@@ -62,7 +61,7 @@ const ResumeSection = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col xs={12} md={7}>
+        <Col xs={12} md={10} xl={8}>
           {jobData.map((job, index) => (
             <div key={index} className="mt-3 mb-5">
               <ColorHeader>{job.role}</ColorHeader>
@@ -76,14 +75,14 @@ const ResumeSection = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col xs={12} md={7}>
+        <Col xs={12} md={10} xl={8}>
           <LabelText>Education</LabelText>
           <BioHeader>{educationData.school}</BioHeader>
           <BioText>{educationData.major}</BioText>
           <BioText lighter>{educationData.gradYear}</BioText>
         </Col>
       </Row>
-    </FancyContainer>
+    </Container>
   )
 }
 export default ResumeSection

@@ -9,8 +9,8 @@ stack:
 slug: gpx-parser
 source: https://github.com/willkrakow/gps-grapher
 livesite: https://adoring-goldwasser-a7c4c6.netlify.app/
+publicId: gpxparser_rp1sxh
 ---
-### Background
 Back when I was a runner, cyclist and triathlete, the most frequented app on my phone was [Strava](https://strava.com/).
 
 If you're unfamiliar with Strava, imagine if Instagram and MapMyRun had a lovechild. Strava is the offspring. It's social media for endurance athletes.
