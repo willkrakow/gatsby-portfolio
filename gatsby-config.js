@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path")
 require("dotenv").config()
 module.exports = {
   siteMetadata: {
@@ -84,24 +84,9 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-transition-link`,
-    `gatsby-plugin-netlify-cms`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-relative-images`,
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 590,
-            },
-          },
-        ],
-      },
-    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-twitter`,
     {
@@ -115,5 +100,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require("sass"),
+      },
+    },
   ],
 }

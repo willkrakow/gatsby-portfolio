@@ -12,6 +12,7 @@ slug: our-wedding
 source: https://github.com/willkrakow/wedding-plans
 livesite: https://campbellkrakow.com
 publicId: wedding_byxwpi
+description: My wedding website, built with Gatsby.
 ---
 I spent a good long while debating whether to include this project. It's far more personal than any of my other projects, and in terms of content (i.e., "What *are* our wedding plans?"), it's far from complete. Nevertheless, I'm proud of the result, the implementation, and most importantly, the motivation.
 

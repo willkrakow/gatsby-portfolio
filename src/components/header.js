@@ -31,8 +31,7 @@ export default function Header({menuLinks}) {
             <Nav className="text-right">
               {menuLinks.map((link, index) => (
                   <ColorAniLink
-                  
-                  morphTo
+                  fade
                     activeStyle={{
                       fontWeight: "bolder",
                     }}

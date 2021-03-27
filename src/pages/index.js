@@ -14,7 +14,7 @@ const sections = [
     textColumn: {
       label: "About me",
       title: "Hi there!",
-      description: "My name's Will. I'm a developer with a background in mathematics and an affection for intuitive, original designs. Currently, I work at PlantPure, a plant-based food and education company where my job duties range from web development to copywriting and market research. In my spare time I like to hike, ride bikes, and play around with new Javascript libraries. Anyways, enough of the dating-profile-esque intro. Keep reading to learn more about me and my work.",
+      description: "My name's Will. I'm a full-stack developer from Hillsborough, NC, with a background in mathematics and an affection for intuitive, original designs. In my spare time I like to hike, ride bikes, and play around with new Javascript libraries. I am seeking full time or contract employment. Keep reading to learn more about me and my work.",
     },
     cta: {
       label: "View resume",
@@ -26,8 +26,8 @@ const sections = [
   {
     textColumn: {
       label: "Projects",
-      title: "Personal forays into development",
-      description: "I primary work on the frontend, and have recently taken a liking to the JAMstack architecture. Nevertheless, I've also worked extensively in Node.js on projects large and small, for both complete servers and lambda functions. Beyond web dev, I like using Python for web scraping, data analytics, and machine learning via Tensorflow/Keras.",
+      title: "Things I've built",
+      description: "I primary work on the frontend, and have recently taken a liking to the JAMstack architecture. I've also worked extensively in Node.js on projects large and small, for both complete servers and serverless functions. Beyond web dev, I like using Python for web scraping, data analytics, and machine learning via Tensorflow/Keras.",
       
     },
     cta: {
@@ -40,29 +40,52 @@ const sections = [
   {
     textColumn: {
       label: "Skillset",
-      title: "Stacks? I've got 'em.",
+      title: "Tech I love",
       description:
-        "I know that was lame but so am I. Anywho, here's a brief list of the technologies I've worked with the most.",
+        "These are the libraries, frameworks, languages and tools that I like to use when building personal projects. I'm always open to adding to my toolbox and embracing new technologies.",
     },
     right: TechIcons,
   },
 ]
+
+// const data = useStaticQuery(graphql`
+//   {
+//     allFile(
+//       filter: { extension: { eq: "png" }, relativePath: { eq: "me.png" } }
+//     ) {
+//       edges {
+//         node {
+//           relativePath
+//           childImageSharp {
+//             gatsbyImageData(layout: CONSTRAINED, formats: AUTO, width: 400)
+//           }
+//         }
+//       }
+//     }
+//   }
+// `)
+
   return (
     <Layout
       pageTitle="Home"
       pageDescription="William Krakow | Developer Portfolio"
     >
       <Hero>
-        <StaticImage src="../images/me.JPG" layout="constrained" alt="" width={300} />
+        <StaticImage
+          src="/Users/williamkrakow/dev/gatsby-site/src/images/me.JPG"
+          alt="Me, sitting in a chair, shooting with a 35mm camera"
+        />
       </Hero>
       {sections.map((section, index) => (
-        <TwoColumns
-          key={index}
-          textColumn={section.textColumn}
-          cta={section.cta || null}
-        >
-          {section.right}
-        </TwoColumns>
+        <section>
+          <TwoColumns
+            key={index}
+            textColumn={section.textColumn}
+            cta={section.cta || null}
+          >
+            {section.right}
+          </TwoColumns>
+        </section>
       ))}
     </Layout>
   )

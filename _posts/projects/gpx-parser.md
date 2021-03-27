@@ -9,6 +9,7 @@ stack:
 slug: gpx-parser
 source: https://github.com/willkrakow/gps-grapher
 livesite: https://adoring-goldwasser-a7c4c6.netlify.app/
+description: A client-side tool for parsing .gpx files.
 publicId: gpxparser_rp1sxh
 ---
 Back when I was a runner, cyclist and triathlete, the most frequented app on my phone was [Strava](https://strava.com/).

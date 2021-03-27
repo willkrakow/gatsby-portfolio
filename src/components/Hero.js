@@ -33,7 +33,7 @@ const Hero = (props) => {
             className="text-center d-flex justify-content-center"
           >
             <HeroImg>
-              <div style={{ zIndex: "10" }}>{props.children}</div>
+              <div style={{ zIndex: "10", width: "300px" }}>{props.children}</div>
             </HeroImg>
           </Col>
         </Row>
@@ -42,9 +42,9 @@ const Hero = (props) => {
             <HeroHeader className="text-light d-block w-100 font-weight-bold display-3">
               William Krakow
             </HeroHeader>
-            <h3 className="text-light font-weight-lighter d-inline">
+            <h2 className="text-light font-weight-lighter d-inline text-smaller">
               Dev | Designer | Writer
-            </h3>
+            </h2>
             <div className="d-flex w-100 align-center h-100 justify-content-center">
               <Link to="/projects" alt="Projects | William Krakow">
                 <BlackButton className="align-self-start">Projects</BlackButton>

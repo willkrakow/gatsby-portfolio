@@ -11,6 +11,7 @@ slug: where-is-mango
 source: https://github.com/willkrakow/mango-cra-node
 livesite: https://www.whereismango.com
 publicId: whereismango_uqjmyc
+description: What's the most supererogatory thing you've done during quarantine? I'll go first.
 ---
 In the middle of the pandemic my girlfriend and I got a cat. We named her* Mango, and though she cute and, at only a few weeks old, adorably klutzy, she quickly became too much to handle inside our small riverside cottage. So we started letting her outside.
 

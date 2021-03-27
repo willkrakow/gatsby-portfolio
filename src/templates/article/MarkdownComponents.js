@@ -9,6 +9,7 @@ export const OrderedList = styled.ol`
     counter-increment: item;
     line-height: 1.75em;
     padding-left: 2em;
+    margin-bottom: 1em;
 
     &::before {
       content: counter(item) ".";

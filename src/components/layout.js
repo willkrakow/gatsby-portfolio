@@ -4,6 +4,7 @@ import Header from './header.js';
 import SEO from './SEO'
 import Footer from './Footer';
 import styled from 'styled-components'
+import '../custom.scss'
 
 const Main = styled.main`
 min-height: 100vh;

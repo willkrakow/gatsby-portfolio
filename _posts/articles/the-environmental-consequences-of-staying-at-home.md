@@ -4,6 +4,7 @@ date: 2021-01-23T15:15:31.415Z
 title: The Environmental Consequences of Staying at Home
 thumbnail: images/environment.jpeg
 slug: the-environmental-consequences-of-staying-at-home
+description: There's both a figurative and literal brightside to this pandemic.
 publicId: environment_ljhlqz
 ---
 In the past month, more than 20 million Americans have filed for unemployment. Many others have lost their jobs but have been unable to file for benefits due to outdated and overloaded systems. Citing this drastic reduction in the national workforce, analysts at Credit Suisse estimate that our nation’s GDP will drop by an unprecedented 33.5% next quarter. For context, during the worst quarter of the 2008 financial crisis, the United States GDP dropped by just 8.4%.

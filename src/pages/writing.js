@@ -20,7 +20,7 @@ export default function Writing({data}) {
           <Row className="justify-content-center">
             <Col xs={12} md={10}>
               {edges.map((article, index) => (
-                <Article index={index} key={index} article={article} type="articles" />
+                <Article index={index} key={index} article={article} />
               ))}
             </Col>
           </Row>
@@ -39,8 +39,10 @@ export const query = graphql`
             title
             thumbnail
             slug
+            layout
             date
             publicId
+            description
           }
           html
           excerpt(format: PLAIN)

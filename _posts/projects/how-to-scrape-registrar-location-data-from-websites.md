@@ -1,23 +1,22 @@
 ---
-layout: article
-date: 2021-02-18T02:17:40.796Z
+layout: project
 title: How to scrape registrar location data from websites
 thumbnail: images/globe.jpeg
 slug: scraping-registrar-location-data
+stack:
+    - Python
 publicId: globe_vwzs74
+source: https://github.com/willkrakow/country_lookup
+description: Use Python and the IPInfo API to parse an entire dataset of bloggers, companies, etc.
 ---
 
-## Source
-[View the source on GitHub](https://github.com/willkrakow/country_lookup).
-
-## Background
 A while back my company acquired a list of prominent bloggers in our industry. We hoped to reach out to these bloggers to promote our then recently launched influencer program. However, one thing missing from the list was the location data for each blogger. With GDPR in mind, I wanted to be very cautious about who we contacted; the US has much more lenient laws about unsolicited emails, so I wanted to identify which of the bloggers' sites had IPs registered in the US.
 
 My first thought was to spend a day looking up domain and whois info on [the ICANN database](https://lookup.icann.org). However, being lazy, and a programmer, I thought "I should be able to automate this".
 
 And so, enter Python and [IPInfo](https://ipinfo.io).
 
-Here's an overview of the method I used.
+Here's an overview of the method I used. You can also [view the source on GitHub](https://github.com/willkrakow/country_lookup).
 
 ## Tools
 

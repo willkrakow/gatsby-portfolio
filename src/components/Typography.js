@@ -50,6 +50,7 @@ export const BioText = styled.p.attrs(props => ({
 }))`
   font-size: 1rem;
   line-height: 1.5em;
+  font-weight: 300;
 `
 
 export const ColorText = styled.p.attrs(props => ({
@@ -68,7 +69,7 @@ export const ColorLink = styled(Link).attrs(props => ({
 }))`
   box-shadow: inset 0 -0.1em 0 rgba(23, 162, 184, 0.5);
   line-height: 2em;
-  font-size: 1.125em;
+  font-size: 1em;
   border: none;
   padding: 0 1em;
   margin: auto 0.5em;
@@ -78,7 +79,7 @@ export const ColorLink = styled(Link).attrs(props => ({
   transition: all 0.5s ease;
   &:hover {
     box-shadow: 0px 0.25em 0 rgba(23, 162, 184, 0.5);
-    background: rgba(23, 162, 184, 0.1);
+    background: rgba(23, 162, 184, 0.2);
     text-decoration: none;
   }
   &:link {
@@ -137,17 +138,17 @@ export const ColorAniLink = styled(AniLink).attrs(props => ({
 export const ColorURL = styled.a`
   box-shadow: inset 0 -0.1em 0 rgba(253, 29, 29, 0.5);
   line-height: 2em;
-  font-size: 1.125em;
+  font-size: 1em;
   border: none;
   padding: 0 1em;
   margin: auto 0.5em;
   border-radius: 1em 0 1em 0;
   background: transparent;
   display: inline;
-  transition: all 0.5s ease;
+  transition: all 0.3s linear;
   &:hover {
     box-shadow: 0px 0.25em 0 rgba(253, 29, 29, 1);
-    background: rgba(253, 29, 29, 0.1);
+    background: rgba(253, 29, 29, 0.2);
     text-decoration: none;
   }
   &:link {

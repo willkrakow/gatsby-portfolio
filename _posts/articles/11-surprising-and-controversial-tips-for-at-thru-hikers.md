@@ -4,6 +4,7 @@ date: 2019-05-25T14:11:00.000Z
 title: 11 Surprising and Controversial Tips for AT Thru-hikers
 thumbnail: images/attripping.jpeg
 slug: 11-surprising-and-controversial-tips-for-at-thru-hikers
+description: Everyone has their own rules and beliefs about how to hike a trail. These are mine. For legal purposes, this is a joke.
 publicId: attripping_xzvtn2
 ---
 1. Don’t carry full water bottles up every goddamn mountain. Drink at the bottom, where there’s usually a good source, then fill your bottles halfway.

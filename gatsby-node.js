@@ -13,7 +13,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ) {
         edges {
           node {
-            excerpt(pruneLength: 250)
+            excerpt(pruneLength: 300)
             htmlAst
             id
             frontmatter {
@@ -22,6 +22,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               title
               slug
               publicId
+              description
             }
           }
         }
@@ -52,7 +53,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         ) {
           edges {
             node {
-              excerpt(pruneLength: 250)
+              excerpt(pruneLength: 300)
               htmlAst
               id
               frontmatter {
@@ -60,7 +61,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 title
                 slug
                 layout
+                livesite
+                source
                 publicId
+                description
               }
             }
           }

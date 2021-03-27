@@ -1,10 +1,11 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import { Container, Row, Col } from "react-bootstrap"
-import { BioText, BioHeader, } from "./Typography"
+import { BioText, BioHeader, ColorURL, } from "./Typography"
 import PropTypes from "prop-types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+import { faArrowLeft, faEye } from "@fortawesome/free-solid-svg-icons"
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Link } from "gatsby"
 import RehypeReact from "rehype-react"
 import { UnorderedList, OrderedList, BlockQuote, CodeBlock } from "../templates/article/MarkdownComponents"
@@ -110,7 +111,7 @@ PageBanner.defaultProps = {
 }
 
 
-export const PostBanner = ({ title, date, timeToRead, backLink, stack }) => (
+export const PostBanner = ({ title, date, timeToRead, backLink, stack, livesite, source }) => (
   <Container className="pt-5 pb-2">
     <Row className="justify-content-center">
       <Col xs={12} md={10} xl={8}>
@@ -122,6 +123,8 @@ export const PostBanner = ({ title, date, timeToRead, backLink, stack }) => (
         <BioText className="text-secondary">{date}</BioText>
         <BioText lighter>{timeToRead} min read</BioText>
         {stack && <StackList stack={stack} />}
+        {livesite && <a href={livesite} alt={title}><FontAwesomeIcon icon={faEye} color="inherit" />&nbsp;Live site</a>}
+        {source && <ColorURL href={source} alt={`${title} | GitHub`}><FontAwesomeIcon color="inherit" icon={faGithub} />&nbsp;Source</ColorURL>}
       </Col>
     </Row>
   </Container>
@@ -132,6 +135,9 @@ PostBanner.propTypes = {
   date: PropTypes.string,
   timeToRead: PropTypes.string,
   backLink: PropTypes.string,
+  stack: PropTypes.arrayOf(PropTypes.string),
+  livesite: PropTypes.string,
+  source: PropTypes.string,
 }
 
 PostBanner.defaultProps = {
@@ -143,10 +149,14 @@ PostBanner.defaultProps = {
 export const StackList = ({ stack }) => (
   <>
     {stack.map((tech, index) => (
-      <BioText key={index} lighter className={`d-inline-block`}>
-        {index > 0 && <span className="mx-2 d-inline-block">|</span>}
+      <p
+        key={index}
+        lighter
+        className={`d-inline-block mb-4 mr-2 px-3 text-light rounded-pill font-weight-light`}
+        style={{ backgroundColor: "#7026b9", }}
+      >
         {tech}
-      </BioText>
+      </p>
     ))}
   </>
 )
@@ -179,6 +189,11 @@ const PostImage = styled.img`
 max-width: 100%;
 height: auto;
 margin: 2em auto;
+display: block;
+`
+
+export const WrapLink = styled.a`
+  overflow-wrap: anywhere;
 `
 
 const renderAst = new RehypeReact({
@@ -191,26 +206,28 @@ const renderAst = new RehypeReact({
     blockquote: BlockQuote,
     pre: CodeBlock,
     img: PostImage,
+    a: WrapLink,
   },
 }).Compiler
+
 
 export const ResponsiveImg = styled.img`
   width: 100%;
   margin: auto;
   display: block;
   height: auto;
-  max-width: 350px;
+  margin-bottom: 1rem;
 `
 
 export const PostWrapper = ({ htmlAst, img }) => (
   <Container>
     <Row className="justify-content-center">
-      <Col xs={12} md={10} xl={8}>
+      <Col xs={12} md={8} xl={8}>
         {img ? <ResponsiveImg variant="top" src={`/${img}`} /> : null}
       </Col>
     </Row>
     <Row className="justify-content-center">
-      <Col xs={12} md={7} xl={8}>
+      <Col xs={12} md={8} xl={8}>
         {renderAst(htmlAst)}
       </Col>
     </Row>
