@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Row, Col, Container } from "react-bootstrap"
+import { Row, Col, Container, Dropdown, Button } from "react-bootstrap"
 import Layout from "../components/layout"
 import Project from "../components/Project"
 import { PageBanner } from "../components/containers"
@@ -28,6 +28,43 @@ justify-content: center;
 flex-wrap: wrap;
 align-items: center;
 padding: 16px;
+@media(max-width: 576px) {
+  display: none;
+}
+`
+
+const MobileSortBox = styled(Dropdown)`
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgba(112, 38, 205, 0.4);
+  border-radius: 8px;
+  margin: 0 32px;
+  @media (min-width: 576px) {
+    display: none;
+  }
+  button {
+    flex: 0 0 100%;
+    display: inline-block;
+  }
+  div.dropdown-menu {
+    width: 100%;
+    padding: 8px 16px;
+  }
+`
+
+const FancyDropdownItem = styled(Dropdown.Item)`
+  background-color: ${props => (props.selected ? "#7026b9" : "#fafafa")};
+  color: ${props => (props.selected ? "#fafafa" : "#7026b9")};
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  padding: 8px;
+  &:hover {
+    background-color: ${props =>
+      props.selected ? "rgb(132 58 205)" : "rgba(112, 38, 205, 0.4)"};
+  }
 `
 
 export default function Writing({ data }) {
@@ -104,9 +141,9 @@ export default function Writing({ data }) {
       <Container>
         <Row className="justify-content-center">
           <Col xs={12} md={4}>
-            <SortBox>
+            <SortBox className="d-xs-none d-md-flex">
               <BioText fade gray className="text-left w-100 mb-1">
-                Tech
+                Filter
               </BioText>
               {techItems.map((btn, index) => (
                 <SortButton
@@ -119,14 +156,21 @@ export default function Writing({ data }) {
                 </SortButton>
               ))}
             </SortBox>
+            <MobileSortBox>
+              <Dropdown.Toggle variant="light" id="dropdown-basic">
+                Filter
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                {techItems.map((btn, index) => (
+                  <FancyDropdownItem as={Button} key={index} selected={toQuery.includes(btn)} value={btn} onClick={handleClick}>{btn}</FancyDropdownItem>
+                ))}
+              </Dropdown.Menu>
+            </MobileSortBox>
           </Col>
           <Col xs={12} md={8}>
             {filtered.map((article, index) => (
-              <Project
-                index={index}
-                key={index}
-                article={article}
-              />
+              <Project index={index} key={index} article={article} />
             ))}
           </Col>
         </Row>
