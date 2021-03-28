@@ -92,11 +92,9 @@ module.exports = {
     {
       resolve: `gatsby-source-cloudinary`,
       options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-        resourceType: `image`,
-        context: true,
+        cloudName: "djmk8xgrk",
+        apiKey: "184146695825149",
+        apiSecret: "85vjJdeFW_BY75FXU-xIQJ8BRPA",
       },
     },
     `gatsby-plugin-netlify`,

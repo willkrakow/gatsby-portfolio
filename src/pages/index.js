@@ -5,8 +5,26 @@ import TechIcons from "../components/TechIcons.js"
 import SocialLinks from "../components/SocialLinks.js"
 import ProjectList from '../components/ProjectList.js'
 import TwoColumns from "../components/TwoColumns.js"
-import { StaticImage } from 'gatsby-plugin-image'
+import styled, { keyframes } from 'styled-components'
 
+const backgroundDrift = keyframes`
+0% {
+  background-position: top left;
+}
+
+100% {
+  background-position: top right;
+}
+`
+
+const ImageWrapper = styled.img`
+width: 300px;
+height: 300px;
+background: linear-gradient(to bottom right, rgba(200, 200, 200, 0.4), rgba(200, 200, 200, 0.2));
+background-size: 400%;
+overflow: hidden;
+animation: 0.5s ${backgroundDrift} linear infinite;
+`
 export default function Home() {
 
 const sections = [
@@ -48,31 +66,14 @@ const sections = [
   },
 ]
 
-// const data = useStaticQuery(graphql`
-//   {
-//     allFile(
-//       filter: { extension: { eq: "png" }, relativePath: { eq: "me.png" } }
-//     ) {
-//       edges {
-//         node {
-//           relativePath
-//           childImageSharp {
-//             gatsbyImageData(layout: CONSTRAINED, formats: AUTO, width: 400)
-//           }
-//         }
-//       }
-//     }
-//   }
-// `)
-
   return (
     <Layout
       pageTitle="Home"
       pageDescription="William Krakow | Developer Portfolio"
     >
       <Hero>
-        <StaticImage
-          src="/Users/williamkrakow/dev/gatsby-site/src/images/me.JPG"
+        <ImageWrapper
+          src="https://res.cloudinary.com/djmk8xgrk/image/upload/w_300,ar_1:1,c_fill,g_auto,e_sharpen/v1616892366/Portfolio/mynolta.jpg"
           alt="Me, sitting in a chair, shooting with a 35mm camera"
         />
       </Hero>
