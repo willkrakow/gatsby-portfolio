@@ -73,7 +73,7 @@ const sections = [
     >
       <Hero>
         <ImageWrapper
-          src="https://res.cloudinary.com/djmk8xgrk/image/upload/w_300,ar_1:1,c_fill,g_auto,e_sharpen/v1616892366/Portfolio/mynolta.jpg"
+          src="https://res.cloudinary.com/djmk8xgrk/image/upload/w_300,ar_1:1,c_fill,g_auto,e_sharpen/v1616892366/Portfolio/mynolta.png"
           alt="Me, sitting in a chair, shooting with a 35mm camera"
         />
       </Hero>

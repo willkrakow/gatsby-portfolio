@@ -10,6 +10,7 @@ import { BioText } from '../components/Typography'
 const SortButton = styled.button`
   border: none;
   width: 100%;
+  margin-bottom: 0.25em;
   text-align: left;
   background-color: ${props => (props.selected ? "#7026b9" : "#fafafa")};
   color: ${props => (props.selected ? "#fafafa" : "#7026b9")};
@@ -60,6 +61,7 @@ const FancyDropdownItem = styled(Dropdown.Item)`
   width: 100%;
   border: none;
   text-align: left;
+  margin-bottom: 0.25em;
   padding: 8px;
   &:hover {
     background-color: ${props =>
@@ -157,7 +159,7 @@ export default function Writing({ data }) {
               ))}
             </SortBox>
             <MobileSortBox>
-              <Dropdown.Toggle variant="light" id="dropdown-basic">
+              <Dropdown.Toggle variant="light" id="dropdown-basic" className="mb-1">
                 Filter
               </Dropdown.Toggle>
 

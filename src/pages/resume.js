@@ -3,8 +3,6 @@ import Layout from '../components/layout'
 import { PageBanner } from '../components/containers'
 import ResumeSection from '../components/ResumeSection'
 
-
-
 export default function Resume() {
     return (
       <Layout

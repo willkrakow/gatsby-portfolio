@@ -13,22 +13,22 @@ livesite: https://www.whereismango.com
 publicId: whereismango_uqjmyc
 description: What's the most supererogatory thing you've done during quarantine? I'll go first.
 ---
-In the middle of the pandemic my girlfriend and I got a cat. We named her* Mango, and though she cute and, at only a few weeks old, adorably klutzy, she quickly became too much to handle inside our small riverside cottage. So we started letting her outside.
+In the middle of the pandemic my girlfriend and I got a cat. We named her* Mango, and though she was cute and, at only a few weeks old, adorably klutzy, she quickly became too much to handle inside our small riverside cottage. So we started letting her outside.
 
 At first she was too timid to even leave the porch. Not long after that, she would venture to the edge of our backyard and then scamper on home at the slightest chitter from a squirrel.
 
 But within a few weeks, Mango began dissappearing for hours at a time. My now-fiancé and I would pretend not to worry, at least until the sun set.
 
-Once, the neighbors found her without a collar and sent them off to a friend's house. Another time, I got a knock on the door from a woman who lived a quarter mile away, who said she had discovered Mango lounging in the street in front of her house. On Thanksgiving, I got a message on Nextdoor that Mango was playing in the stream behind my old apartment complex, nearly a mile down the road.
+Once, the neighbors found her without a collar and sent her off to a friend's house. Another time, I got a knock on the door from a woman who lived a quarter mile away, who said she had discovered Mango lounging in the street in front of her house. On Thanksgiving, I got a message on Nextdoor that Mango was playing in the stream behind my old apartment complex, nearly a mile down the road.
 
-Through all this, she didn't have a collar, but was known throughout the neighborhood thanks to her fiesty and quirky personality. Nevertheless, we decided it was time to do something to ensure that no matter how far she wandered, we - or whoever found her - would be able to track her and bring her home.
+Through all this, she didn't have a collar, but was known throughout the neighborhood thanks to her fiesty and quirky personality. Nevertheless, we decided it was time to do something to ensure that no matter how far Mango wandered, we - or whoever found her - would be able to track her and bring her home.
 
 My fiancé found a $25 solution on Amazon that included a collar with a QR code badge that linked up to a generic and ad-ridden page you could customize to a limited extent. However, the page didn't have an SSL certificate and there was no way to alter the URL. Plus, Mango lost that collar about 3 days after it arrived.
 
 And so, I decided to throw my own QR code on her collar that redirects to [whereismango.com](https://www.whereismango.com/).
 
 ### How it works
-There are numerous QR code collars on Amazon, but they are expensive and Mango looses collars at an alarming rate. I purchased whereismango.com and created a QR code on [qr.io](https://qr.io).
+There are numerous QR code collars on Amazon, but they are expensive and Mango loses collars at an alarming rate. I purchased whereismango.com and created a QR code on [qr.io](https://qr.io).
 
 ## Whereismango.com
 The site is basically just a React SPA with a form, and a few goodies hidden under the hood.

@@ -37,7 +37,7 @@ background-position: left top;
 animation: 1s ${backgroundShift} ease-in infinite;
 `
 
-const cardAnimation = keyframes`
+export const cardAnimation = keyframes`
 0% {
   transform: translateY(20px);
   opacity: 0.0

@@ -1,5 +1,7 @@
-const path = require("path")
-require("dotenv").config()
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "William Krakow",
@@ -92,9 +94,9 @@ module.exports = {
     {
       resolve: `gatsby-source-cloudinary`,
       options: {
-        cloudName: "djmk8xgrk",
-        apiKey: "184146695825149",
-        apiSecret: "85vjJdeFW_BY75FXU-xIQJ8BRPA",
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
       },
     },
     `gatsby-plugin-netlify`,

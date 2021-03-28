@@ -2,6 +2,13 @@ import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import JobDescription from './JobDescription';
 import { BioHeader, LabelText, ColorHeader, BioText } from './Typography'
+import styled from "styled-components"
+import { cardAnimation } from './Article';
+
+const AnimatedResume = styled(Container)`
+animation: 0.3s ${cardAnimation} ease;
+`
+
 
 const ResumeSection = () => {
 
@@ -45,7 +52,7 @@ const ResumeSection = () => {
   }
 
   return (
-    <Container>
+    <AnimatedResume>
       <Row className="justify-content-center">
         <Col xs={12} md={10} xl={8}>
           <LabelText>Experience</LabelText>
@@ -82,7 +89,7 @@ const ResumeSection = () => {
           <BioText lighter>{educationData.gradYear}</BioText>
         </Col>
       </Row>
-    </Container>
+    </AnimatedResume>
   )
 }
 export default ResumeSection

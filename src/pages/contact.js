@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import { PageBanner } from '../components/containers'
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { BlackButton } from '../components/Typography'
+import { cardAnimation } from "../components/Article"
 
 
 const FancyInput = styled(Form.Control).attrs(props => ({
@@ -18,6 +19,10 @@ const FancyInput = styled(Form.Control).attrs(props => ({
     box-shadow: 0 5px 0 rgba(1, 177, 169, 0.8) !important;
     background: rgba(1, 177, 169, 0.1);
   }
+`
+
+const AnimatedForm = styled(Form)`
+animation: 0.3s ${cardAnimation} ease;
 `
 
 const encode = data => {
@@ -46,7 +51,7 @@ const Contact = () => {
       <Container>
         <Row className="justify-content-center h-100">
           <Col xs={12} md={6} className="text-center">
-            <Form onSubmit={handleSubmit(onSubmit)} data-netlify="true">
+            <AnimatedForm onSubmit={handleSubmit(onSubmit)} data-netlify="true">
               <input
                 ref={register}
                 type="hidden"
@@ -86,7 +91,7 @@ const Contact = () => {
               >
                 Submit
               </BlackButton>
-            </Form>
+            </AnimatedForm>
           </Col>
         </Row>
       </Container>
