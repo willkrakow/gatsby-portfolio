@@ -3,6 +3,8 @@ layout: project
 date: 2021-02-16T13:13:04.861Z
 title: Scraping pricing data from a bad hospital website
 thumbnail: images/computer_desk.jpeg
+stack:
+  - Python
 slug: scraping-pricing-data-from-a-bad-hospital-website
 description: A rant about the state of health care price information in America. Part I.
 publicId: unc-health-price-inhouse

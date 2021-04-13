@@ -13,6 +13,7 @@ stack:
 slug: scraping-pricing-data-from-a-bad-hospital-website-part-two
 description: A project to reveal price information intuitively. Part II.
 publicId: unc-health-price-inhouse
+source: https://github.com/willkrakow/unc_health_price_scraper
 ---
 
 I decided to write a Python script to scrape data from the UNC Rex price estimator. The API endpoint I discovered is at https://portalapprev.com/ptapp/api/cdm/data?_dc=1617216721840&recno=8d086f6527295fbb6f6d253f3b5548b85ef9fcad8319564656464e552fff3d1e. Hitting this endpoint returns the following:

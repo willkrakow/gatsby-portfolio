@@ -6,7 +6,7 @@ import { StackList } from "./containers"
 import styled, { keyframes } from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faEye } from "@fortawesome/free-solid-svg-icons"
+import { faEye, faBook } from "@fortawesome/free-solid-svg-icons"
 
 const cardAnimation = keyframes`
 0% {
@@ -53,6 +53,7 @@ export default function Project({ article, index }) {
                 className="d-inline-block text-dark"
                 to={`/projects/${slug}`}
               >
+                <FontAwesomeIcon icon={faBook} />&nbsp;
                 Read more
               </ColorLink>
               {source && (

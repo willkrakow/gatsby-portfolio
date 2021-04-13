@@ -20,6 +20,8 @@ export default function Project({data}) {
           backLink="/projects"
           timeToRead={timeToRead.toString()}
           stack={frontmatter.stack}
+          livesite={frontmatter.livesite || null}
+          source={frontmatter.source || null}
         />
         <PostWrapper htmlAst={htmlAst} img={frontmatter.thumbnail} />
       </Layout>

@@ -6,8 +6,7 @@ stack:
   - Shopify
   - HTML5
   - CSS3
-slug: supp
-source: https://github.com/willkrakow/
+slug: plantpure-nation
 livesite: https://plantpurenation.com/
 publicId: plantpurenation_gkcjps
 description: An e-commerce website built on Shopify.

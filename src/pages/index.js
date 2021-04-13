@@ -45,11 +45,11 @@ const sections = [
     textColumn: {
       label: "Projects",
       title: "Things I've built",
-      description: "I primary work on the frontend, and have recently taken a liking to the JAMstack architecture. I've also worked extensively in Node.js on projects large and small, for both complete servers and serverless functions. Beyond web dev, I like using Python for web scraping, data analytics, and machine learning via Tensorflow/Keras.",
+      description: "I primarily work on the frontend, and have recently taken a liking to the JAMstack architecture. I've also worked extensively in Node.js on projects large and small, for both complete servers and serverless functions. Beyond web dev, I like using Python for web scraping, data analytics, and machine learning via Tensorflow/Keras.",
       
     },
     cta: {
-        label: "See more",
+        label: "View more projects",
         link: "/projects",
         alt: "Development and Design Projects | William Krakow"
     },
