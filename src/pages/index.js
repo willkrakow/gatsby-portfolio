@@ -78,9 +78,8 @@ const sections = [
         />
       </Hero>
       {sections.map((section, index) => (
-        <section>
+        <section key={index}>
           <TwoColumns
-            key={index}
             textColumn={section.textColumn}
             cta={section.cta || null}
           >
