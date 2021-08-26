@@ -7,7 +7,6 @@ slug: how-to-make-it-look-like-your-computer-is-active
 description: Stop putting a paperweight on your space bar.
 publicId: computer_desk_r3dgnn
 ---
-# Emulating mouse events with macOS
 
 ## With `caffeinate`
 
