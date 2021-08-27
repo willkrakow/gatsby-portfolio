@@ -119,12 +119,14 @@ export const PostBanner = ({ title, date, timeToRead, backLink, stack, livesite,
           <FontAwesomeIcon icon={faArrowLeft} className="text-info" />
           &nbsp;All {backLink.slice(1)}
         </Link>
-        <h1 className="display-4 pt-2 pb-3 text-dark text-left">{title}</h1>
-        <BioText className="text-secondary">{date}</BioText>
-        <BioText lighter>{timeToRead} min read</BioText>
-        {stack && <StackList stack={stack} />}
-        {livesite && <a href={livesite} alt={title}><FontAwesomeIcon icon={faEye} color="inherit" />&nbsp;Live site</a>}
+        <h1 className="display-4 pt-2 pb-3 text-dark mt-5 text-left">{title}</h1>
+        <div className="d-flex mb-4">
+        {livesite && <ColorURL href={livesite} alt={title}><FontAwesomeIcon icon={faEye} color="inherit" />&nbsp;Live site</ColorURL>}
         {source && <ColorURL href={source} alt={`${title} | GitHub`}><FontAwesomeIcon color="inherit" icon={faGithub} />&nbsp;Source</ColorURL>}
+        </div>
+        <BioText className="text-secondary">{date}</BioText>
+        {stack && <StackList stack={stack} />}
+        <BioText lighter>{timeToRead} min read</BioText>
       </Col>
     </Row>
   </Container>
@@ -188,7 +190,7 @@ FeaturedImageCol.propTypes = {
 const PostImage = styled.img`
 max-width: 100%;
 height: auto;
-margin: 2em auto;
+margin: 2rem auto;
 display: block;
 `
 
@@ -213,7 +215,7 @@ const renderAst = new RehypeReact({
 
 export const ResponsiveImg = styled.img`
   width: 100%;
-  margin: auto;
+  margin: 1.5rem auto;
   display: block;
   height: auto;
   margin-bottom: 1rem;
@@ -223,7 +225,7 @@ export const PostWrapper = ({ htmlAst, img }) => (
   <Container>
     <Row className="justify-content-center">
       <Col xs={12} md={8} xl={8}>
-        {img ? <ResponsiveImg variant="top" src={`/${img}`} /> : null}
+        {img ? <ResponsiveImg className="my-4 mb-5 shadow-lg p-2" variant="top" src={`/${img}`} /> : null}
       </Col>
     </Row>
     <Row className="justify-content-center">

@@ -9,7 +9,7 @@ const Logo = styled(Navbar.Brand).attrs(props => ({
   to: "/",
   alt: "Home | William Krakow",
 }))`
-  font-family: 'Playball', cursive;
+  font-family: '"Playball", cursive';
   color: #002c86;
   font-size: 2rem;
 `
@@ -19,7 +19,7 @@ const Logo = styled(Navbar.Brand).attrs(props => ({
 export default function Header({menuLinks}) {
     return (
       <Container>
-        <Navbar collapseOnSelect expand="md" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="md" variant="light">
           <Logo as={Link}>
             WK
           </Logo>

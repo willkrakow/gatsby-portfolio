@@ -8,7 +8,7 @@ const ArticleButton = styled.button`
   background: transparent;
   color: #4f4f4a;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1rem;
   &:hover{
     background-color: #f9f9ff;
   }

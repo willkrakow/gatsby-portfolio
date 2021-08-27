@@ -51,7 +51,7 @@ export const UnorderedList = styled.ul`
     margin-left: -1em;
     font-weight: bold;
     margin-right: 0.375em;
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 `
 

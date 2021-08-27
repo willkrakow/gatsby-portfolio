@@ -1,12 +1,9 @@
 import React from "react"
 import { Row, Col, Card } from "react-bootstrap"
-import { BioText, ColorLink, ColorURL, BioHeader } from "./Typography.js"
+import { BioText, BioHeader, BlackButton } from "./Typography.js"
 import { Link } from "gatsby"
 import { StackList } from "./containers"
 import styled, { keyframes } from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faEye, faBook } from "@fortawesome/free-solid-svg-icons"
 
 const cardAnimation = keyframes`
 0% {
@@ -30,13 +27,13 @@ const AniCard = styled(Card)`
 
 export default function Project({ article, index }) {
 
-  const { slug, stack, source, title, livesite, description } = article.node.frontmatter;
+  const { slug, stack, title, description } = article.node.frontmatter;
 
   return (
     <article>
       <AniCard
         key={index}
-        className="border border-bottom border-right-0 border-top-0 border-left-0"
+        className="my-5"
       >
         <Row>
           <Col xs={12}>
@@ -47,15 +44,11 @@ export default function Project({ article, index }) {
               <div className="w-100"></div>
               {stack && <StackList stack={stack} />}
               <BioText>{description}</BioText>
+              <Link to={`/projects/${slug}`}>
+                <BlackButton>Read more</BlackButton>
+              </Link>
             </Card.Body>
-            <Card.Footer>
-              <ColorLink
-                className="d-inline-block text-dark"
-                to={`/projects/${slug}`}
-              >
-                <FontAwesomeIcon icon={faBook} />&nbsp;
-                Read more
-              </ColorLink>
+            {/* <Card.Footer>
               {source && (
                 <ColorURL
                   href={source}
@@ -76,7 +69,7 @@ export default function Project({ article, index }) {
                   &nbsp; Live site
                 </ColorURL>
               )}
-            </Card.Footer>
+            </Card.Footer> */}
           </Col>
         </Row>
       </AniCard>

@@ -10,6 +10,7 @@ export const HeroHeader = styled.h1.attrs(props => ({
 display: block;
 width: 100%;
 font-weight: bold;
+margin-top: 1rem;
 `
 
 export const HeroSub = styled.h2.attrs(props => ({
@@ -21,6 +22,7 @@ export const BioHeader = styled.h3.attrs(props => ({
 }))`
   font-size: 2rem;
   line-height: 1.25em;
+  margin-bottom: 1rem;
 `
 
 export const ColorHeader = styled.h4.attrs(props => ({
@@ -49,7 +51,7 @@ export const BioText = styled.p.attrs(props => ({
   className: `${props.lighter ? "text-info" : "text-dark"} ${props.gray && "text-muted"}`
 }))`
   font-size: 1rem;
-  line-height: 1.5em;
+  line-height: 1.5rem;
   font-weight: 300;
 `
 
@@ -69,10 +71,10 @@ export const ColorLink = styled(Link).attrs(props => ({
 }))`
   box-shadow: inset 0 -0.1em 0 rgba(23, 162, 184, 0.5);
   line-height: 2em;
-  font-size: 1em;
+  font-size: 1rem;
   border: none;
   padding: 0 1em;
-  margin: auto 0.5em;
+  margin: 0.5em;
   border-radius: 1em 0 1em 0;
   background: rgba(23, 162, 184, 0.0);
   display: inline;
@@ -93,7 +95,7 @@ export const ColorSpan = styled.span.attrs(props => ({
 }))`
   box-shadow: inset 0 -0.1em 0 rgba(23, 162, 184, 0.5);
   line-height: 2em;
-  font-size: 1.125em;
+  font-size: 1.125rem;
   border: none;
   padding: 0 1em;
   margin: 0.5em;
@@ -117,7 +119,7 @@ export const ColorAniLink = styled(AniLink).attrs(props => ({
 }))`
   box-shadow: inset 0 -0.1em 0 rgba(23, 162, 184, 0.5);
   line-height: 2em;
-  font-size: 1.125em;
+  font-size: 1.125rem;
   border: none;
   padding: 0 1em;
   margin: 0.5em;
@@ -138,7 +140,7 @@ export const ColorAniLink = styled(AniLink).attrs(props => ({
 export const ColorURL = styled.a`
   box-shadow: inset 0 -0.1em 0 rgba(253, 29, 29, 0.5);
   line-height: 2em;
-  font-size: 1em;
+  font-size: 1rem;
   border: none;
   padding: 0 1em;
   margin: auto 0.5em;

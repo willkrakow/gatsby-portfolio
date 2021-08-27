@@ -28,7 +28,7 @@ display: flex;
 justify-content: center;
 flex-wrap: wrap;
 align-items: center;
-padding: 16px;
+padding: 1rem;
 @media(max-width: 576px) {
   display: none;
 }
