@@ -1,9 +1,9 @@
 import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
 import Layout from "../components/layout";
 import Article from "../components/Article";
-import { PageBanner } from "../components/containers";
+import { PageBanner, PageContainer } from "../components/containers";
 import { graphql } from 'gatsby'
+import { FlexColumn } from "../components/Grid";
 
 export default function Writing({data}) {
   const { allMarkdownRemark } = data
@@ -16,15 +16,13 @@ export default function Writing({data}) {
           subtitle="Perhaps not relevant to web dev but I like to write so these are here."
           nospan
         />
-        <Container>
-          <Row className="justify-content-center">
-            <Col xs={12} md={10}>
+        <PageContainer>
+            <FlexColumn>
               {edges.map((article, index) => (
                 <Article index={index} key={index} article={article} />
               ))}
-            </Col>
-          </Row>
-        </Container>
+        </FlexColumn>
+        </PageContainer>
       </Layout>
     )
 }

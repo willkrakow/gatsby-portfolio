@@ -4,7 +4,11 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ pageTitle, pageDescription }) => {
+interface ISeo {
+  pageTitle?: string;
+  pageDescription?: string;
+}
+const Seo = ({ pageTitle, pageDescription }: ISeo) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
 
@@ -43,17 +47,7 @@ const SEO = ({ pageTitle, pageDescription }) => {
   )
 }
 
-export default SEO
-
-SEO.propTypes = {
-  pageTitle: PropTypes.string,
-  pageDescription: PropTypes.string,
-}
-
-SEO.defaultProps = {
-  pageTitle: null,
-  pageDescription: null,
-}
+export default Seo
 
 const query = graphql`
   query SEO {

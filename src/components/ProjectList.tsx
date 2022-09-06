@@ -1,19 +1,27 @@
 import React from 'react';
-import { ListGroup, ListGroupItem } from 'react-bootstrap'
 import { ColorHeader, BioText } from './Typography'
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import styled from 'styled-components'
+import type {IProjectFrontmatter} from '../types';
+import { StackList } from './containers';
 
-
-const ProjectWrapper = styled.article`
-  box-shadow: 0px 4px 8px 1px rgba(10, 20, 30, 0.2);
-`
+interface IProjectListItem {
+  excerpt: string;
+  frontmatter: Pick<IProjectFrontmatter, 'title' | 'slug' | 'stack'>
+}
+interface IProjectListQuery {
+  allMarkdownRemark: {
+    edges: {
+      node: IProjectListItem;
+    }[]
+  }
+}
 
 const ProjectList = () => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<IProjectListQuery>(graphql`
     {
       allMarkdownRemark(
         filter: { frontmatter: { layout: { eq: "project" } } }
+        sort: {fields: frontmatter___date, order: DESC}
         limit: 3
       ) {
         edges {
@@ -32,20 +40,19 @@ const ProjectList = () => {
   `)
 
     return (
-      <ProjectWrapper>
-        <ListGroup>
+      <section>
           {data.allMarkdownRemark.edges.map((project, index) => (
             <Link to={`/projects/${project.node.frontmatter.slug}`} key={index}>
-              <ListGroupItem>
+              <article>
                 <ColorHeader>{project.node.frontmatter.title}</ColorHeader>
-                <BioText className="pl-3" gray>
+                <StackList stack={project.node.frontmatter.stack} />
+                <BioText>
                   {project.node.excerpt}
                 </BioText>
-              </ListGroupItem>
+              </article>
             </Link>
           ))}
-        </ListGroup>
-      </ProjectWrapper>
+      </section>
     )
 }
 

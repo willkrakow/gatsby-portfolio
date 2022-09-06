@@ -13,7 +13,9 @@ source: https://github.com/willkrakow/wedding-plans
 livesite: https://campbellkrakow.com
 publicId: wedding_byxwpi
 description: My wedding website, built with Gatsby.
+date: 2022-05-01
 ---
+
 I spent a good long while debating whether to include this project. It's far more personal than any of my other projects, and in terms of content (i.e., "What *are* our wedding plans?"), it's far from complete. Nevertheless, I'm proud of the result, the implementation, and most importantly, the motivation.
 
 My fiancé and I got engaged earlier this year after 15 months of dating. Her name's Laura, and she's perfect. The fact that we got together in the first place is somewhere between a miracle and a plot line from a Disney Channel movie. If you'd like to learn more, check out *[Easter and Dandelions](/writing/easter-and-dandelions)*, a story of our third date.

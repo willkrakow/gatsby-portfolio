@@ -1,4 +1,4 @@
-export const Capitalized = (s) => {
+export const capitalized = (s: string) => {
     if (typeof s !== 'string') {
         return ''
     }

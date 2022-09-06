@@ -80,7 +80,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Lato\:400,600`, `Open Sans\:300,500`, "Playball"],
+        fonts: [`Lato\:300,400,600`, `Open Sans\:300,500`, "Playball"],
       },
     },
     `gatsby-plugin-image`,

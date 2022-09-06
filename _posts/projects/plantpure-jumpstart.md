@@ -13,6 +13,7 @@ source: https://github.com/willkrakow
 livesite: https://plantpurenation.com/products/jumpstart
 publicId: jumpstart_ace9bm
 description: A logo design project.
+date: 2020-04-01
 ---
 I completed this project while employed at PlantPure, Inc., a plant-based foods and education company.
 

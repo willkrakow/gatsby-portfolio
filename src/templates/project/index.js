@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
-import { PostBanner, PostWrapper } from '../../components/containers'
+import { PageContainer, PostBanner, PostWrapper } from '../../components/containers'
 
 export default function Project({data}) {
     const { markdownRemark } = data
@@ -16,14 +16,14 @@ export default function Project({data}) {
       >
         <PostBanner
           title={frontmatter.title}
-          date={""}
+          date={frontmatter.date}
           backLink="/projects"
           timeToRead={timeToRead.toString()}
           stack={frontmatter.stack}
           livesite={frontmatter.livesite || null}
           source={frontmatter.source || null}
         />
-        <PostWrapper htmlAst={htmlAst} img={frontmatter.thumbnail} />
+          <PostWrapper htmlAst={htmlAst} img={frontmatter.thumbnail} />
       </Layout>
     )
 
@@ -38,6 +38,7 @@ export const query = graphql`
         thumbnail
         title
         layout
+        date
         stack
         source
         livesite

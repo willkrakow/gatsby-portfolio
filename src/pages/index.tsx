@@ -1,11 +1,12 @@
 import React from "react"
-import Hero from "../components/Hero.js"
+import Hero from "../components/Hero"
 import Layout from "../components/layout.js"
-import TechIcons from "../components/TechIcons.js"
-import SocialLinks from "../components/SocialLinks.js"
-import ProjectList from '../components/ProjectList.js'
-import TwoColumns from "../components/TwoColumns.js"
+import TechIcons from "../components/TechIcons"
+import SocialLinks from "../components/SocialLinks"
+import ProjectList from '../components/ProjectList'
+import TwoColumns from "../components/TwoColumns"
 import styled, { keyframes } from 'styled-components'
+import { PageContainer } from "../components/containers"
 
 const backgroundDrift = keyframes`
 0% {
@@ -77,16 +78,18 @@ const sections = [
           alt="Me, sitting in a chair, shooting with a 35mm camera"
         />
       </Hero>
-      {sections.map((section, index) => (
-        <section key={index}>
-          <TwoColumns
-            textColumn={section.textColumn}
-            cta={section.cta || null}
-          >
-            {section.right}
-          </TwoColumns>
-        </section>
-      ))}
+      <PageContainer>
+        {sections.map((section, index) => (
+          <section key={index}>
+            <TwoColumns
+              textColumn={section.textColumn}
+              cta={section.cta || null}
+            >
+              {section.right}
+            </TwoColumns>
+          </section>
+        ))}
+      </PageContainer>
     </Layout>
   )
 }
