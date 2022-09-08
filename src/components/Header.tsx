@@ -92,8 +92,9 @@ const MobileMenuItemInner = styled.div`
 `
 
 const DesktopMenuItemWrapper = styled.div`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
+  gap: ${props => props.theme.spacing[2]};
 `
 interface IHeaderLink {
   link: string;
@@ -104,11 +105,18 @@ interface IHeader {
 }
 export default function Header({menuLinks}: IHeader) {
   const {colors} = useTheme();
-  const iconColor = colors.primary;
+  const [iconColor, setIconColor] = useState(colors.primary);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const hasLoaded = useRef(false);
   const {toggleTheme, currentTheme} = useContext(ThemeToggleContext);
   
+  const handleMouseEnterIcon = () => {
+    setIconColor(colors.lightTint);
+  }
+
+  const handleMouseExitIcon = () => {
+    setIconColor(colors.primary);
+  }
   useEffect(() => {
     hasLoaded.current = true;    
   }, [])
@@ -126,7 +134,16 @@ export default function Header({menuLinks}: IHeader) {
                 {capitalized(link.name)}
               </ColorAniLink>
             ))}
-            <WhiteButton onClick={toggleTheme}><FontAwesomeIcon icon={currentTheme === 'light' ? faMoon : faSun} color={iconColor} /></WhiteButton>
+            <WhiteButton
+              onMouseEnter={handleMouseEnterIcon}
+              onMouseLeave={handleMouseExitIcon}
+              onClick={toggleTheme}
+            >
+              <FontAwesomeIcon
+                icon={currentTheme === "light" ? faMoon : faSun}
+                color={iconColor}
+              />
+            </WhiteButton>
           </DesktopMenuItemWrapper>
         </DesktopNavbar>
         <MobileNavbar>

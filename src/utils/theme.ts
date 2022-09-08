@@ -8,10 +8,10 @@ export const myTheme: DefaultTheme = {
   colors: {
     primary: `hsl(204, 69%, 53%)`,
     primaryTint: `hsl(204, 69%, 90%)`,
-    secondary: `hsl(264, 69%, 53%)`,
+    secondary: `hsl(264, 69%, 73%)`,
     secondaryTint: `hsl(264, 69%, 90%)`,
-    tertiary: `hsl(15, 69%, 52%)`,
-    tertiaryTint: `hsl(15, 69%, 90%)`,
+    tertiary: `hsl(204, 69%, 23%)`,
+    tertiaryTint: `hsl(204, 69%, 50%)`,
     dark: `hsl(204, 20%, 5%)`,
     darkTint: `hsl(204, 20%, 8%)`,
     darkShade: `hsl(204, 10%, 1%)`,
@@ -23,6 +23,7 @@ export const myTheme: DefaultTheme = {
     success: `hsl(130, 69%, 53%)`,
     white: `hsl(204, 5%, 99%)`,
     black: `hsl(204, 5%, 2%)`,
+    clear: `rgba(255,255,255,0.2)`
   },
 
   fontSizes: {
@@ -65,6 +66,7 @@ export const darkTheme = (theme: DefaultTheme): DefaultTheme => {
       secondaryTint: theme.colors.secondary,
       tertiary: theme.colors.tertiaryTint,
       tertiaryTint: theme.colors.tertiary,
+      clear: `rgba(0,0,0,0.2)`
     },
     gradients: {
       blueGreen:

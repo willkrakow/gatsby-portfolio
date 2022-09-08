@@ -1,19 +1,95 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { BlackButton, WhiteButton, HeroHeader, HeroSub } from "./Typography"
 import { Link } from "gatsby"
-import { backgroundShift } from "../utils/animations"
 
-const HeroContainer = styled.section`
-  background: ${props => props.theme.colors.primary};
-  background: ${props => props.theme.gradients.blueGreen};
-  background-size: 400%;
-  background-position: top left;
-  animation: ${backgroundShift} 10s ease-in-out infinite;
-  padding: ${props => props.theme.spacing[6]} 0;
-  border-radius: ${props => props.theme.borderRadii[2]};
+const orbs = keyframes`
+  0% {
+    background-position-y: 0%;
+    background-position-x: 0%;
+  }
   
+  25% {
+    background-position-y: 20%;
+    background-position-x: 60%;
+  }
+  
+    50% {
+  background-position-y: 70%;
+      background-position-x: 30%;
+  }
+  
+    75% {
+    background-position-y: 20%;
+      background-position-x: 90%;
+  }
+  
+  100% {
+    background-position-y: 0%;
+    background-position-x: 0%;
+  }
 `
+
+const move = keyframes`
+from {
+  background-position-x: 0%;
+}
+
+to {
+  background-position-x: 50%;
+}
+`
+const HeroContainer = styled.div`
+  padding: ${props => props.theme.spacing[6]} 0;
+  animation: 60s ${orbs} linear infinite;
+  border-radius: ${props => props.theme.borderRadii[2]};
+  background: radial-gradient(
+      circle at 30% 20%,
+      ${props => props.theme.colors.primary} 0%,
+      ${props => props.theme.colors.clear} 3%,
+      ${props => props.theme.colors.clear} 100%
+    ),
+    radial-gradient(
+      circle at 80% 15%,
+      ${props => props.theme.colors.secondary} 0%,
+      ${props => props.theme.colors.clear} 5%,
+      ${props => props.theme.colors.clear} 100%
+    ),
+    radial-gradient(
+      circle at 60% 80%,
+      ${props => props.theme.colors.tertiary} 0%,
+      ${props => props.theme.colors.clear} 8%,
+      ${props => props.theme.colors.clear} 100%
+    ),
+    radial-gradient(
+      circle at 20% 55%,
+      ${props => props.theme.colors.primary} 0%,
+      ${props => props.theme.colors.clear} 9%,
+      ${props => props.theme.colors.clear} 100%
+    ),
+    radial-gradient(
+      circle at 40% 75%,
+      ${props => props.theme.colors.secondary} 0%,
+      ${props => props.theme.colors.clear} 4%,
+      ${props => props.theme.colors.clear} 100%
+    ),
+    radial-gradient(
+      circle at 90% 35%,
+      ${props => props.theme.colors.tertiary} 0%,
+      ${props => props.theme.colors.clear} 4%,
+      ${props => props.theme.colors.clear} 100%
+    ),
+    radial-gradient(
+      circle at 5% 95%,
+      ${props => props.theme.colors.secondary} 0%,
+      ${props => props.theme.colors.clear} 4%,
+      ${props => props.theme.colors.clear} 100%
+    );
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: 200% 200%;
+`
+
 
 const HeroInner = styled.div`
   max-width: 1200px;

@@ -40,6 +40,9 @@ export const CodeBlock = styled.pre.attrs(props => ({
   background-color: rgba(0, 10, 15, 0.05);
   border-radius: 2em;
   line-height: 1.25em;
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
 `
 
 export const UnorderedList = styled.ul`

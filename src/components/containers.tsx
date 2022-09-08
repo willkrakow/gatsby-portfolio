@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { BioText, BioHeader, ColorURL, } from "./Typography"
+import { BioText, BioHeader, ColorURL, ColorLink, ColorAniLink, } from "./Typography"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft, faEye } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -9,19 +9,17 @@ import { Link } from "gatsby"
 import RehypeReact from "rehype-react"
 import { UnorderedList, OrderedList, BlockQuote, CodeBlock } from "../templates/article/MarkdownComponents"
 import { FlexItem, FlexRow } from "./Grid"
-import { backgroundShift } from '../utils/animations';
 
 export const Pill = styled.span`
 display: inline-block;
-margin-bottom: 8px;
-margin-right: 4px;
-padding: 2px 8px;
+padding: 4px 8px;
+vertical-align: center;
 border-radius: 12px;
 font-size: 14px;
-font-weight: ${props => props.theme.fontWeights.heavy};
-letter-spacing: 1px;
+letter-spacing: 0.5px;
+font-weight: thin;
 background-color: ${props => props.theme.colors.tertiaryTint};
-color: ${props => props.theme.colors.tertiary};
+color: ${props => props.theme.colors.white};
 font-family: monospace;
 `;
 
@@ -37,7 +35,7 @@ interface IPageBanner {
 const PageBannerWrapper = styled.section`
 margin-top: ${props => props.theme.spacing[5]};
 padding-top: ${props => props.theme.spacing[3]};
-padding-bottom: ${props => props.theme.spacing[3]};
+padding-bottom: ${props => props.theme.spacing[2]};
 display: flex;
 flex-direction: column;
 `
@@ -67,7 +65,6 @@ export const PageBanner = ({ title = "William Krakow", subtitle = "Full Stack So
 interface IPostBanner {
   title: string;
   date: string;
-  timeToRead: number;
   backLink: string;
   stack?: string[];
   livesite?: string;
@@ -75,41 +72,46 @@ interface IPostBanner {
 }
 
 const PostBannerWrapper = styled.div`
-padding-top: ${props => props.theme.spacing[5]};
-padding-bottom: ${props => props.theme.spacing[3]};
+padding-top: ${props => props.theme.spacing[4]};
+padding-bottom: ${props => props.theme.spacing[1]};
 display: flex;
 flex-direction: column;
 max-width: 700px;
 margin: auto;
+gap: ${props => props.theme.spacing[2]};
 `
 
 const PostBannerTitle = styled.h1`
 font-size: ${props => props.theme.fontSizes.xxxl};
-padding: ${props => props.theme.spacing[4]} 0;
 color: ${props => props.theme.colors.darkTint};
-margin-top: ${props => props.theme.spacing[5]};
+margin-top: ${props => props.theme.spacing[3]};
+margin-bottom: ${props => props.theme.spacing[1]};
 text-align: left;
 `
 
 const PostBannerLinks = styled.div`
 display: flex;
-margin-bottom: ${props => props.theme.spacing[4]};
+`
+
+const BackLink = styled(ColorAniLink)`
+width: fit-content;
 `
 export const PostBanner = ({
   title = "New Post",
   date,
-  timeToRead = 0,
   backLink = "/projects",
   stack,
   livesite,
   source,
 }: IPostBanner) => (
   <PostBannerWrapper>
-    <Link to={backLink}>
+    <BackLink to={backLink}>
       <FontAwesomeIcon icon={faArrowLeft} />
       &nbsp;All {backLink.slice(1)}
-    </Link>
+    </BackLink>
+    <BioText gray>{new Date(date).toDateString()}</BioText>
     <PostBannerTitle>{title}</PostBannerTitle>
+    {stack && <StackList stack={stack} />}
     <PostBannerLinks>
       {livesite && (
         <ColorURL href={livesite}>
@@ -117,7 +119,6 @@ export const PostBanner = ({
           &nbsp;Live site
         </ColorURL>
       )}
-      {/* @ts-ignore */}
       {source && (
         <ColorURL href={source}>
           <FontAwesomeIcon color="inherit" icon={faGithub as IconDefinition} />
@@ -125,13 +126,6 @@ export const PostBanner = ({
         </ColorURL>
       )}
     </PostBannerLinks>
-    <BioText gray>{new Date(date).toDateString()}</BioText>
-    {stack && (
-      <FlexRow wrap={false}>
-        <StackList stack={stack} />
-      </FlexRow>
-    )}
-    <BioText gray>{timeToRead} min read</BioText>
   </PostBannerWrapper>
 )
 
@@ -139,11 +133,11 @@ interface IStackList {
   stack: string[];
 }
 export const StackList = ({ stack }: IStackList) => (
-  <>
+  <FlexRow gap={3} wrap>
     {stack.map((tech, index) => (
       <Pill key={index}>{tech}</Pill>
     ))}
-  </>
+  </FlexRow>
 )
 
 const PostImage = styled.img`
@@ -195,6 +189,7 @@ export const PageContainer = styled.div<IPageContainer>`
 
 const PostWrapperSection = styled.section`
 display: flex;
+flex-direction: column;
 justify-content: center;
 `
 

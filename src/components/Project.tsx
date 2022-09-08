@@ -1,5 +1,5 @@
 import React from "react"
-import { BioText, BioHeader, BlackButton } from "./Typography"
+import { BioText, BioHeader, BlackButton, ColorHeader } from "./Typography"
 import { Link } from "gatsby"
 import { StackList } from "./containers"
 import styled from "styled-components"
@@ -7,10 +7,12 @@ import { IProjectFrontmatter } from "../types"
 
 
 const ProjectCard = styled.article`
-margin-bottom: ${props => props.theme.spacing[4]};
-padding: ${props => props.theme.spacing[4]} ${props => props.theme.spacing[5]};
+padding: ${props => props.theme.spacing[3]};
 background-color: ${props => props.theme.colors.light};
 border-radius: ${props => props.theme.borderRadii[2]};
+display: flex;
+flex-direction: column;
+gap: ${props => props.theme.spacing[2]};
 `
 
 interface IProjectComponent {
@@ -29,7 +31,7 @@ export default function Project({ article, index }: IProjectComponent) {
 
   return (
     <ProjectCard>
-          <BioHeader>{title}</BioHeader>
+          <ColorHeader>{title}</ColorHeader>
         {stack && <StackList stack={stack} />}
         <BioText>{description}</BioText>
         <Link to={`/projects/${slug}`}>

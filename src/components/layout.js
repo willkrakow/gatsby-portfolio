@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
     background-color: ${props => props.theme.colors.lightTint};
     transition: all 0.5s ease;
+    margin: 0;
   }
   :root {
     font-size: 16px;

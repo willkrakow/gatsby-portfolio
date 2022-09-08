@@ -32,6 +32,7 @@ declare module "styled-components" {
       error: string;
       white: string;
       black: string;
+      clear: string;
     },
     fontWeights: {
         thin: number;

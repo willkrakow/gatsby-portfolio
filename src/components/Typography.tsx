@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const HeroHeader = styled.h1`
   display: block;
@@ -8,12 +9,12 @@ export const HeroHeader = styled.h1`
   font-weight: bold;
   margin-top: 1rem;
   font-size: 3rem;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
   text-align: center;
 `;
 
 export const HeroSub = styled.h2`
-color: ${props => props.theme.colors.white};
+color: ${props => props.theme.colors.darkTint};
 font-family: monospace;
 font-weight: ${props => props.theme.fontWeights.thin};
 font-size: ${props => props.theme.fontSizes.md};
@@ -34,11 +35,13 @@ export const PlainHeader = styled.h4`
   line-height: 1.25em;
   font-size: 1.5rem;
   display: inline-block;
-  font-weight: ${props => props.theme.fontWeights.light};
+  font-weight: ${props => props.theme.fontWeights.bold};
   width: 100%;
   margin-bottom: ${props => props.theme.spacing[3]};
+  margin-top: 0;
   text-decoration: none;
   color: ${props => props.theme.colors.darkTint};
+  font-family: "Open Sans", sans-serif;
 `
 
 export const ColorHeader = styled(PlainHeader)`
@@ -69,7 +72,7 @@ export const BioText = styled.p<IBioText>`
   }};
   line-height: 1.5rem;
   font-weight: ${props => props.theme.fontWeights.light};
-  text-align: ${props => props.centered ? 'center' : 'start'};
+  text-align: ${props => props.centered ? 'center' : props.textAlign ? props.textAlign : 'start'};
   font-family: 'Open Sans', sans-serif;
   margin-bottom: ${props => props.theme.spacing[3]};
   margin-top: 0;
@@ -80,6 +83,7 @@ interface IBioText {
   gray?: boolean;
   className?: string;
   centered?: boolean;
+  textAlign?: string;
 }
 export const ColorText = styled.p`
   box-shadow: inset 0px -0.5em rgba(131, 58, 180, 0.2);
@@ -99,7 +103,6 @@ export const ColorLink = styled(Link)`
   font-size: ${props => props.theme.fontSizes.sm};
   border: none;
   padding: 0 1em;
-  margin: 0.5em;
   border-radius: 1em 0 1em 0;
   background: ${props => props.theme.colors.lightTint};
   display: inline;
@@ -125,7 +128,6 @@ export const ColorSpan = styled.span`
   font-size: ${props => props.theme.fontSizes.sm};
   border: none;
   padding: 0 1em;
-  margin: 0.5em;
   border-radius: 1em 0 1em 0;
   background: ${props => props.theme.colors.lightTint};
   display: inline;
@@ -151,7 +153,6 @@ export const ColorAniLink = styled(AniLink)`
   font-size: ${props => props.theme.fontSizes.sm};
   border: none;
   padding: 0 ${props => props.theme.spacing[4]};
-  margin: ${props => props.theme.spacing[3]};
   text-decoration: none;
   border-radius: 1em 0 1em 0;
   background: ${props => props.theme.colors.light};
@@ -171,22 +172,18 @@ export const ColorAniLink = styled(AniLink)`
 `
 
 export const ColorURL = styled.a`
-  box-shadow: inset 0 -0.1em 0 ${props => props.theme.colors.primaryTint};
-  line-height: 2em;
-  font-size: 1rem;
+  font-size: ${props => props.theme.fontSizes.sm};
   border: none;
-  padding: 0 1em;
-  margin: auto 0.5em;
-  border-radius: 1em 0 1em 0;
-  background: ${props => props.theme.colors.light};
   display: inline;
   transition: all 0.3s linear;
   color: ${props => props.theme.colors.dark};
   font-family: monospace;
   font-weight: ${props => props.theme.fontWeights.light};
+  border-radius: ${props => props.theme.borderRadii[1]};
+  padding: 0.5rem;
   &:hover {
-    box-shadow: inset 0 -2em 0 ${props => props.theme.colors.primaryTint};
-    background: ${props => props.theme.colors.lightTint};
+    background: ${props => props.theme.colors.light};
+    border-bottom: ${props => props.theme.colors.primary};
     text-decoration: none;
   }
   &:link {
@@ -197,9 +194,6 @@ export const ColorURL = styled.a`
 
 const BaseButton = styled.button`
   padding: ${props => props.theme.spacing[2]} ${props => props.theme.spacing[5]};
-  margin-right: ${props => props.theme.spacing[2]};
-  margin-top: ${props => props.theme.spacing[3]};
-  margin-bottom: ${props => props.theme.spacing[3]};
   border-radius: ${props => props.theme.borderRadius};
   font-weight: ${props => props.theme.fontWeights.heavy};
   border: none;
@@ -215,7 +209,7 @@ export const BlackButton = styled(BaseButton)`
   border-color: ${props => props.theme.colors.dark};
   transition: all 0.3s ease;
   &:hover {
-    background: ${props => props.theme.colors.secondary};
+    background: ${props => props.theme.colors.tertiaryTint};
     color: ${props => props.theme.colors.lightTint};
   }
   &:disabled {
@@ -230,7 +224,7 @@ export const WhiteButton = styled(BaseButton)`
   border-color: transparent;
   transition: all 0.3s ease;
   &:hover {
-    background: ${props => props.theme.colors.primary};
+    background: ${props => props.theme.colors.tertiary};
     color: ${props => props.theme.colors.lightTint};
   }
   &:disabled {

@@ -4,12 +4,12 @@ import styled from 'styled-components';
 interface IHorizontalGrid {
   cols: [number, number, number];
   gap?: number
-  direction: "row" | "column"
+  direction?: "row" | "column"
 }
 export const HorizontalGrid = styled.div<IHorizontalGrid>`
   display: grid;
   grid-template-columns: repeat(${props => props.cols[2]}, 1fr);
-  grid-auto-flow: ${props => props.direction};
+  grid-auto-flow: ${props => props.direction || "row"};
   gap: ${props => props.theme.spacing[props.gap || 0]};
   @media (max-width: 599px) {
     grid-template-columns: repeat(${props => props.cols[0]}, 1fr);
@@ -43,7 +43,7 @@ grid-columns: span ${props => props.span || 1};
 interface IFlex {
     justifyContent?: 'center' | 'flex-start' | 'flex-end';
     alignItems?: 'center' | 'flex-start' | 'flex-end';
-    wrap: boolean;
+    wrap?: boolean;
     gap?: number;
 }
 export const FlexColumn = styled.div<IFlex>`
