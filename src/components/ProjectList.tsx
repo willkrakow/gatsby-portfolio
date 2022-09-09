@@ -3,7 +3,18 @@ import { ColorHeader, BioText } from './Typography'
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import type {IProjectFrontmatter} from '../types';
 import { StackList } from './containers';
+import styled from 'styled-components';
 
+
+const ProjectHeader = styled.div`
+margin-bottom: ${props => props.theme.spacing[3]};
+`
+
+const Container = styled.section`
+display: flex;
+flex-direction: column;
+gap: ${props => props.theme.spacing[4]};
+`
 interface IProjectListItem {
   excerpt: string;
   frontmatter: Pick<IProjectFrontmatter, 'title' | 'slug' | 'stack'>
@@ -40,19 +51,19 @@ const ProjectList = () => {
   `)
 
     return (
-      <section>
-          {data.allMarkdownRemark.edges.map((project, index) => (
-            <Link to={`/projects/${project.node.frontmatter.slug}`} key={index}>
-              <article>
+      <Container>
+        {data.allMarkdownRemark.edges.map((project, index) => (
+          <Link to={`/projects/${project.node.frontmatter.slug}`} key={index}>
+            <article>
+              <ProjectHeader>
                 <ColorHeader>{project.node.frontmatter.title}</ColorHeader>
                 <StackList stack={project.node.frontmatter.stack} />
-                <BioText>
-                  {project.node.excerpt}
-                </BioText>
-              </article>
-            </Link>
-          ))}
-      </section>
+              </ProjectHeader>
+              <BioText>{project.node.excerpt}</BioText>
+            </article>
+          </Link>
+        ))}
+      </Container>
     )
 }
 

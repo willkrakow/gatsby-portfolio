@@ -10,7 +10,7 @@ slug: use-data-sync
 source: https://github.com/willkrakow/my-hooks/blob/master/src/hooks/useDataSync.ts
 description: A custom hook for effortless CRUD operations. Written in TypeScript.
 publicId: usedatasync_fnxndt
-date: 2021-09-07
+date: 2022-09-07
 ---
 
 Since React is **data-agnostic**, one of the most common problems developers face is how to keep their UI state in sync with an external API.

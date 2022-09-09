@@ -21,11 +21,11 @@ module.exports = {
         pageDescription: "Professional and personal development and design",
       },
       {
-        name: "writing",
-        link: "/writing",
-        pageTitle: "Writing",
+        name: "uses",
+        link: "/uses",
+        pageTitle: "Uses",
         pageDescription:
-          "Articles published and unpublished about everything under the sun.",
+          "Things that improve my day in work and in life",
       },
       {
         name: "contact",
@@ -52,6 +52,13 @@ module.exports = {
         theme_color: `#002c86`,
         display: `browser`,
         icon: `static/images/favicon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/_posts/uses`,
+        name: `uses`,
       },
     },
     {

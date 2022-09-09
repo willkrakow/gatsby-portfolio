@@ -10,7 +10,7 @@ slug: react-use-download
 source: https://github.com/willkrakow/my-hooks/blob/master/src/hooks/useDownload.ts
 description: A custom hook for fetching and downloading files from an external server. Written in TypeScript.
 publicId: carbon_lvdylp
-date: 2021-09-07
+date: 2022-09-07
 ---
 
 Although downloads are as foundational to the internet as Wordpress blogs and cats, there isn't a nice built-in Javascript API to handle them. Of course, there is a quite elegant way to do it in HTML:

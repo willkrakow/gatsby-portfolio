@@ -37,7 +37,7 @@ export const PlainHeader = styled.h4`
   display: inline-block;
   font-weight: ${props => props.theme.fontWeights.bold};
   width: 100%;
-  margin-bottom: ${props => props.theme.spacing[3]};
+  margin-bottom: ${props => props.theme.spacing[2]};
   margin-top: 0;
   text-decoration: none;
   color: ${props => props.theme.colors.darkTint};
@@ -53,6 +53,7 @@ export const LabelText = styled.h5`
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 0;
+  margin-top: 0;
   font-size: ${props => props.theme.fontSizes.sm};
   font-weight: bolder;
   font-family: monospace;
