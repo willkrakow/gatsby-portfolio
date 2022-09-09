@@ -1,4 +1,8 @@
-require('dotenv').config()
+require('dotenv').config({
+  path: `.env`
+});
+
+console.log(process.env);
 
 module.exports = {
   siteMetadata: {
@@ -102,6 +106,8 @@ module.exports = {
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,
         apiKey: process.env.CLOUDINARY_API_KEY,
         apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: 'image',
+        maxResults: 50,
       },
     },
     `gatsby-plugin-netlify`,

@@ -33,12 +33,11 @@ export const BlockQuote = styled.blockquote`
   }
 `
 
-export const CodeBlock = styled.pre.attrs(props => ({
-  className: "text-secondary",
-}))`
+export const CodeBlock = styled.pre`
   padding: 1em;
-  background-color: rgba(0, 10, 15, 0.05);
-  border-radius: 2em;
+  color: ${props => props.theme.colors.darkTint};
+  background-color: ${props => props.theme.colors.light};
+  border-radius: ${props => props.theme.borderRadii[1]};
   line-height: 1.25em;
   display: flex;
   flex-direction: column;
