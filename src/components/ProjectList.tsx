@@ -27,6 +27,16 @@ interface IProjectListQuery {
   }
 }
 
+const NoUnderlineLink = styled(Link)`
+  text-decoration: none;
+`
+
+const ProjectArticle = styled.article`
+  padding: ${props => props.theme.spacing[4]} ${props => props.theme.spacing[4]};
+  border-radius: ${props => props.theme.borderRadii[2]};
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+`
+
 const ProjectList = () => {
   const data = useStaticQuery<IProjectListQuery>(graphql`
     {
@@ -53,15 +63,15 @@ const ProjectList = () => {
     return (
       <Container>
         {data.allMarkdownRemark.edges.map((project, index) => (
-          <Link to={`/projects/${project.node.frontmatter.slug}`} key={index}>
-            <article>
+          <NoUnderlineLink to={`/projects/${project.node.frontmatter.slug}`} key={index}>
+            <ProjectArticle>
               <ProjectHeader>
                 <ColorHeader>{project.node.frontmatter.title}</ColorHeader>
                 <StackList stack={project.node.frontmatter.stack} />
               </ProjectHeader>
               <BioText>{project.node.excerpt}</BioText>
-            </article>
-          </Link>
+            </ProjectArticle>
+          </NoUnderlineLink>
         ))}
       </Container>
     )

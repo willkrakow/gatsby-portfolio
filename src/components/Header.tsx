@@ -16,8 +16,10 @@ const Logo = styled.span`
 `;
 
 const MobileLink = styled(ColorAniLink)`
-  font-size: ${props => props.theme.fontSizes.sm};
+  font-size: ${props => props.theme.fontSizes.md};
+  margin-top: ${props => props.theme.spacing[4]};
   width: 100%;
+  padding: ${props => props.theme.spacing[2]} ${props => props.theme.spacing[4]};
 `
 
 
@@ -89,6 +91,8 @@ const MobileMenuItemInner = styled.div`
   height: fit-content;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 80vw;
 `
 
 const DesktopMenuItemWrapper = styled.div`

@@ -13,6 +13,7 @@ border-radius: ${props => props.theme.borderRadii[2]};
 display: flex;
 flex-direction: column;
 gap: ${props => props.theme.spacing[2]};
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
 `
 
 interface IProjectComponent {

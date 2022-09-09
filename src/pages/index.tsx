@@ -19,7 +19,7 @@ const backgroundDrift = keyframes`
 `
 
 const ImageWrapper = styled.img`
-width: 300px;
+max-width: 300px;
 height: 300px;
 background: linear-gradient(to bottom right, rgba(200, 200, 200, 0.4), rgba(200, 200, 200, 0.2));
 background-size: 400%;
@@ -74,7 +74,7 @@ const sections = [
     >
       <Hero>
         <ImageWrapper
-          src="https://res.cloudinary.com/djmk8xgrk/image/upload/w_300,ar_1:1,c_fill,g_auto,e_sharpen/v1616892366/Portfolio/mynolta.jpg"
+          src="https://res.cloudinary.com/djmk8xgrk/image/upload/ar_1:1,c_fill,g_auto,e_sharpen/v1616892366/Portfolio/mynolta.jpg"
           alt="Me, sitting in a chair, shooting with a 35mm camera"
         />
       </Hero>

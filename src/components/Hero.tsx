@@ -43,6 +43,7 @@ const HeroContainer = styled.div`
   padding: ${props => props.theme.spacing[6]} 0;
   animation: 60s ${orbs} linear infinite;
   border-radius: ${props => props.theme.borderRadii[2]};
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   background: radial-gradient(
       circle at 30% 20%,
       ${props => props.theme.colors.primary} 0%,
@@ -123,7 +124,7 @@ const HeroImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 500px;
+  max-width: 100%;
   flex: 1 1 500px;
   text-align: center;
   margin: auto;
@@ -163,7 +164,8 @@ const Hero = ({ children }: IHero) => {
         </HeroImageWrapper>
         <HeroContentWrapper>
           <HeroHeader>William Krakow</HeroHeader>
-          <HeroSub>Dev | Designer | Writer</HeroSub>
+          <HeroSub>Software Engineer</HeroSub>
+          <HeroSub>Node | TypeScript | React</HeroSub>
           <HeroActions>
             <Link to="/projects">
               <BlackButton>Projects</BlackButton>
