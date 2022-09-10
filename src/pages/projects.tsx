@@ -15,7 +15,8 @@ const SortButton = styled.button<{selected: boolean}>`
   margin-bottom: ${props => props.theme.spacing[2]};
   text-align: left;
   cursor: pointer;
-  background-color: ${props => (props.selected ? props.theme.colors.tertiary : props.theme.colors.light)};
+  background-color: ${props => (props.selected ? props.theme.colors.tertiary : props.theme.colors.lightTint)};
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   color: ${props => (props.selected ? props.theme.colors.light : props.theme.colors.tertiary)};
   transition: all 0.3s ease;
   &:hover {
@@ -27,7 +28,7 @@ const SortButton = styled.button<{selected: boolean}>`
   padding: 8px;
   display: flex;
   align-items: center;
-  font-family: monospace;
+  font-family: "Source Code Pro", monospace;
   letter-spacing: 1px;
   font-weight: ${props => props.theme.fontWeights.heavy};
 `
@@ -74,22 +75,6 @@ const MobileSortBox = styled.div`
   }
 `
 
-const FancyDropdownItem = styled.span<{selected: boolean}>`
-  background-color: ${props => (props.selected ? "#7026b9" : "#fafafa")};
-  color: ${props => (props.selected ? "#fafafa" : "#7026b9")};
-  transition: all 0.3s ease;
-  border-radius: 8px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  margin-bottom: 0.25em;
-  padding: 8px;
-  &:hover {
-    background-color: ${props =>
-      props.selected ? "rgb(132 58 205)" : "rgba(112, 38, 205, 0.4)"};
-  }
-`
-
 const ProjectGrid = styled.div`
 display: grid;
 grid-template-columns: 1fr;
@@ -131,6 +116,12 @@ const DropdownMenu = styled.div<{ isOpen: boolean }>`
     height: 0px;
     display: none;
   }
+`
+const FilterActions = styled.div`
+display: flex;
+width: 100%;
+justify-content: space-between;
+align-items: center;
 `
 interface IProjectFrontmatter {
   date: string
@@ -279,17 +270,17 @@ export default function Writing({ data }: IProjectsPage) {
                     {btn.name} <SortBoxCounter>{btn.count}</SortBoxCounter>
                   </SortButton>
                 ))}
-              {uncommonItems.length > COMMON_ITEMS && (
+              <FilterActions>
                 <WhiteButton onClick={handleShowMore}>
                   {showMore ? "Show Fewer" : "Show More"}
                 </WhiteButton>
-              )}
-              <BlackButton
-                onClick={handleClearFilters}
-                disabled={toQuery.length === 0}
-              >
-                Reset
-              </BlackButton>
+                <BlackButton
+                  onClick={handleClearFilters}
+                  disabled={toQuery.length === 0}
+                >
+                  Reset
+                </BlackButton>
+              </FilterActions>
             </SortBox>
             <MobileSortBox>
               <WhiteButton onClick={handleDropdown}>

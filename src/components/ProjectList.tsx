@@ -35,6 +35,7 @@ const ProjectArticle = styled.article`
   padding: ${props => props.theme.spacing[4]} ${props => props.theme.spacing[4]};
   border-radius: ${props => props.theme.borderRadii[2]};
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: ${props => props.theme.colors.lightTint};
 `
 
 const ProjectList = () => {

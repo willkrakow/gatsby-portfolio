@@ -9,7 +9,7 @@ import { navAnimation, navNullAnimation, navCloseAnimation } from '../utils/anim
 import { ThemeToggleContext } from '../utils/theme';
 
 const Logo = styled.span`
-  font-family: monospace;
+  font-family: "Source Code Pro", monospace;
   color: ${props => props.theme.colors.primary};
   font-size: 2rem;
   text-decoration: none;

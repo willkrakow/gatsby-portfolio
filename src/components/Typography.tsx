@@ -6,16 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export const HeroHeader = styled.h1`
   display: block;
   width: 100%;
-  font-weight: bold;
+  font-weight: 900;
   margin-top: 1rem;
   font-size: 3rem;
   color: ${props => props.theme.colors.primary};
   text-align: center;
+  font-family: "Inter";
 `;
 
 export const HeroSub = styled.h2`
 color: ${props => props.theme.colors.darkTint};
-font-family: monospace;
+font-family: "Source Code Pro", monospace;
 font-weight: ${props => props.theme.fontWeights.thin};
 font-size: ${props => props.theme.fontSizes.md};
 `;
@@ -26,7 +27,7 @@ export const BioHeader = styled.h3`
   margin-bottom: 1rem;
   color: ${props => props.theme.colors.darkTint};
   font-weight: ${props => props.theme.fontWeights.light};
-  font-family: "Open Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   margin-top: 0;
   text-decoration: none;
 `
@@ -41,7 +42,7 @@ export const PlainHeader = styled.h4`
   margin-top: 0;
   text-decoration: none;
   color: ${props => props.theme.colors.darkTint};
-  font-family: "Open Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 `
 
 export const ColorHeader = styled(PlainHeader)`
@@ -56,7 +57,7 @@ export const LabelText = styled.h5`
   margin-top: 0;
   font-size: ${props => props.theme.fontSizes.sm};
   font-weight: bolder;
-  font-family: monospace;
+  font-family: "Source Code Pro", monospace;
 `
 
 
@@ -74,7 +75,7 @@ export const BioText = styled.p<IBioText>`
   line-height: 1.5rem;
   font-weight: ${props => props.theme.fontWeights.light};
   text-align: ${props => props.centered ? 'center' : props.textAlign ? props.textAlign : 'start'};
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin-bottom: ${props => props.theme.spacing[3]};
   margin-top: 0;
 `
@@ -95,7 +96,7 @@ export const ColorText = styled.p`
   display: inline;
   color: ${props => props.theme.colors.darkTint};
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 `
 
 export const ColorLink = styled(Link)`
@@ -110,7 +111,7 @@ export const ColorLink = styled(Link)`
   text-decoration: none;
   transition: all 0.3s ease;
   color: ${props => props.theme.colors.darkTint};
-  font-family: monospace;
+  font-family: "Source Code Pro", monospace;
   font-weight: ${props => props.theme.fontWeights.light};
   &:hover {
     box-shadow: 0px 0.25em 0 ${props => props.theme.colors.primaryTint};
@@ -134,7 +135,7 @@ export const ColorSpan = styled.span`
   display: inline;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-family: monospace;
+  font-family: "Source Code Pro", monospace;
   color: ${props => props.theme.colors.darkTint};
   font-weight: ${props => props.theme.fontWeights.light};
   &:hover {
@@ -149,7 +150,7 @@ export const ColorSpan = styled.span`
 
 
 export const ColorAniLink = styled(AniLink)`
-  box-shadow: inset 0 -0.1em 0 ${props => props.theme.colors.primaryTint};
+  box-shadow: inset 0 -0.2em 0 ${props => props.theme.colors.primary};
   line-height: 2em;
   font-size: ${props => props.theme.fontSizes.sm};
   border: none;
@@ -160,7 +161,7 @@ export const ColorAniLink = styled(AniLink)`
   display: inline;
   transition: all 0.3s ease;
   color: ${props => props.theme.colors.dark};
-  font-family: monospace;
+  font-family: "Source Code Pro", monospace;
   font-weight: ${props => props.theme.fontWeights.light};
   &:hover {
     box-shadow: inset 0 -2em 0 ${props => props.theme.colors.primaryTint};
@@ -178,7 +179,7 @@ export const ColorURL = styled.a`
   display: inline;
   transition: all 0.3s linear;
   color: ${props => props.theme.colors.dark};
-  font-family: monospace;
+  font-family: "Source Code Pro", monospace;
   font-weight: ${props => props.theme.fontWeights.light};
   border-radius: ${props => props.theme.borderRadii[1]};
   padding: 0.5rem;
@@ -198,7 +199,7 @@ const BaseButton = styled.button`
   border-radius: ${props => props.theme.borderRadius};
   font-weight: ${props => props.theme.fontWeights.heavy};
   border: none;
-  font-family: monospace;
+  font-family: "Source Code Pro", monospace;
   cursor: pointer;
   &:disabled {
     cursor: not-allowed;
@@ -211,7 +212,7 @@ export const BlackButton = styled(BaseButton)`
   transition: all 0.3s ease;
   &:hover {
     background: ${props => props.theme.colors.tertiaryTint};
-    color: ${props => props.theme.colors.lightTint};
+    color: ${props => props.theme.colors.white};
   }
   &:disabled {
     background: ${props => props.theme.colors.lightShade};

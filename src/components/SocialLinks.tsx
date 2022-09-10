@@ -9,6 +9,7 @@ const ListItem = styled.li`
   list-style: none;
   display: flex;
   justify-content: flex-start;
+  margin-bottom: ${props => props.theme.spacing[1]};
   @media screen(max-width: 599px) {
     justify-content: flex-end;
   }

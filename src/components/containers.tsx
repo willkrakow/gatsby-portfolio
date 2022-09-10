@@ -1,27 +1,26 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
-import { BioText, BioHeader, ColorURL, ColorLink, ColorAniLink, } from "./Typography"
+import styled from "styled-components"
+import { BioText, BioHeader, ColorURL, ColorAniLink, } from "./Typography"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft, faEye } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "gatsby"
 import RehypeReact from "rehype-react"
 import { UnorderedList, OrderedList, BlockQuote, CodeBlock } from "../templates/article/MarkdownComponents"
 import { FlexItem, FlexRow } from "./Grid"
 
 export const Pill = styled.span`
-display: inline-block;
-padding: 4px 8px;
-vertical-align: center;
-border-radius: 12px;
-font-size: 14px;
-letter-spacing: 0.5px;
-font-weight: thin;
-background-color: ${props => props.theme.colors.tertiaryTint};
-color: ${props => props.theme.colors.white};
-font-family: monospace;
-`;
+  display: inline-block;
+  padding: 4px 8px;
+  vertical-align: center;
+  border-radius: 12px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-weight: thin;
+  background-color: ${props => props.theme.colors.tertiaryTint};
+  color: ${props => props.theme.colors.white};
+  font-family: "Source Code Pro", monospace;
+`
 
 const WrapperText = styled.span`
   opacity: 0.4;

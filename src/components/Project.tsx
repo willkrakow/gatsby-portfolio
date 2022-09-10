@@ -8,7 +8,7 @@ import { IProjectFrontmatter } from "../types"
 
 const ProjectCard = styled.article`
 padding: ${props => props.theme.spacing[3]};
-background-color: ${props => props.theme.colors.light};
+background-color: ${props => props.theme.colors.lightTint};
 border-radius: ${props => props.theme.borderRadii[2]};
 display: flex;
 flex-direction: column;

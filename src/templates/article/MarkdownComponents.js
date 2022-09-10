@@ -13,7 +13,7 @@ export const OrderedList = styled.ol`
 
     &::before {
       content: counter(item) ".";
-      color: rgba(1, 177, 169, 1);
+      color: ${props => props.theme.colors.primary};
       width: 1em;
       margin-right: 0.25em;
       font-weight: bold;
@@ -28,8 +28,8 @@ export const BlockQuote = styled.blockquote`
     margin: 1em 1em;
     padding: 0 1em;
     font-style: italic;
-    color: #6c757d;
-    border-left: 0.5em solid rgba(1, 177, 169, 0.2);
+    color: ${props => props.theme.colors.muted};
+    border-left: 0.5em solid ${props => props.theme.colors.tertiary};
   }
 `
 
@@ -49,11 +49,11 @@ export const UnorderedList = styled.ul`
 
   li::before {
     content: ">";
-    color: rgba(1, 177, 169, 1);
+    color: ${props => props.theme.colors.primary};
     margin-left: -1em;
     font-weight: bold;
     margin-right: 0.375em;
-    font-size: 1.5rem;
+    font-size: ${props => props.theme.fontSizes.md};
   }
 `
 

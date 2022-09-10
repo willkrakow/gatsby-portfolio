@@ -15,8 +15,8 @@ padding: ${props => props.theme.spacing[4]};
 const GlobalStyle = createGlobalStyle`
   body {
     font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
-    background-color: ${props => props.theme.colors.lightTint};
+    font-family: 'Inter', sans-serif;
+    background-color: ${props => props.theme.colors.light};
     transition: all 0.5s ease;
     margin: 0;
   }

@@ -2,8 +2,6 @@ require('dotenv').config({
   path: `.env`
 });
 
-console.log(process.env);
-
 module.exports = {
   siteMetadata: {
     title: "William Krakow",
@@ -53,7 +51,7 @@ module.exports = {
         short_name: `William Krakow`,
         start_url: `/`,
         background_color: `#fffafc`,
-        theme_color: `#002c86`,
+        theme_color: `#08c5ff`,
         display: `browser`,
         icon: `static/images/favicon.png`,
       },
@@ -89,7 +87,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Lato\:300,400,600`, `Open Sans\:300,500`, "Playball"],
+        fonts: [`Lato\:300,400,600`, `Open Sans\:300,500`, "Playball", "Source Code Pro\:200,300,400,500,600,700,800", "Inter\:200,300,400,500,600,700,800,900"],
       },
     },
     `gatsby-plugin-image`,
