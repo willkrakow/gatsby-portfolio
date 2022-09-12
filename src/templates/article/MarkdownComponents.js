@@ -7,9 +7,13 @@ export const OrderedList = styled.ol`
   padding: 1em;
   li {
     counter-increment: item;
-    line-height: 1.75em;
-    padding-left: 2em;
+    padding-left: 0.5em;
     margin-bottom: 1em;
+    font-size: ${props => props.theme.fontSizes.sm};
+    color: ${props => props.theme.colors.darkTint};
+    line-height: 1.5rem;
+    font-weight: ${props => props.theme.fontWeights.light};
+    font-family: 'Inter', sans-serif;
 
     &::before {
       content: counter(item) ".";
@@ -36,7 +40,7 @@ export const BlockQuote = styled.blockquote`
 export const CodeBlock = styled.pre`
   padding: 1em;
   color: ${props => props.theme.colors.darkTint};
-  background-color: ${props => props.theme.colors.light};
+  background-color: ${props => props.theme.colors.lightTint};
   border-radius: ${props => props.theme.borderRadii[1]};
   line-height: 1.25em;
   display: flex;
@@ -47,6 +51,14 @@ export const CodeBlock = styled.pre`
 export const UnorderedList = styled.ul`
   list-style: none;
 
+  li {
+    margin-bottom: 1em;
+    font-size: ${props => props.theme.fontSizes.sm};
+    color: ${props => props.theme.colors.darkTint};
+    line-height: 1.5rem;
+    font-weight: ${props => props.theme.fontWeights.light};
+    font-family: 'Inter', sans-serif;
+  }
   li::before {
     content: ">";
     color: ${props => props.theme.colors.primary};
@@ -55,6 +67,10 @@ export const UnorderedList = styled.ul`
     margin-right: 0.375em;
     font-size: ${props => props.theme.fontSizes.md};
   }
+`
+
+export const CodeString = styled.code`
+  color: ${props => props.theme.colors.primary};
 `
 
 export const HR = styled.hr`

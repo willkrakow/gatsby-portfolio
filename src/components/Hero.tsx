@@ -30,20 +30,11 @@ const orbs = keyframes`
   }
 `
 
-const move = keyframes`
-from {
-  background-position-x: 0%;
-}
-
-to {
-  background-position-x: 50%;
-}
-`
 const HeroContainer = styled.div`
   padding: ${props => props.theme.spacing[6]} 0;
   animation: 60s ${orbs} linear infinite;
   border-radius: ${props => props.theme.borderRadii[2]};
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px 2px rgba(0,0,0,0.1);
   background: radial-gradient(
       circle at 30% 20%,
       ${props => props.theme.colors.primary} 0%,
@@ -69,7 +60,7 @@ const HeroContainer = styled.div`
       ${props => props.theme.colors.clear} 100%
     ),
     radial-gradient(
-      circle at 40% 75%,
+      circle at 40% 5%,
       ${props => props.theme.colors.secondary} 0%,
       ${props => props.theme.colors.clear} 4%,
       ${props => props.theme.colors.clear} 100%
@@ -88,7 +79,7 @@ const HeroContainer = styled.div`
     );
   background-position-x: 0%;
   background-position-y: 0%;
-  background-size: 200% 200%;
+  background-size: 150% 200%;
 `
 
 
@@ -104,17 +95,14 @@ const HeroInner = styled.div`
 `
 
 const HeroImg = styled.div`
-  transform: rotate(12deg);
+  transform: rotateZ(20deg);
   transition: 0.3s;
   background: ${props => props.theme.colors.light};
   z-index: 1;
   padding: 1rem;
   border-radius: ${props => props.theme.borderRadii[1]};
-  box-shadow: 0px 5px 20px ${props => props.theme.colors.lightShade};
+  box-shadow: 0px 6px 20px ${props => props.theme.colors.muted};
   border: 1px solid rgba(3, 120, 152, 0.1);
-  &:hover {
-    transform: rotate(0deg);
-  }
   @media screen and (max-width: 575px) {
     margin-top: 3rem;
   }
@@ -153,6 +141,8 @@ const HeroActions = styled.div`
 interface IHero {
   children: React.ReactNode
 }
+
+
 const Hero = ({ children }: IHero) => {
   return (
     <HeroContainer>

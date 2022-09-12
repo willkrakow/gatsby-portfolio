@@ -6,7 +6,7 @@ import { faArrowLeft, faEye } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons"
 import RehypeReact from "rehype-react"
-import { UnorderedList, OrderedList, BlockQuote, CodeBlock } from "../templates/article/MarkdownComponents"
+import { UnorderedList, OrderedList, BlockQuote, CodeBlock, CodeString } from "../templates/article/MarkdownComponents"
 import { FlexItem, FlexRow } from "./Grid"
 
 export const Pill = styled.span`
@@ -162,6 +162,7 @@ const renderAst = new RehypeReact({
     pre: CodeBlock,
     img: PostImage,
     a: WrapLink,
+    code: CodeString,
   },
 }).Compiler;
 

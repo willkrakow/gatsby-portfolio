@@ -9,12 +9,12 @@ import ThemeWrapper from './ThemeWrapper';
 const Main = styled.main`
 min-height: 100vh;
 max-width: 100vw;
-padding: ${props => props.theme.spacing[4]};
+padding: ${props => props.theme.spacing[2]};
 `
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Inter', sans-serif;
     background-color: ${props => props.theme.colors.light};
     transition: all 0.5s ease;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react"
+import React, { useState, useEffect, useMemo, useRef } from "react"
 import Layout from "../components/layout"
 import Project from "../components/Project"
 import { PageBanner, PageContainer } from "../components/containers"
@@ -58,12 +58,12 @@ const SortBoxCounter = styled.span`
 const MobileSortBox = styled.div`
   display: flex;
   justify-content: center;
-  border: 1px solid rgba(112, 38, 205, 0.4);
   border-radius: 8px;
-  margin: 0 32px;
+  margin: ${props => props.theme.spacing[4]} 32px;
   position: relative;
   @media (min-width: 600px) {
     display: none;
+    margin: 0;
   }
   button {
     flex: 0 0 100%;
@@ -152,7 +152,6 @@ interface IProjectsPage {
 export default function Writing({ data }: IProjectsPage) {
   const { allMarkdownRemark } = data
   const { edges } = allMarkdownRemark
-
   const [toQuery, setToQuery] = useState<string[]>([])
   const [filtered, setFiltered] = useState([...edges])
   const [showMore, setShowMore] = useState<boolean>(false);
@@ -210,7 +209,7 @@ export default function Writing({ data }: IProjectsPage) {
     [key: string]: number;
   }
   const stackItems = useMemo(() => filtered.reduce((acc, curr) => {
-    const currentItems = acc;
+    const currentItems: StackItems = acc;
     curr.node.frontmatter.stack.forEach(item => {
       if(typeof currentItems[item] === 'undefined'){
         currentItems[item] = 1
@@ -283,22 +282,11 @@ export default function Writing({ data }: IProjectsPage) {
               </FilterActions>
             </SortBox>
             <MobileSortBox>
-              <WhiteButton onClick={handleDropdown}>
+              <BlackButton onClick={handleDropdown}>
                 Filter by language / library
-              </WhiteButton>
-              <DropdownMenu isOpen={isDropdownOpen}>
-                {commonItems.map((btn, index) => (
-                  <SortButton
-                    key={index}
-                    selected={toQuery.includes(btn.name)}
-                    value={btn.name}
-                    onClick={handleClick}
-                  >
-                    {btn.name} <SortBoxCounter>{btn.count}</SortBoxCounter>
-                  </SortButton>
-                ))}
-                {showMore &&
-                  uncommonItems.map((btn, index) => (
+              </BlackButton>
+                <DropdownMenu isOpen={isDropdownOpen}>
+                  {commonItems.map((btn, index) => (
                     <SortButton
                       key={index}
                       selected={toQuery.includes(btn.name)}
@@ -308,12 +296,23 @@ export default function Writing({ data }: IProjectsPage) {
                       {btn.name} <SortBoxCounter>{btn.count}</SortBoxCounter>
                     </SortButton>
                   ))}
-                {uncommonItems.length > COMMON_ITEMS && (
-                  <WhiteButton onClick={handleShowMore}>
-                    {showMore ? "Show Fewer" : "Show More"}
-                  </WhiteButton>
-                )}
-              </DropdownMenu>
+                  {showMore &&
+                    uncommonItems.map((btn, index) => (
+                      <SortButton
+                        key={index}
+                        selected={toQuery.includes(btn.name)}
+                        value={btn.name}
+                        onClick={handleClick}
+                      >
+                        {btn.name} <SortBoxCounter>{btn.count}</SortBoxCounter>
+                      </SortButton>
+                    ))}
+                  {uncommonItems.length > COMMON_ITEMS && (
+                    <WhiteButton onClick={handleShowMore}>
+                      {showMore ? "Show Fewer" : "Show More"}
+                    </WhiteButton>
+                  )}
+                </DropdownMenu>
             </MobileSortBox>
           </ProjectGridFilters>
           <ProjectGridContent>

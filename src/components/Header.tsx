@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMoon, faSun, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { navAnimation, navNullAnimation, navCloseAnimation } from '../utils/animations';
 import { ThemeToggleContext } from '../utils/theme';
+import { FlexRow } from './Grid';
 
 const Logo = styled.span`
   font-family: "Source Code Pro", monospace;
@@ -57,6 +58,7 @@ const Hamburger = styled.button`
   background: ${props => props.theme.colors.lightTint};
   border-radius: ${props => props.theme.borderRadii[1]};
   overflow: hidden;
+  margin-left: ${props => props.theme.spacing[2]};
 `
 
 interface IMobileMenuItemWrapper {
@@ -154,13 +156,24 @@ export default function Header({menuLinks}: IHeader) {
           <Logo as={Link} to="/">
             WK
           </Logo>
-          <Hamburger onClick={handleToggleNav}>
-            <FontAwesomeIcon
-              icon={isMobileOpen ? faTimes : faBars}
-              size="2x"
-              color={iconColor}
-            />
-          </Hamburger>
+          <FlexRow>
+            <Hamburger
+              onClick={toggleTheme}
+            >
+              <FontAwesomeIcon
+                icon={currentTheme === "light" ? faMoon : faSun}
+                color={iconColor}
+                size="2x"
+              />
+            </Hamburger>
+            <Hamburger onClick={handleToggleNav}>
+              <FontAwesomeIcon
+                icon={isMobileOpen ? faTimes : faBars}
+                size="2x"
+                color={iconColor}
+              />
+            </Hamburger>
+          </FlexRow>
           <MobileMenuItemWrapper
             isOpen={isMobileOpen}
             hasLoaded={hasLoaded.current}
