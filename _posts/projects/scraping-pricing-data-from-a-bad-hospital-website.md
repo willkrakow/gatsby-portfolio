@@ -1,13 +1,13 @@
 ---
 layout: project
-date: 2021-02-16T13:13:04.861Z
 title: Scraping pricing data from a bad hospital website
 thumbnail: images/computer_desk.jpeg
 stack:
   - Python
 slug: scraping-pricing-data-from-a-bad-hospital-website
-description: A rant about the state of health care price information in America. Part I.
+description: Part I.
 publicId: unc-health-price-inhouse
+date: 2021-08-30
 ---
 
 A while back I was referred to a GI clinic at UNC hospitals for an ultrasound. Now, since I'm a middle class citizen in the US with decent health insurance, I thought it prudent for me to check on the price of this procedure and ensure that it wouldn't bankrupt me. And it was smart that I did - this quotidian and simple 15 minute procedure would have ran me about $1200 – and that's #after# the insurance adjustment.

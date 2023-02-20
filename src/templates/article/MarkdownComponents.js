@@ -7,13 +7,17 @@ export const OrderedList = styled.ol`
   padding: 1em;
   li {
     counter-increment: item;
-    line-height: 1.75em;
-    padding-left: 2em;
+    padding-left: 0.5em;
     margin-bottom: 1em;
+    font-size: ${props => props.theme.fontSizes.sm};
+    color: ${props => props.theme.colors.darkTint};
+    line-height: 1.5rem;
+    font-weight: ${props => props.theme.fontWeights.light};
+    font-family: 'Inter', sans-serif;
 
     &::before {
       content: counter(item) ".";
-      color: rgba(1, 177, 169, 1);
+      color: ${props => props.theme.colors.primary};
       width: 1em;
       margin-right: 0.25em;
       font-weight: bold;
@@ -28,31 +32,45 @@ export const BlockQuote = styled.blockquote`
     margin: 1em 1em;
     padding: 0 1em;
     font-style: italic;
-    color: #6c757d;
-    border-left: 0.5em solid rgba(1, 177, 169, 0.2);
+    color: ${props => props.theme.colors.muted};
+    border-left: 0.5em solid ${props => props.theme.colors.tertiary};
   }
 `
 
-export const CodeBlock = styled.pre.attrs(props => ({
-  className: "text-secondary",
-}))`
+export const CodeBlock = styled.pre`
   padding: 1em;
-  background-color: rgba(0, 10, 15, 0.05);
-  border-radius: 2em;
+  color: ${props => props.theme.colors.darkTint};
+  background-color: ${props => props.theme.colors.lightTint};
+  border-radius: ${props => props.theme.borderRadii[1]};
   line-height: 1.25em;
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
 `
 
 export const UnorderedList = styled.ul`
   list-style: none;
 
+  li {
+    margin-bottom: 1em;
+    font-size: ${props => props.theme.fontSizes.sm};
+    color: ${props => props.theme.colors.darkTint};
+    line-height: 1.5rem;
+    font-weight: ${props => props.theme.fontWeights.light};
+    font-family: 'Inter', sans-serif;
+  }
   li::before {
     content: ">";
-    color: rgba(1, 177, 169, 1);
+    color: ${props => props.theme.colors.primary};
     margin-left: -1em;
     font-weight: bold;
     margin-right: 0.375em;
-    font-size: 1.5rem;
+    font-size: ${props => props.theme.fontSizes.md};
   }
+`
+
+export const CodeString = styled.code`
+  color: ${props => props.theme.colors.primary};
 `
 
 export const HR = styled.hr`

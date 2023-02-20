@@ -1,6 +1,5 @@
 ---
 layout: project
-date: 2021-08-24T13:13:04.861Z
 title: Yonder
 thumbnail: images/computer_desk.jpeg
 stack:
@@ -14,6 +13,7 @@ slug: yonder
 description: A website for a bar I love.
 publicId: yonder_bar
 source: https://github.com/willkrakow/yonder
+date: 2021-08-01
 ---
 
 When my fiancé and I first started dating, we’d often stop in at a bar in downtown Hillsborough called Yonder. As with most places in our sleep town, most of the Yonder regulars were old enough to be our parents. Nevertheless, we never felt anything less than warm southern hospitality from the bartenders (who also happen to be the bar owners), and grew quite fond of the place.

@@ -1,6 +1,6 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+  path: `.env`
+});
 
 module.exports = {
   siteMetadata: {
@@ -23,11 +23,11 @@ module.exports = {
         pageDescription: "Professional and personal development and design",
       },
       {
-        name: "writing",
-        link: "/writing",
-        pageTitle: "Writing",
+        name: "uses",
+        link: "/uses",
+        pageTitle: "Uses",
         pageDescription:
-          "Articles published and unpublished about everything under the sun.",
+          "Things that improve my day in work and in life",
       },
       {
         name: "contact",
@@ -51,9 +51,16 @@ module.exports = {
         short_name: `William Krakow`,
         start_url: `/`,
         background_color: `#fffafc`,
-        theme_color: `#002c86`,
+        theme_color: `#08c5ff`,
         display: `browser`,
         icon: `static/images/favicon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/_posts/uses`,
+        name: `uses`,
       },
     },
     {
@@ -80,7 +87,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Lato\:400,600`, `Open Sans\:300,500`, "Playball"],
+        fonts: [`Lato\:300,400,600`, `Open Sans\:300,500`, "Playball", "Source Code Pro\:200,300,400,500,600,700,800", "Inter\:200,300,400,500,600,700,800,900"],
       },
     },
     `gatsby-plugin-image`,
@@ -97,14 +104,10 @@ module.exports = {
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,
         apiKey: process.env.CLOUDINARY_API_KEY,
         apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: 'image',
+        maxResults: 50,
       },
     },
     `gatsby-plugin-netlify`,
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        implementation: require("sass"),
-      },
-    },
   ],
 }
