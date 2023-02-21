@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Social security number vulnerability for NC Nurses
-thumbnail: images/ssn_search_in_html_comment.png
+thumbnail: images/fetchbyssn.png
 stack:
   - TypeScript
 slug: ncbon-summary
