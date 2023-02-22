@@ -6,7 +6,7 @@ import { faArrowLeft, faEye } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons"
 import RehypeReact from "rehype-react"
-import { UnorderedList, OrderedList, BlockQuote, CodeBlock, CodeString, HR } from "../templates/article/MarkdownComponents"
+import { UnorderedList, OrderedList, BlockQuote, CodeBlock, CodeString, HR, Summary } from "../templates/article/MarkdownComponents"
 import { FlexItem, FlexRow } from "./Grid"
 
 export const Pill = styled.span`
@@ -140,9 +140,9 @@ export const StackList = ({ stack }: IStackList) => (
 )
 
 const PostImage = styled.img`
-max-width: 100%;
+max-width: calc(100% - 4rem);
 height: auto;
-margin: 2rem auto;
+margin: 2rem;
 display: block;
 `
 
@@ -151,10 +151,6 @@ export const WrapLink = styled.a`
   color: ${props => props.theme.colors.primary};
 `
 
-export const Summary = styled.summary`
-  color: ${props => props.theme.colors.primaryShade};
-  margin: 0.5rem 0;
-`
 
 // @ts-ignore
 const renderAst = new RehypeReact({

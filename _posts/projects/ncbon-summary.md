@@ -13,7 +13,13 @@ date: 2023-02-21
 
 A few months back my wife started a new nursing job. Around 10AM on her first day, she called and asked me to look up the renewal deadline for her nursing license. Being the good work-from-home husband that I am, I did some Googling and landed on the [North Carolina Board of Nursing License Verification Portal](https://portal.ncbon.com/LicenseVerification/search.aspx).
 
-The portal offers three ways to search for a license: by name, by license number, and by **social security number**. This last one caught my eye - any time a feature related to SSNs is presented on a publicly facing website there's a possibility for data leaks. And state governments have shown [a lack of diligence](https://arstechnica.com/tech-policy/2021/10/missouri-gov-calls-journalist-who-found-security-flaw-a-hacker-threatens-to-sue/) with respect to their employees SSNs before. So I began digging, for evidence of data mishandling.
+The portal offers three ways to search for a license: by name, by license number, and by **social security number**.
+
+![NC Board of Nursing License Verification Portal](/images/ssn_search_ncbon.png)
+
+This last one caught my eye - any time a feature related to SSNs is presented on a publicly facing website there's a possibility for data leaks. And state governments have shown [a lack of diligence](https://arstechnica.com/tech-policy/2021/10/missouri-gov-calls-journalist-who-found-security-flaw-a-hacker-threatens-to-sue/) with respect to their employees SSNs before.
+
+So I began digging, for evidence of data mishandling.
 
 **What I found was that I could brute force the SSN search feature to get a list of names, social security numbers, and cities of residence for a large portion of nurses, nursing assistants, and nurse practitioners registered in the state of North Carolina.**
 
@@ -21,13 +27,25 @@ The portal offers three ways to search for a license: by name, by license number
 
 To understand how this was possible - almost trivially so - we first need to examine domain of our search: the 1 billion possible nine-digit social security numbers.
 
-The fact that SSNs serve as our nation's de facto 'password' that citizens must use to navigate legal, financial, and professional systems in the United States is somewhat of a duct-tape job. SSNs were never meant to be such a sensitive, critical token - they were introduced to keep track of income taxes. Cards issued between 1946 and 1972 were labeled ["Not for identification purposes"](https://web.archive.org/web/20120629234649/http://www.americanchronicle.com/articles/view/3911). However, in the 1960s, [the government shoehorned them into their current general identification role](https://www.ssa.gov/history/reports/ssnreportc2.html) to simplify digital record-keeping across agencies.
+The fact that SSNs serve as our nation's de facto 'password' that citizens must use to navigate legal, financial, and professional systems in the United States is somewhat of a duct-tape job. SSNs were never meant to be such a sensitive, critical token - they were introduced to keep track of income taxes. Cards issued between 1946 and 1972 were labeled ["Not for identification purposes"](https://web.archive.org/web/20120629234649/http://www.americanchronicle.com/articles/view/3911).
+
+![Social Security Card labeled "NOT FOR IDENTIFICATION PURPOSES"](/images/ssn_card.png)
+
+However, in the 1960s, [the government shoehorned them into their current general identification role](https://www.ssa.gov/history/reports/ssnreportc2.html) to simplify digital record-keeping across agencies.
 
 > Ironically, despite serving as a pseudo-password to opening a credit card, verifying a license, or retrieving sensitive medical information, SSNs would fail nearly all password requirement checks on modern websites. 
 
-In 2011, the Social Security Administration [began assigning SSNs in a pseudorandom fashion](https://www.ssa.gov/employer/randomization.html), rather than by state (as it did prior to 1972) or ZIP code (1972-2011) as it had in the past. But for those of us born prior to 2011, a bad actor only needs to know the year and US state in which someone was born to quickly assert the first three numbers (e.g., `123-##-####`), or at least a range of those first three numbers (e.g., `123-##-####` through `125-##-####`). Even the largest state by population, California, had only 81 possible three-digit prefixes between 1973 and 2011 - that means we can be certain that a person born in California between those years *does not* have an SSN in the remaining **99.2%** of all possible combinations.
+In 2011, the Social Security Administration [began assigning SSNs in a pseudorandom fashion](https://www.ssa.gov/employer/randomization.html), rather than by state (as it did prior to 1972) or ZIP code (1972-2011) as it had in the past. But for those of us born prior to 2011, a bad actor only needs to know the year and US state in which someone was born to quickly assert the first three numbers (e.g., `123-##-####`), or at least a range of those first three numbers (e.g., `123-##-####` through `125-##-####`).
 
-For those whose parents applied for a social security card in North Carolina between 1972 and 2011 - your SSN is either between `237-##-####` and `246-##-####`, or (less likely) `681-##-####` and `690-##-####`.
+Even the largest state by population, California, had only 81 possible three-digit prefixes between 1973 and 2011 - that means we can be certain that a person born in California between those years *does not* have an SSN in the remaining **~92%** of all possible combinations.
+
+Additionally, certain numeric sequences are not allowed - such as:
+- `666-##-####`
+- `##-00-####`
+- `##-##-0000`
+- `123-45-6789`
+
+North Carolina had 15 prefixes prior to 2011, cutting our search domain by 98.5%. Further, 9 of those prefixes were allotted to the state, but their range was not exhausted before the new randomization process took place, meaning the majority of NC registed SSNs fall in a 6 million number range.
 
 ---
 
@@ -39,7 +57,11 @@ I had assumed that the endpoint would be rate limited and protected with some so
 
 To test my theory, I copied the `/Search.aspx` API call as a curl request and sent a few test payloads. And there it was - the API was returning different response statuses for positive results and negative results, and the results list for a given SSN query was serialized in an ASP.NET `_VIEWSTATE` attribute.
 
-To test the extent of this vulnerability I wrote ~50 lines of TypeScript that would loop through a shortened list of 1 million numbers (e.g., `###-00-0000` through `###-99-9999`) and check if the response had results or not. I let that script run for about 20 minutes - with no interval randomization, no IP address shuffling, no proxy server, and managed to construct a list of over 1000 names, SSNs, and cities of residence for the nurses of North Carolina. With a little optimization, I'm confident I could retrieve thousands of results in an equally short amount of time.
+To test the extent of this vulnerability I wrote ~50 lines of TypeScript that would loop through a shortened list of 1 million numbers (e.g., `###-00-0000` through `###-99-9999`) and check if the response had results or not.
+
+>Social security numbers issued in North Carolina between 1972 and 2011 fall between `237-##-####` and `246-##-####`, or (less likely) `681-##-####` and `690-##-####`. These are the ranges I tested, with the assumption that about 50% of people working in North Carolina were born there too.
+
+I let that script run for about 20 minutes - with no interval randomization, no IP address shuffling, no proxy server, and managed to construct a list of over 1000 names, SSNs, and cities of residence for the nurses of North Carolina. With a little optimization, I'm confident I could retrieve thousands of results in an equally short amount of time.
 
 Here are the important bits of the code.
 
@@ -122,7 +144,7 @@ const ssnFetches = async () => {
             if (i < 10) {
                 areaCode = `0${i}`
             }
-            for (let j = 9998; j > 1000; j--) {
+            for (let j = 9998; j > 0000; j--) {
                 let lastFour = `${j}`
                 const fullSSN = `${prefix}-${areaCode}-${lastFour}`
                 try {
@@ -166,7 +188,11 @@ const ssnFetches = async () => {
 
 ---
 
-I reported these findings to the NCBON immediately after discovery and initial documentation. About 24 hours later, I still hadn't heard back, though they had commented out the section of HTML that displayed the SSN search so they clearly read my message. However, the API endpoint was still open, and again I was able to exploit it with no problems. I sent another message mentioning this, and a few hours later received a call from the Board's Chief Legal Officer.
+I reported these findings to the NCBON immediately after discovery and initial documentation. About 24 hours later, I still hadn't heard back, though they had commented out the section of HTML that displayed the SSN search so they clearly read my message.
+
+![SSN Search Tab commented out in HTML. The API enpoint was still open.](/images/ssn_search_in_html_comment_ncbon.png)
+
+However, the API endpoint was still open, and again I was able to exploit it with no problems. I sent another message mentioning this, and a few hours later received a call from the Board's Chief Legal Officer.
 
 The legal officer apologized for the delay, thanked me for being forthcoming, and we set up a time to meet with the IT Director to discuss the issue the following day. I sent over the scripts, payloads, screenshots, and a timeline as well as a summary of my findings and recommendations, and they said they'd get back to me with any questions.
 
