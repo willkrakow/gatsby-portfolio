@@ -62,10 +62,10 @@ const fetchBySSN = (num: string) => fetch("https://portal.ncbon.com/LicenseVerif
         "referrer": "https://portal.ncbon.com/LicenseVerification/search.aspx",
         body: `__VIEWSTATE=%...txtSSN=${num}&...`,
 })
+
+// Negative results contain the string "unable to locate any results...". Positive results will contain an empty ul for the error messages.
 ```
 </details>
-
-> Negative results contain the string "unable to locate any results...". Positive results will contain any empty <ul> for the error messages
 
 <details>
 <summary>Fetching the results</summary>
