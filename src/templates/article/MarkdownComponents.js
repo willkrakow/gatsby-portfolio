@@ -29,10 +29,10 @@ export const OrderedList = styled.ol`
 
 export const BlockQuote = styled.blockquote`
   p {
-    margin: 1em 1em;
+    margin: 1em 0em;
     padding: 0 1em;
     font-style: italic;
-    color: ${props => props.theme.colors.muted};
+    color: ${props => props.theme.colors.primary};
     border-left: 0.5em solid ${props => props.theme.colors.tertiary};
   }
 `
@@ -70,7 +70,7 @@ export const UnorderedList = styled.ul`
 `
 
 export const CodeString = styled.code`
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.primaryShade};
 `
 
 export const HR = styled.hr`
