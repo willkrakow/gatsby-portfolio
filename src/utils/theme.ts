@@ -20,6 +20,7 @@ export const myTheme: DefaultTheme = {
     lightShade: `hsl(204, 20%, 88%)`,
     muted: `hsl(204, 20%, 75%)`,
     error: `hsl(350, 69%, 53%)`,
+    errorTint: `hsl(350, 69%, 73%)`,
     success: `hsl(130, 69%, 53%)`,
     white: `hsl(204, 5%, 99%)`,
     black: `hsl(204, 5%, 2%)`,
