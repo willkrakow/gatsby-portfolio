@@ -8,8 +8,10 @@ export const myTheme: DefaultTheme = {
   colors: {
     primary: `hsl(204, 69%, 53%)`,
     primaryTint: `hsl(204, 69%, 90%)`,
+    primaryShade: `hsl(204, 69%, 33%)`,
     secondary: `hsl(264, 69%, 73%)`,
     secondaryTint: `hsl(264, 69%, 90%)`,
+    secondaryShade: `hsl(264, 69%, 33%)`,
     tertiary: `hsl(204, 69%, 23%)`,
     tertiaryTint: `hsl(204, 69%, 50%)`,
     dark: `hsl(204, 15%, 8%)`,
