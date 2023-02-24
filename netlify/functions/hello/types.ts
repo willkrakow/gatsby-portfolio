@@ -3,4 +3,5 @@ export interface MessageBody {
     email: string;
     subject: string;
     message: string;
+    date: string;
 }

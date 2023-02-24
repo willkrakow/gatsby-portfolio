@@ -1,16 +1,19 @@
 import { MessageBody } from "./types";
-
-export const parseBody = (body: string) => {
+type ParseBodyResult = {
+    data: MessageBody | null,
+    errors: string[],
+}
+export const parseBody = (body: string): ParseBodyResult => {
     const errors: string[] = [];
     try {
-        const data = JSON.parse(body) as MessageBody;
+        const data = JSON.parse(body) as Omit<MessageBody, 'date'>;
         ['name', 'email', 'subject', 'message'].forEach(key => {
             if (!data[key]) {
                 errors.push(`"${key}" is required`)
             }
         });
         return {
-            data,
+            data: {...data, date: new Date().toDateString()},
             errors,
         }
 
