@@ -29,11 +29,12 @@ export const OrderedList = styled.ol`
 
 export const BlockQuote = styled.blockquote`
   p {
-    margin: 1em 1em;
-    padding: 0 1em;
-    font-style: italic;
-    color: ${props => props.theme.colors.muted};
+    margin: 1em 0em;
+    padding: 1rem 1em;
+    font-weight: ${props => props.theme.fontWeights.heavy};
+    color: ${props => props.theme.colors.primaryShade};
     border-left: 0.5em solid ${props => props.theme.colors.tertiary};
+    background-color: ${props => props.theme.colors.lightShade};
   }
 `
 
@@ -70,9 +71,16 @@ export const UnorderedList = styled.ul`
 `
 
 export const CodeString = styled.code`
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.primaryShade};
 `
 
 export const HR = styled.hr`
     margin: 2rem 6rem;
+`
+
+
+export const Summary = styled.summary`
+  color: ${props => props.theme.colors.primaryShade};
+  margin: 0.5rem 0;
+  cursor: pointer;
 `

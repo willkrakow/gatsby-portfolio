@@ -17,8 +17,10 @@ declare module "styled-components" {
     colors: {
       primary: string;
       primaryTint: string;
+      primaryShade: string;
       secondary: string;
       secondaryTint: string;
+      secondaryShade: string;
       tertiary: string;
       tertiaryTint: string;
       light: string;
@@ -30,6 +32,7 @@ declare module "styled-components" {
       muted: string;
       success: string;
       error: string;
+      errorTint: string;
       white: string;
       black: string;
       clear: string;
