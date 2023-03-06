@@ -73,6 +73,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/static/mlgallery`,
+        name: `mlgallery`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/_posts/projects`,
         name: `projects`,
       },
@@ -109,5 +116,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
+    {
+      resolve: require.resolve(`./plugins/mlimage-plugin`),
+      options: {
+        images: `mlgallery`
+      }
+    },
   ],
 }
