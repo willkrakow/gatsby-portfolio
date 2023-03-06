@@ -32,6 +32,7 @@ declare module "styled-components" {
       muted: string;
       success: string;
       error: string;
+      errorTint: string;
       white: string;
       black: string;
       clear: string;
