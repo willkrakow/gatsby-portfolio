@@ -6,6 +6,7 @@ const {createMlImageNodeFields, isImageSharp, typeDefs, getImageBuffer, validate
 
 let model;
 let objectModel;
+let count = 0;
 
 const loadModels = async () => {
     if (!model) {
@@ -20,9 +21,6 @@ const loadModels = async () => {
 }
 
 const destroyModels = async () => {
-    reporter.info(
-        `Destroying Coco model`
-    );
     objectModel.dispose()
     model = null;
 }
@@ -96,6 +94,7 @@ exports.onPostBootstrap = async ({
                 parent: node.id,
             });
 
+            count += 1;
             createNode(mlImageNodeFields);
         } catch (err) {
             reporter.error(`Error classifying ${parentNode.base}`)
@@ -105,4 +104,9 @@ exports.onPostBootstrap = async ({
 
 }
 
-exports.onPostBuild = async () => destroyModels();
+exports.onPostBuild = async ({ reporter }) => {
+    await destroyModels();
+
+    reporter.info(`${ count } ML Image nodes created`)
+
+}
