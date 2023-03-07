@@ -25,7 +25,7 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
     "outDir": "./public"
   },
-  "include": ["./src/**/*", "./gatsby-node.ts", "./gatsby-config.ts", "./plugins/**/*"],
-  "exclude": ["./static/**/*", "./public/**/*", "./node_modules/**/*", "./.cache/**/*", "./.netlify/**/*"],
+  "include": ["./src/**/*"],
+  "exclude": ["./src/images/*"],
 
 }
