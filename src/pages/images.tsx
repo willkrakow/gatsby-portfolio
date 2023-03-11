@@ -55,7 +55,7 @@ export const query = graphql`
         parent {
           ... on ImageSharp {
             id
-            gatsbyImageData(height: 300, width: 300, aspectRatio: 1)
+            gatsbyImageData(height: 300, width: 300)
             original {
               height
               width

@@ -1,8 +1,12 @@
-require('dotenv').config({
-  path: `.env`
-});
+import * as dotenv from 'dotenv';
+import type { GatsbyConfig } from 'gatsby';
+import path from 'path';
 
-module.exports = {
+dotenv.config({
+  path: '.env'
+})
+
+const config: GatsbyConfig = {
   siteMetadata: {
     title: "William Krakow",
     titleTemplate: "%s | William Krakow",
@@ -117,10 +121,12 @@ module.exports = {
     },
     `gatsby-plugin-netlify`,
     {
-      resolve: require.resolve(`./plugins/mlimage-plugin`),
+      resolve: `mlimage-plugin`,
       options: {
-        images: `mlgallery`
+        images: 'mlgallery'
       }
-    },
+    }
   ],
 }
+
+export default config;
