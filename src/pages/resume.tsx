@@ -58,8 +58,18 @@ export default function Resume() {
 
   const jobData = [
     {
+      name: "Aspida",
+      dates: "October 2022 - present",
+      url: "aspida.com",
+      role: "Software Engineer",
+      description: [
+        "Managed infrastructure via Terraform to deploy applications on AWS using services including ECS, RDS and API Gateway.",
+        "Developed full stack applications with Node JS, React JS and TypeScript",
+      ]
+    },
+    {
       name: "Passport",
-      dates: "January 2021 - present",
+      dates: "January 2022 - September 2022",
       url: "passportinc.com",
       role: "Software Engineer",
       description: [
@@ -70,7 +80,7 @@ export default function Resume() {
     },
     {
       name: "PlantPure",
-      dates: "November 2019 - January 2021",
+      dates: "November 2019 - January 2022",
       url: 'plantpurenation.com',
       role: "Web Development",
       description: [
@@ -98,7 +108,7 @@ export default function Resume() {
         "Wrote website copy and contributed technical support articles, and handled support tickets.",
         "Designed neuroscience research hardware, manufacturing processes, and QA tests."]
     }
-  ]
+  ];
 
   const educationData = {
     school: "University of North Carolina at Chapel Hill",

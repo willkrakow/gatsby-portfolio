@@ -5,6 +5,7 @@ import Seo from './Seo'
 import Footer from './Footer';
 import styled, { createGlobalStyle } from 'styled-components'
 import ThemeWrapper from './ThemeWrapper';
+import PropTypes from 'prop-types';
 
 const Main = styled.main`
 min-height: 100vh;
@@ -26,8 +27,7 @@ const GlobalStyle = createGlobalStyle`
   }
   `
 
-
-export default function Layout({ children, pageDescription, pageTitle }) {
+function Layout({ children, pageDescription, pageTitle }) {
   
   return (
     <StaticQuery
@@ -59,5 +59,15 @@ export default function Layout({ children, pageDescription, pageTitle }) {
       )}
     />
   )
-        }
+}
 
+export default Layout;
+
+Layout.propTypes = {
+  children: PropTypes.node,
+  pageDescription: PropTypes.string,
+  pageTitle: PropTypes.string,
+}
+
+
+  
