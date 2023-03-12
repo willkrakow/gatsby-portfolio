@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const HeroHeader = styled.h1`
   display: block;
@@ -149,7 +147,7 @@ export const ColorSpan = styled.span`
 `
 
 
-export const ColorAniLink = styled(AniLink)`
+export const ColorAniLink = styled(Link)`
   box-shadow: inset 0 -0.2em 0 ${props => props.theme.colors.primary};
   line-height: 2em;
   font-size: ${props => props.theme.fontSizes.sm};

@@ -1,5 +1,5 @@
 import React from "react"
-import { ColorHeader, BioText, ColorLink, BioHeader, LabelText } from "./Typography";
+import { BioText, ColorLink, BioHeader, LabelText } from "./Typography";
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { IArticle } from "../types";

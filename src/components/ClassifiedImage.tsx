@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { GatsbyImageProps } from 'gatsby-image';
+import { GatsbyImageProps } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 export interface IMLObject {
   bbox: [number, number, number, number]

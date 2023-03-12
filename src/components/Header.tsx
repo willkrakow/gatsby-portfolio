@@ -136,7 +136,7 @@ export default function Header({menuLinks}: IHeader) {
           </Logo>
           <DesktopMenuItemWrapper>
             {menuLinks.map((link, index) => (
-              <ColorAniLink fade key={index} to={link.link}>
+              <ColorAniLink key={index} to={link.link}>
                 {capitalized(link.name)}
               </ColorAniLink>
             ))}
@@ -180,7 +180,7 @@ export default function Header({menuLinks}: IHeader) {
           >
             <MobileMenuItemInner>
               {menuLinks.map((link, index) => (
-                <MobileLink fade key={index} to={link.link}>
+                <MobileLink key={index} to={link.link}>
                   {capitalized(link.name)}
                 </MobileLink>
               ))}
