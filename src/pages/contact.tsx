@@ -100,7 +100,7 @@ const Contact = () => {
     error: false,
     message: null,
   })
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit, formState } = useForm<IContactForm>()
   const onSubmit = async (data: IContactForm) => {
     setLoading(true);
     try {
@@ -147,36 +147,30 @@ const Contact = () => {
           </>
         ) : (
             <AnimatedForm onSubmit={handleSubmit(onSubmit)} data-netlify="true">
-            <input
-              ref={register}
-              type="hidden"
-              name="form-name"
-              value="contact_form"
-            />
             <FancyInput
-              ref={register({ required: true })}
+              {...register('name', { required: true })}
               name="name"
               placeholder={`Your Name`}
             />
-            {errors.name && <span>This field is required</span>}
+            {formState.errors.name && <span>This field is required</span>}
             <FancyInput
-              ref={register({ required: true })}
+              {...register('email', { required: true })}
               name="email"
               placeholder={`Your Email Address`}
             />
-            {errors.email && <span>This field is required</span>}
+            {formState.errors.email && <span>This field is required</span>}
             <FancyInput
-              ref={register({ required: true })}
+              {...register('subject', { required: true })}
               name="subject"
               placeholder={`Subject`}
             />
-            {errors.subject && <span>This field is required</span>}
+            {formState.errors.subject && <span>This field is required</span>}
             <FancyTextArea
-              ref={register({ required: true })}
+              {...register('message', { required: true })}
               name="message"
               placeholder="Message"
             />
-            {errors.text && <span>This field is required</span>}
+            {formState.errors.message && <span>This field is required</span>}
             <BlackButton type="submit">Submit</BlackButton>
           </AnimatedForm>
           )}

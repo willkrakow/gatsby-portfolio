@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from "react"
+import React, { useState, useEffect, useMemo } from "react";
 import Layout from "../components/layout"
 import Project from "../components/Project"
 import { PageBanner, PageContainer } from "../components/containers"
@@ -158,7 +158,7 @@ export default function Writing({ data }: IProjectsPage) {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   const handleDropdown = () => {
-    setIsDropdownOpen(prev => !prev);
+    setIsDropdownOpen((prev: boolean) => !prev);
   }
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const btn = e.currentTarget.value
@@ -174,12 +174,12 @@ export default function Writing({ data }: IProjectsPage) {
   }
 
   const handleRemove = (tech: string) => {
-    const temp = _.without(toQuery, tech)
+    const temp = toQuery.filter(t => t !== tech);
     setToQuery([...temp]);
   }
 
   const handleShowMore = () => {
-    setShowMore(prev => !prev)
+    setShowMore((prev: boolean) => !prev)
   }
 
   const handleClearFilters = () => setToQuery([]);
@@ -208,9 +208,9 @@ export default function Writing({ data }: IProjectsPage) {
   type StackItems = {
     [key: string]: number;
   }
-  const stackItems = useMemo(() => filtered.reduce((acc, curr) => {
+  const stackItems = useMemo(() => filtered.reduce((acc: any, curr: any) => {
     const currentItems: StackItems = acc;
-    curr.node.frontmatter.stack.forEach(item => {
+    curr.node.frontmatter.stack.forEach((item: any) => {
       if(typeof currentItems[item] === 'undefined'){
         currentItems[item] = 1
       } else {
@@ -228,7 +228,7 @@ export default function Writing({ data }: IProjectsPage) {
       name: key,
       count,
     }))
-    .sort((a, b) => b.count - a.count)
+    .sort((a, b) => (b.count as number) - (a.count as number))
   }, [stackItems]);
 
   const commonItems = stackItemArray.slice(0,COMMON_ITEMS);
@@ -248,7 +248,7 @@ export default function Writing({ data }: IProjectsPage) {
           <ProjectGridFilters>
             <SortBox>
               <BioText gray>Filter by language / library</BioText>
-              {commonItems.map((btn, index) => (
+              {commonItems.map((btn: any, index: number) => (
                 <SortButton
                   key={index}
                   selected={toQuery.includes(btn.name)}
@@ -259,7 +259,7 @@ export default function Writing({ data }: IProjectsPage) {
                 </SortButton>
               ))}
               {showMore &&
-                uncommonItems.map((btn, index) => (
+                uncommonItems.map((btn: any, index: number) => (
                   <SortButton
                     key={index}
                     selected={toQuery.includes(btn.name)}
@@ -285,8 +285,19 @@ export default function Writing({ data }: IProjectsPage) {
               <BlackButton onClick={handleDropdown}>
                 Filter by language / library
               </BlackButton>
-                <DropdownMenu isOpen={isDropdownOpen}>
-                  {commonItems.map((btn, index) => (
+              <DropdownMenu isOpen={isDropdownOpen}>
+                {commonItems.map((btn: any, index: number) => (
+                  <SortButton
+                    key={index}
+                    selected={toQuery.includes(btn.name)}
+                    value={btn.name}
+                    onClick={handleClick}
+                  >
+                    {btn.name} <SortBoxCounter>{btn.count}</SortBoxCounter>
+                  </SortButton>
+                ))}
+                {showMore &&
+                  uncommonItems.map((btn: any, index: number) => (
                     <SortButton
                       key={index}
                       selected={toQuery.includes(btn.name)}
@@ -296,27 +307,16 @@ export default function Writing({ data }: IProjectsPage) {
                       {btn.name} <SortBoxCounter>{btn.count}</SortBoxCounter>
                     </SortButton>
                   ))}
-                  {showMore &&
-                    uncommonItems.map((btn, index) => (
-                      <SortButton
-                        key={index}
-                        selected={toQuery.includes(btn.name)}
-                        value={btn.name}
-                        onClick={handleClick}
-                      >
-                        {btn.name} <SortBoxCounter>{btn.count}</SortBoxCounter>
-                      </SortButton>
-                    ))}
-                  {uncommonItems.length > COMMON_ITEMS && (
-                    <WhiteButton onClick={handleShowMore}>
-                      {showMore ? "Show Fewer" : "Show More"}
-                    </WhiteButton>
-                  )}
-                </DropdownMenu>
+                {uncommonItems.length > COMMON_ITEMS && (
+                  <WhiteButton onClick={handleShowMore}>
+                    {showMore ? "Show Fewer" : "Show More"}
+                  </WhiteButton>
+                )}
+              </DropdownMenu>
             </MobileSortBox>
           </ProjectGridFilters>
           <ProjectGridContent>
-            {filtered.map((article, index) => (
+            {filtered.map((article: any, index: number) => (
               <Project index={index} key={index} article={article} />
             ))}
           </ProjectGridContent>
@@ -330,7 +330,7 @@ export const query = graphql`
   {
     allMarkdownRemark(
       filter: { frontmatter: { layout: { eq: "project" } } }
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: {frontmatter: {date: DESC}}
     ) {
       edges {
         node {

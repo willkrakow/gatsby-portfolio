@@ -1,8 +1,12 @@
-require('dotenv').config({
-  path: `.env`
-});
+import * as dotenv from 'dotenv';
+import type { GatsbyConfig } from 'gatsby';
+import path from 'path';
 
-module.exports = {
+dotenv.config({
+  path: '.env'
+})
+
+const config: GatsbyConfig = {
   siteMetadata: {
     title: "William Krakow",
     titleTemplate: "%s | William Krakow",
@@ -92,6 +96,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/_posts/resume`,
+        name: `resume`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Lato\:300,400,600`, `Open Sans\:300,500`, "Playball", "Source Code Pro\:200,300,400,500,600,700,800", "Inter\:200,300,400,500,600,700,800,900"],
@@ -117,10 +128,12 @@ module.exports = {
     },
     `gatsby-plugin-netlify`,
     {
-      resolve: require.resolve(`./plugins/mlimage-plugin`),
+      resolve: `mlimage-plugin`,
       options: {
-        images: `mlgallery`
+        images: 'mlgallery'
       }
-    },
+    }
   ],
 }
+
+export default config;

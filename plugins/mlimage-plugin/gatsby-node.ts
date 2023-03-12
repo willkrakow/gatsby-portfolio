@@ -1,11 +1,13 @@
-const utils = require("./utils/index");
-const mobilenet = require('@tensorflow-models/mobilenet');
-const coco = require('@tensorflow-models/coco-ssd');
-const tf = require('@tensorflow/tfjs-node');
+import utils from './utils/index';
+import * as mobilenet from '@tensorflow-models/mobilenet';
+import * as coco from '@tensorflow-models/coco-ssd';
+import * as tf from '@tensorflow/tfjs-node';
+import type { GatsbyNode } from 'gatsby';
+
 const {createMlImageNodeFields, isImageSharp, typeDefs, getImageBuffer, validatePluginOptions} = utils;
 
-let model;
-let objectModel;
+let model: mobilenet.MobileNet | null;
+let objectModel: coco.ObjectDetection;
 let count = 0;
 
 const loadModels = async () => {
@@ -48,7 +50,7 @@ const classifyImage = async (imageBuffer, imageType) => {
             break;
     }
     const objects = await objectModel.detect(imageForObjects);
-    const label = await model.classify(image);
+    const label = await model?.classify(image as tf.Tensor<tf.Rank.R3>);
 
     return {
         objects,
@@ -56,9 +58,10 @@ const classifyImage = async (imageBuffer, imageType) => {
     }
 }
 
-exports.onPreBootstrap = async () => loadModels();
+export const onPreBootstrap: GatsbyNode['onPreBootstrap'] = async () => loadModels();
 
-exports.onPreInit = ({ reporter }, pluginOptions) => {
+export const onPreInit: GatsbyNode['onPreInit'] = ({ reporter }, pluginOptions) => {
+    console.log("HERE WE ARE AND WE'RE in THE PLUGIN   ")
     reporter.info(`Classifying images to generate alt text`)
     const errors = validatePluginOptions(pluginOptions);
     if (errors.length > 0){
@@ -66,11 +69,11 @@ exports.onPreInit = ({ reporter }, pluginOptions) => {
     }
 }
 
-exports.createSchemaCustomization = ({ actions }) => {
+export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = async ({ actions }) => {
     actions.createTypes(typeDefs)
 }
 
-exports.onPostBootstrap = async ({
+export const onPostBootstrap: GatsbyNode['onPostBootstrap'] = async ({
     actions, getNode, reporter, createNodeId, getNodesByType,
 }, pluginOptions) => {
 
@@ -78,7 +81,7 @@ exports.onPostBootstrap = async ({
     const { createNode } = actions;
     await Promise.all(images.map(async (node) => {
         if (!isImageSharp(node)) return;
-        const parentNode = getNode(node.parent)
+        const parentNode = getNode(node.parent as string) as any;
         
         if (!parentNode.absolutePath?.includes(pluginOptions.images)) {
             return;
@@ -97,6 +100,7 @@ exports.onPostBootstrap = async ({
             count += 1;
             createNode(mlImageNodeFields);
         } catch (err) {
+            reporter.error(err)
             reporter.error(`Error classifying ${parentNode.base}`)
         }
     }));
@@ -104,7 +108,7 @@ exports.onPostBootstrap = async ({
 
 }
 
-exports.onPostBuild = async ({ reporter }) => {
+export const onPostBuild = async ({ reporter }) => {
     await destroyModels();
 
     reporter.info(`${ count } ML Image nodes created`)

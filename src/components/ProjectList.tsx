@@ -43,7 +43,7 @@ const ProjectList = () => {
     {
       allMarkdownRemark(
         filter: { frontmatter: { layout: { eq: "project" } } }
-        sort: {fields: frontmatter___date, order: DESC}
+        sort: { frontmatter: { date: DESC }}
         limit: 3
       ) {
         edges {

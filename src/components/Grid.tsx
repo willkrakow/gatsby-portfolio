@@ -37,7 +37,7 @@ interface IGridItem {
     span: number;
 }
 export const GridItem = styled.div<IGridItem>`
-grid-columns: span ${props => props.span || 1};
+  grid-column: span ${props => props.span || 1};
 `
 
 interface IFlex {

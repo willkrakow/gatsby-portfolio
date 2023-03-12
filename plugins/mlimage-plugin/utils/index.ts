@@ -1,16 +1,12 @@
-const sharp = require("sharp");
-const crypto = require("crypto");
+import sharp from "sharp";
+import crypto from "crypto";
+import type { Node } from "gatsby";
 
-/**
- * 
- * @param {object} node 
- * @returns 
- */
-const isImageSharp = (node) => {
+const isImageSharp = (node: Node) => {
     return node.internal.type && node.internal.type === 'ImageSharp';
 }
 
-const getImageBuffer = (path) => {
+const getImageBuffer = (path: string) => {
     return sharp(path).toBuffer();
 }
 
@@ -41,15 +37,16 @@ const typeDefs = `
     }
 `;
 
-/**
- * 
- * @param {object} params params
- * @param {string} params.id id
- * @param {object} params.altText altText
- * @param {string} params.parent parent node id
- * @returns 
- */
-const createMlImageNodeFields = ({ id, altText, parent }) => ({
+interface CreateMLImageFields {
+    id: string;
+    altText: {
+        objects: any[];
+        label: any;
+    };
+    parent: any;
+}
+
+const createMlImageNodeFields = ({ id, altText, parent }: CreateMLImageFields) => ({
     // Data for the node.
     objects: altText.objects || [],
     label: altText.label || {},
@@ -74,8 +71,9 @@ const optionsSchema = {
     }
 }
 
+
 const validatePluginOptions = (pluginOptions) => {
-    const errors = [];
+    const errors: string[] = [];
     Object.entries(optionsSchema).forEach(([key, schema]) => {
         if (schema.required && !pluginOptions[key]){
             errors.push(`"${key}" is required`)
@@ -90,4 +88,4 @@ const validatePluginOptions = (pluginOptions) => {
 }
 
 
-module.exports = {isImageSharp, typeDefs, getImageBuffer, createMlImageNodeFields, validatePluginOptions}
+export default {isImageSharp, typeDefs, getImageBuffer, createMlImageNodeFields, validatePluginOptions}
