@@ -18,12 +18,26 @@ interface MarkdownProject {
     }
   }
 }
-
 interface MarkdownProjectQuery {
     allMarkdownRemark: {
       edges: MarkdownProject[]
     }
 }
+
+interface MarkdownResume {
+  title: string;
+  layout: string;
+  dates: string;
+  role: string;
+  description: string[];
+}
+
+interface MarkdownResumeQuery {
+  allMarkdownRemark: {
+    edges: MarkdownResume[]
+  }
+}
+
 export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
@@ -69,5 +83,4 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql,
       },
     })
   })
-
 }

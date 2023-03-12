@@ -96,6 +96,13 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/_posts/resume`,
+        name: `resume`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Lato\:300,400,600`, `Open Sans\:300,500`, "Playball", "Source Code Pro\:200,300,400,500,600,700,800", "Inter\:200,300,400,500,600,700,800,900"],
