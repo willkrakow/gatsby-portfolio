@@ -3,6 +3,7 @@ layout: resume
 title: Passport
 dates: January 2022 - September 2022
 role: Software Engineer
+order: 2
 stack:
   - Built data-intensive React applications in an enterprise setting.
   - Developed microservices using AWS Lambda and Serverless Framework, including event-driven tasks.

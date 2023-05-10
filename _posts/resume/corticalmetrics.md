@@ -3,6 +3,7 @@ layout: resume
 title: Cortical Metrics
 dates: May 2016 - November 2018
 role: Web Designer and Product Engineer
+order: 5
 stack:
   - Analyzed clinical trial data, generated statistical reports, and wrote articles on the latest neuroscience research.
   - Wrote website copy and contributed technical support articles, and handled support tickets.

@@ -4,6 +4,7 @@ import styled from "styled-components"
 import ClassifiedImage, { IClassifiedImage } from "../components/ClassifiedImage"
 import Layout from "../components/layout"
 import { PageBanner } from "../components/containers"
+import PageHead from "../components/PageHead"
 
 const ImageGrid = styled.div`
   display: grid;
@@ -81,3 +82,14 @@ export const query = graphql`
     }
   }
 `;
+
+export function Head() {
+  const data = {
+    title: 'Images | Will Krakow',
+    url: 'https://williamkrakow.dev/images',
+    description: 'Images labeled with Tensorflow.js',
+  }
+
+  return <PageHead {...data} />
+}
+

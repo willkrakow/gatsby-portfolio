@@ -65,7 +65,10 @@ export default function Resume({data}: PageProps<ResumeProps>) {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { layout: { eq: "resume" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { layout: { eq: "resume" } } }
+      sort: { frontmatter: { order: ASC } }
+    ) {
       nodes {
         frontmatter {
           dates

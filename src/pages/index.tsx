@@ -7,6 +7,7 @@ import ProjectList from '../components/ProjectList'
 import TwoColumns from "../components/TwoColumns"
 import styled, { keyframes } from 'styled-components'
 import { PageContainer } from "../components/containers"
+import PageHead from "../components/PageHead"
 
 const backgroundDrift = keyframes`
 0% {
@@ -33,7 +34,7 @@ const sections = [
     textColumn: {
       label: "About me",
       title: "Hi there!",
-      description: "My name's Will. I'm a full-stack developer from Hillsborough, NC, with a background in mathematics and an affection for intuitive, original designs. In my spare time I like to hike, ride bikes, and play around with new Javascript libraries. I am seeking full time or contract employment. Keep reading to learn more about me and my work.",
+      description: "My name's Will. I'm a full-stack software engineer from Chapel Hill, NC, with a background in mathematics and an interest in serverless architecture. In my spare time I like to hike, ride bikes, and write.",
     },
     cta: {
       label: "View resume",
@@ -46,7 +47,7 @@ const sections = [
     textColumn: {
       label: "Projects",
       title: "Things I've built",
-      description: "I primarily work on the frontend, and have recently taken a liking to the JAMstack architecture. I've also worked extensively in Node.js on projects large and small, for both complete servers and serverless functions. Beyond web dev, I like using Python for web scraping, data analytics, and machine learning via Tensorflow/Keras.",
+      description: "I primarily work on full stack TypeScript projects. Beyond web dev, I like using Python for web scraping, data analytics, and machine learning via Tensorflow/Keras.",
       
     },
     cta: {
@@ -93,3 +94,15 @@ const sections = [
     </Layout>
   )
 }
+
+
+export function Head() {
+  const data = {
+    title: 'Will Krakow',
+    url: 'https://williamkrakow.dev',
+    description: 'Home',
+  }
+
+  return <PageHead {...data} />
+}
+

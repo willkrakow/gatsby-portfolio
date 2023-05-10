@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import { PageBanner, PageContainer } from "../components/containers"
 import { BlackButton, LabelText } from "../components/Typography"
 import { cardAnimation } from "../utils/animations"
+import PageHead from "../components/PageHead"
 
 const FancyInput = styled.input`
   margin: ${props => props.theme.spacing[4]} auto;
@@ -177,6 +178,16 @@ const Contact = () => {
       </PageContainer>
     </Layout>
   )
+}
+
+export function Head(){
+  const data = {
+    title: "Contact | Will Krakow",
+    url: "https://williamkrakow.dev/contact",
+    description: "Send me a message"
+  }
+
+  return <PageHead {...data} />
 }
 
 export default Contact
