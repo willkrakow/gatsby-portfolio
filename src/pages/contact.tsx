@@ -25,6 +25,7 @@ const FancyInput = styled.input`
   }
 `
 
+<<<<<<< Updated upstream
 const FancyTextArea = styled.textarea`
   margin: ${props => props.theme.spacing[4]} auto;
   border: 1px solid ${props => props.theme.colors.primaryTint};
@@ -68,6 +69,8 @@ const ErrorText = styled(LabelText)`
   color: ${props => props.theme.colors.error};
 `
 
+=======
+>>>>>>> Stashed changes
 const AnimatedForm = styled.form`
   animation: 0.3s ${cardAnimation} ease;
   display: flex;

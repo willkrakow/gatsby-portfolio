@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { DefaultTheme, ThemeProvider, ThemedStyledFunction } from "styled-components"
+import React, { useEffect, useState } from 'react';
+import { DefaultTheme, ThemeProvider } from "styled-components"
 import useLocalStorage from '../hooks/useLocalStorage';
 import { myTheme, darkTheme, ThemeToggleContext } from '../utils/theme';
 

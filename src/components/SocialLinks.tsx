@@ -10,15 +10,15 @@ const ListItem = styled.li`
   display: flex;
   justify-content: flex-start;
   margin-bottom: ${props => props.theme.spacing[2]};
-  @media screen(max-width: 599px) {
+  @media (max-width: 599px) {
     justify-content: flex-end;
-  }
+  };
 `
 
 const SocialLinkList = styled.ul`
   text-align: left;
   padding-left: 0;
-  @media screen(max-width: 599px) {
+  @media (max-width: 599px) {
     text-align: right;
   }
 `
@@ -37,23 +37,8 @@ const data = [
   },
   {
     name: "William Krakow",
-    url: "http://facebook.com/willkrakow",
-    icon: faFacebook,
-  },
-  {
-    name: "@willkrakow",
-    url: "https://instagram.com/willkrakow",
-    icon: faInstagram,
-  },
-  {
-    name: "William Krakow",
     url: "https://linkedin.com/in/william.krakow",
     icon: faLinkedin,
-  },
-  {
-    name: "willkrakow(at)gmail.com",
-    url: "mailto:willkrakow@gmail.com",
-    icon: faEnvelope,
   },
 ]
 

@@ -58,46 +58,60 @@ export default function Resume() {
 
   const jobData = [
     {
+      name: "Aspida",
+      dates: "October 2022 - present",
+      url: "aspida.com",
+      role: "Senior Software Engineer",
+      description: [
+        "Build cloud native applications for the financial services industry",
+        "Architect cloud resources using AWS, Terraform, and CI/CD Pipelines",
+        "Advise other engineers on best practices for building scalable, secure, and reliable applications",
+      ],
+    },
+    {
       name: "Passport",
-      dates: "January 2021 - present",
+      dates: "January 2022 - September 2022",
       url: "passportinc.com",
       role: "Software Engineer",
       description: [
         "Built data-intensive React applications in an enterprise setting",
         "Developed microservices using AWS Lambda and Serverless Framework, including event-driven tasks",
-        "Assisted with planning microservice architecture and data storage strategies"
-      ]
+        "Assisted with planning microservice architecture and data storage strategies",
+      ],
     },
     {
       name: "PlantPure",
-      dates: "November 2019 - January 2021",
-      url: 'plantpurenation.com',
+      dates: "November 2019 - January 2022",
+      url: "plantpurenation.com",
       role: "Web Development",
       description: [
         "Developed and maintained pages, components, and content for a Shopify store with 40k+ monthly visitors.",
         "Designed marketing materials and wrote web, social media, and email marketing copy.",
-        "Used creative initiatives and insights from Google Analytics to increase total reach by 90% over 3 months."]
+        "Used creative initiatives and insights from Google Analytics to increase total reach by 90% over 3 months.",
+      ],
     },
     {
       name: "Duke Center for Child Traumatic Stress",
       dates: "December 2018 - April 2019",
-      url: 'duke.edu',
+      url: "duke.edu",
       role: "Web Development and Database Analyst",
       description: [
         "Developed and implemented project-specific data management plans for 100+ medical clinics.",
         "Advised clinicians, administrators and psychiatry researchers on proper data entry conventions.",
-        "Compiled and wrote documentation for database development and Salesforce integrations."]
+        "Compiled and wrote documentation for database development and Salesforce integrations.",
+      ],
     },
     {
       name: "Cortical Metrics",
       dates: "May 2016 - November 2018",
-      url: 'corticalmetrics.com',
+      url: "corticalmetrics.com",
       role: "Hardware Engineering, Marketing and Design",
       description: [
         "Analyzed clinical trial data, generated statistical reports, and wrote articles on the latest neuroscience research.",
         "Wrote website copy and contributed technical support articles, and handled support tickets.",
-        "Designed neuroscience research hardware, manufacturing processes, and QA tests."]
-    }
+        "Designed neuroscience research hardware, manufacturing processes, and QA tests.",
+      ],
+    },
   ]
 
   const educationData = {

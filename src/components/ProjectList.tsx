@@ -1,7 +1,7 @@
 import React from 'react';
 import { ColorHeader, BioText } from './Typography'
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import type {IProjectFrontmatter} from '../types';
+import {IProjectFrontmatter} from '../types';
 import { StackList } from './containers';
 import styled from 'styled-components';
 
