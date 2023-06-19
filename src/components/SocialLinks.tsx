@@ -1,13 +1,11 @@
 import React from 'react'
 import {
   faGithub,
-  faFacebook,
-  faInstagram,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
-import { faEnvelope, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { ColorSpan } from './Typography'
 
 const ListItem = styled.li`
@@ -41,23 +39,8 @@ export default function SocialLinks() {
     },
     {
       name: 'William Krakow',
-      url: 'http://facebook.com/willkrakow',
-      icon: faFacebook,
-    },
-    {
-      name: '@willkrakow',
-      url: 'https://instagram.com/willkrakow',
-      icon: faInstagram,
-    },
-    {
-      name: 'William Krakow',
       url: 'https://linkedin.com/in/william.krakow',
       icon: faLinkedin,
-    },
-    {
-      name: 'willkrakow(at)gmail.com',
-      url: 'mailto:willkrakow@gmail.com',
-      icon: faEnvelope,
     },
   ]
 
