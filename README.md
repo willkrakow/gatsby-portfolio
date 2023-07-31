@@ -7,4 +7,4 @@
   William Krakow | Portfolio
 </h1>
 
-Hi there! I'm Will, and this is the repo for [my portfolio site](https://williamkrakow.dev/). Feel free to browse around and judge me. Just don't fork this repo. That's creepy.
+This is the repo for [my portfolio](https://williamkrakow.dev/). Feel free to browse around. Just don't fork this repo. That's creepy.
